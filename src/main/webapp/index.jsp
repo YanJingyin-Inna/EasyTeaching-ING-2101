@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
-    <meta name="description" content="这是一个 index 页面">
+    <title>EasyTeaching-首页</title>
+    <meta name="description" content="网站首页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -27,7 +27,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <a href="javascript:;" class="tpl-logo">
-            <img src="assets/img/logo.png" alt="">
+            <img src="assets/img/myLogo.png" alt="">
         </a>
     </div>
     <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -87,50 +87,50 @@
 
                 </ul>
             </li>
-            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
-                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>
-                </a>
-                <ul class="am-dropdown-content tpl-dropdown-content">
-                    <li class="tpl-dropdown-content-external">
-                        <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>
-                    <li>
-                        <a href="javascript:;" class="tpl-dropdown-content-progress">
-                                <span class="task">
-                        <span class="desc">Amaze UI 用户中心 v1.2 </span>
-                                <span class="percent">45%</span>
-                                </span>
-                            <span class="progress">
-                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="tpl-dropdown-content-progress">
-                                <span class="task">
-                        <span class="desc">新闻内容页 </span>
-                                <span class="percent">30%</span>
-                                </span>
-                            <span class="progress">
-                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="tpl-dropdown-content-progress">
-                                <span class="task">
-                        <span class="desc">管理中心 </span>
-                                <span class="percent">60%</span>
-                                </span>
-                            <span class="progress">
-                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>
-                    </span>
-                        </a>
-                    </li>
+<%--            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>--%>
+<%--                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">--%>
+<%--                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>--%>
+<%--                </a>--%>
+<%--                <ul class="am-dropdown-content tpl-dropdown-content">--%>
+<%--                    <li class="tpl-dropdown-content-external">--%>
+<%--                        <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>--%>
+<%--                    <li>--%>
+<%--                        <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
+<%--                                <span class="task">--%>
+<%--                        <span class="desc">Amaze UI 用户中心 v1.2 </span>--%>
+<%--                                <span class="percent">45%</span>--%>
+<%--                                </span>--%>
+<%--                            <span class="progress">--%>
+<%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>--%>
+<%--                    </span>--%>
+<%--                        </a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
+<%--                                <span class="task">--%>
+<%--                        <span class="desc">新闻内容页 </span>--%>
+<%--                                <span class="percent">30%</span>--%>
+<%--                                </span>--%>
+<%--                            <span class="progress">--%>
+<%--                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>--%>
+<%--                    </span>--%>
+<%--                        </a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
+<%--                                <span class="task">--%>
+<%--                        <span class="desc">管理中心 </span>--%>
+<%--                                <span class="percent">60%</span>--%>
+<%--                                </span>--%>
+<%--                            <span class="progress">--%>
+<%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>--%>
+<%--                    </span>--%>
+<%--                        </a>--%>
+<%--                    </li>--%>
 
-                </ul>
-            </li>
-            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+<%--                </ul>--%>
+<%--            </li>--%>
+<%--            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>--%>
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
@@ -158,60 +158,84 @@
 
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
-            Amaze UI 列表
+            我的功能
         </div>
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
                 <li class="tpl-left-nav-item">
                     <a href="index.jsp" class="nav-link active">
                         <i class="am-icon-home"></i>
-                        <span>首页</span>
+                        <span>主页</span>
                     </a>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="chart.html" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-bar-chart"></i>
-                        <span>数据表</span>
+                    <a href="course.jsp" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-calendar"></i>
+                        <span>课程</span>
                         <i class="tpl-left-nav-content tpl-badge-danger">
                             12
                         </i>
                     </a>
                 </li>
 
+<%--                <li class="tpl-left-nav-item">--%>
+<%--                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">--%>
+<%--                        <i class="am-icon-table"></i>--%>
+<%--                        <span>表格</span>--%>
+<%--                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>--%>
+<%--                    </a>--%>
+<%--                    <ul class="tpl-left-nav-sub-menu">--%>
+<%--                        <li>--%>
+<%--                            <a href="table-font-list.html">--%>
+<%--                                <i class="am-icon-angle-right"></i>--%>
+<%--                                <span>文字表格</span>--%>
+<%--                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>--%>
+<%--                            </a>--%>
+
+<%--                            <a href="table-images-list.html">--%>
+<%--                                <i class="am-icon-angle-right"></i>--%>
+<%--                                <span>图片表格</span>--%>
+<%--                                <i class="tpl-left-nav-content tpl-badge-success">--%>
+<%--                                    18--%>
+<%--                                </i>--%>
+<%--                            </a>--%>
+<%--                                <a href="form-news.html">--%>
+<%--                                    <i class="am-icon-angle-right"></i>--%>
+<%--                                    <span>消息列表</span>--%>
+<%--                                    <i class="tpl-left-nav-content tpl-badge-primary">--%>
+<%--                                        5--%>
+<%--                                    </i>--%>
+<%--                                </a>--%>
+
+<%--                                    <a href="form-news-list.html">--%>
+<%--                                        <i class="am-icon-angle-right"></i>--%>
+<%--                                        <span>文字列表</span>--%>
+
+<%--                                    </a>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </li>--%>
+
                 <li class="tpl-left-nav-item">
                     <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-table"></i>
-                        <span>表格</span>
+                        <i class="am-icon-wpforms"></i>
+                        <span>作业区</span>
+<%--                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>--%>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
+<%--                    <ul class="tpl-left-nav-sub-menu" style="display: block;">--%>
                         <li>
-                            <a href="table-font-list.html">
+                            <a href="feedback.html">
                                 <i class="am-icon-angle-right"></i>
-                                <span>文字表格</span>
+                                <span>反馈</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="table-images-list.html">
+                            <a href="form-line.html">
                                 <i class="am-icon-angle-right"></i>
-                                <span>图片表格</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
+                                <span>线条表单</span>
                             </a>
-                                <a href="form-news.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>消息列表</span>
-                                    <i class="tpl-left-nav-content tpl-badge-primary">
-                                        5
-                                    </i>
-                                </a>
-
-                                    <a href="form-news-list.html">
-                                        <i class="am-icon-angle-right"></i>
-                                        <span>文字列表</span>
-
-                                    </a>
                         </li>
                     </ul>
                 </li>
@@ -219,20 +243,22 @@
                 <li class="tpl-left-nav-item">
                     <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-wpforms"></i>
-                        <span>表单</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                        <span>考试区</span>
+                        <%--                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>--%>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
-                    <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                    <ul class="tpl-left-nav-sub-menu">
+                        <%--                    <ul class="tpl-left-nav-sub-menu" style="display: block;">--%>
                         <li>
-                            <a href="form-amazeui.html">
+                            <a href="feedback.html">
                                 <i class="am-icon-angle-right"></i>
-                                <span>Amaze UI 表单</span>
+                                <span>小测</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a href="form-line.html">
                                 <i class="am-icon-angle-right"></i>
-                                <span>线条表单</span>
+                                <span>自主练习</span>
                             </a>
                         </li>
                     </ul>
@@ -255,12 +281,12 @@
 
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
-            Amaze UI 首页组件
+            主页
         </div>
         <ol class="am-breadcrumb">
-            <li><a href="#" class="am-icon-home">首页</a></li>
-            <li><a href="#">分类</a></li>
-            <li class="am-active">内容</li>
+            <li><a href="" class="am-icon-home">主页</a></li>
+<%--            <li><a href="#">分类</a></li>--%>
+<%--            <li class="am-active">内容</li>--%>
         </ol>
         <div class="tpl-content-scope">
             <div class="note note-info">
@@ -330,9 +356,6 @@
                     </a>
                 </div>
             </div>
-
-
-
         </div>
 
         <div class="row">
@@ -793,243 +816,25 @@
                 </div>
             </div>
             <div class="am-u-md-6 am-u-sm-12 row-mb">
+
                 <div class="tpl-portlet">
                     <div class="tpl-portlet-title">
                         <div class="tpl-caption font-green ">
-                            <span>项目进度</span>
+                            <span>指派任务</span>
+                            <span class="caption-helper">16 件</span>
                         </div>
-
-                    </div>
-
-                    <div class="am-tabs tpl-index-tabs" data-am-tabs>
-                        <ul class="am-tabs-nav am-nav am-nav-tabs">
-                            <li class="am-active"><a href="#tab1">进行中</a></li>
-                            <li><a href="#tab2">已完成</a></li>
-                        </ul>
-
-                        <div class="am-tabs-bd">
-                            <div class="am-tab-panel am-fade am-in am-active" id="tab1">
-                                <div id="wrapperA" class="wrapper">
-                                    <div id="scroller" class="scroller">
-                                        <ul class="tpl-task-list tpl-task-remind">
-                                            <li>
-                                                <div class="cosB">
-                                                    12分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco">
-                        <i class="am-icon-bell-o"></i>
-                      </span>
-
-                                                    <span> 注意：Chrome 和 Firefox 下， display: inline-block; 或 display: block; 的元素才会应用旋转动画。<span class="tpl-label-info"> 提取文件
-                                                            <i class="am-icon-share"></i>
-                                                        </span></span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    36分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-danger">
-                        <i class="am-icon-bolt"></i>
-                      </span>
-
-                                                    <span> FontAwesome 在绘制图标的时候不同图标宽度有差异， 添加 .am-icon-fw 将图标设置为固定的宽度，解决宽度不一致问题（v2.3 新增）。</span>
-                                                </div>
-
-                                            </li>
-
-                                            <li>
-                                                <div class="cosB">
-                                                    2小时前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-info">
-                        <i class="am-icon-bullhorn"></i>
-                      </span>
-
-                                                    <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    1天前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-warning">
-                        <i class="am-icon-plus"></i>
-                      </span>
-
-                                                    <span> 部分用户反应在过长的 Tabs 中滚动页面时会意外触发 Tab 切换事件，用户可以选择禁用触控操作。</span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    12分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco">
-                        <i class="am-icon-bell-o"></i>
-                      </span>
-
-                                                    <span> 注意：Chrome 和 Firefox 下， display: inline-block; 或 display: block; 的元素才会应用旋转动画。<span class="tpl-label-info"> 提取文件
-                                                            <i class="am-icon-share"></i>
-                                                        </span></span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    36分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-danger">
-                        <i class="am-icon-bolt"></i>
-                      </span>
-
-                                                    <span> FontAwesome 在绘制图标的时候不同图标宽度有差异， 添加 .am-icon-fw 将图标设置为固定的宽度，解决宽度不一致问题（v2.3 新增）。</span>
-                                                </div>
-
-                                            </li>
-
-                                            <li>
-                                                <div class="cosB">
-                                                    2小时前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-info">
-                        <i class="am-icon-bullhorn"></i>
-                      </span>
-
-                                                    <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
-                                                </div>
-
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                        <div class="tpl-portlet-input">
+                            <div class="portlet-input input-small input-inline">
+                                <div class="input-icon right">
+                                    <i class="am-icon-search"></i>
+                                    <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
                             </div>
-                            <div class="am-tab-panel am-fade" id="tab2">
-                                <div id="wrapperB" class="wrapper">
-                                    <div id="scroller" class="scroller">
-                                        <ul class="tpl-task-list tpl-task-remind">
-                                            <li>
-                                                <div class="cosB">
-                                                    12分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco">
-                                                </div>
-                                    </div>
-                        <i class="am-icon-bell-o"></i>
-                      </span>
-
-                                                    <span> 注意：Chrome 和 Firefox 下， display: inline-block; 或 display: block; 的元素才会应用旋转动画。<span class="tpl-label-info"> 提取文件
-                                                            <i class="am-icon-share"></i>
-                                                        </span></span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    36分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-danger">
-                        <i class="am-icon-bolt"></i>
-                      </span>
-
-                                                    <span> FontAwesome 在绘制图标的时候不同图标宽度有差异， 添加 .am-icon-fw 将图标设置为固定的宽度，解决宽度不一致问题（v2.3 新增）。</span>
-                                                </div>
-
-                                            </li>
-
-                                            <li>
-                                                <div class="cosB">
-                                                    2小时前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-info">
-                        <i class="am-icon-bullhorn"></i>
-                      </span>
-
-                                                    <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    1天前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-warning">
-                        <i class="am-icon-plus"></i>
-                      </span>
-
-                                                    <span> 部分用户反应在过长的 Tabs 中滚动页面时会意外触发 Tab 切换事件，用户可以选择禁用触控操作。</span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    12分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco">
-                        <i class="am-icon-bell-o"></i>
-                      </span>
-
-                                                    <span> 注意：Chrome 和 Firefox 下， display: inline-block; 或 display: block; 的元素才会应用旋转动画。<span class="tpl-label-info"> 提取文件
-                                                            <i class="am-icon-share"></i>
-                                                        </span></span>
-                                                </div>
-
-                                            </li>
-                                            <li>
-                                                <div class="cosB">
-                                                    36分钟前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-danger">
-                        <i class="am-icon-bolt"></i>
-                      </span>
-
-                                                    <span> FontAwesome 在绘制图标的时候不同图标宽度有差异， 添加 .am-icon-fw 将图标设置为固定的宽度，解决宽度不一致问题（v2.3 新增）。</span>
-                                                </div>
-
-                                            </li>
-
-                                            <li>
-                                                <div class="cosB">
-                                                    2小时前
-                                                </div>
-                                                <div class="cosA">
-                                                        <span class="cosIco label-info">
-                        <i class="am-icon-bullhorn"></i>
-                      </span>
-
-                                                    <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
-                                                </div>
-
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
 </div>

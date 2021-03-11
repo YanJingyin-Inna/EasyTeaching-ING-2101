@@ -491,7 +491,7 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     height: 50px;
     padding: 25px 15px 10px;
     color: #5C9ACF;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -1966,5 +1966,9 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     }
     .tpl-content-wrapper {
         padding-left: 0;
+    }
+    .xrequired {
+     content: '* ';
+     color: red;
     }
 }
