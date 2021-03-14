@@ -33,8 +33,8 @@ public class FeedbackController {
     @ResponseBody
     public ServerResponse<String> UploadInfo(FeedbackInfo feedbackInfo){
         // TODO: 增加课程id和教师id的获取
-        FeedbackInfo feedbackInfo1 = new FeedbackInfo();
-        feedbackInfo1.setContent("test");
+//        FeedbackInfo feedbackInfo1 = new FeedbackInfo();
+//        feedbackInfo1.setContent("test");
         return  iFeedbackService.UploadInfo(feedbackInfo);
 
     }

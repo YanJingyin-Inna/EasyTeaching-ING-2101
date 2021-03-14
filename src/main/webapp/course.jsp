@@ -198,16 +198,21 @@
                         <li class="tpl-left-nav-item">
                             <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                                 <i class="am-icon-wpforms"></i>
-                                <span>考试区</span>
+                                <span>测试区</span>
 <!--                                                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>-->
                                 <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                             </a>
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="feedback.html">
+                                    <a href="question-list.jsp">
                                         <i class="am-icon-angle-right"></i>
-                                        <span>小测</span>
+                                        <span>试题库</span>
+                                    </a>
+
+                                    <a href="test-list.jsp">
+                                        <i class="am-icon-angle-right"></i>
+                                        <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                     </a>
 
@@ -258,7 +263,7 @@
                         <i class="am-icon-comments-o"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 1349 </div>
+                        <div class="number"> 课程1 </div>
                         <div class="desc"> 新消息 </div>
                     </div>
                     <a class="more" href="course-single.jsp"> 查看更多

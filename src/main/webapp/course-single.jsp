@@ -179,13 +179,13 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu" style="display: block;">
                         <li>
-                            <a href="table-font-list.html">
+                            <a href="course-class.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>班级学生</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="table-images-list.html">
+                            <a href="course-resource.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>课程资源</span>
                                 <i class="tpl-left-nav-content tpl-badge-success">
@@ -204,20 +204,25 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="form-news-list.html">
+                                <a href="course-test-main.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
 
-                                <a href="form-news-list.html">
+                                <a href="course-question-list.jsp" >
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>测试库</span>
+                                </a>
+
+                                <a href="course-score.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>成绩</span>
                                 </a>
 
-                                <a href="form-news-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>成绩册</span>
-                                </a>
+<%--                                <a href="form-news-list.html">--%>
+<%--                                    <i class="am-icon-angle-right"></i>--%>
+<%--                                    <span>成绩册</span>--%>
+<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -250,16 +255,21 @@
                         <li class="tpl-left-nav-item">
                             <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                                 <i class="am-icon-wpforms"></i>
-                                <span>考试区</span>
+                                <span>测试区</span>
 <!--                                                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>-->
                                 <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                             </a>
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="feedback.html">
+                                    <a href="form-line.html">
                                         <i class="am-icon-angle-right"></i>
-                                        <span>小测</span>
+                                        <span>试题库</span>
+                                    </a>
+
+                                    <a href="course-test-main.jsp">
+                                        <i class="am-icon-angle-right"></i>
+                                        <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                     </a>
 
