@@ -219,6 +219,11 @@
                                     <span>测试库</span>
                                 </a>
 
+                                <a href="course-vote-list.jsp" >
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>投票反馈</span>
+                                </a>
+
                                 <a href="course-score.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>成绩</span>

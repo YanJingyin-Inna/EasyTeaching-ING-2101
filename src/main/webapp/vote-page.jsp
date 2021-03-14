@@ -172,7 +172,7 @@
                 </li>
 
                 <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list ">
                         <i class="am-icon-table"></i>
                         <span>课程功能</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
@@ -214,7 +214,7 @@
                                     <span>测试库</span>
                                 </a>
 
-                                <a href="course-vote-list.jsp" >
+                                <a href="course-vote-list.jsp"  class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>投票反馈</span>
                                 </a>
@@ -300,12 +300,12 @@
 
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
-            课程名称
+            投票反馈
         </div>
         <ol class="am-breadcrumb">
-            <li><a href=./ class="am-icon-home">主页</a></li>
+            <li><a href="index.jsp" class="am-icon-home">主页</a></li>
             <li><a href="course.jsp">课程</a></li>
-            <li class="am-active">课程名称</li>
+            <li class="am-active">投票反馈</li>
         </ol>
         <div class="tpl-content-scope">
             <div class="note note-info">

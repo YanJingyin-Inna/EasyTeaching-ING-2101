@@ -219,6 +219,11 @@
                                     <span>试题库</span>
                                 </a>
 
+                                <a href="course-vote-list.jsp" >
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>投票反馈</span>
+                                </a>
+
                                 <a href="course-score.jsp" class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>成绩</span>
@@ -739,7 +744,7 @@
         </div>
 
     </div>
-
+</div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/amazeui.min.js"></script>
