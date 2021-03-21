@@ -21,6 +21,7 @@
     <script src="assets/js/jquery-3.3.1.js"></script>
 
 
+
     <script>
         function checkUsername(){
             var username = $("#doc-ipt-username-1").val();
