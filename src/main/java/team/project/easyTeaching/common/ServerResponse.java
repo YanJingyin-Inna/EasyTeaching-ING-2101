@@ -1,8 +1,11 @@
 package team.project.easyTeaching.common;
 
+
+
+
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 
 import java.io.Serializable;
 
@@ -17,6 +20,7 @@ public class ServerResponse<T> implements Serializable {
     private ServerResponse(int status){
         this.status = status;
     }
+
     private ServerResponse(int status,T data){
         this.status = status;
         this.data = data;
