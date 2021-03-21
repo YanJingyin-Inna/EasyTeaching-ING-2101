@@ -16,6 +16,64 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
+
+
+    <script>
+        function checkUsername(){
+            var username = $("#doc-ipt-username-1").val();
+            var password = $("#doc-ipt-password-1").val();
+            var flag;
+            if($.trim(username) ){
+                $("#username").css("border","");
+                flag = true;
+            }else {
+                $("#username").css("border","1px solid red");
+                alert('用户名不能为空');
+                flag = false;
+                return flag;
+            }
+
+            if($.trim(password) ){
+                $("#content").css("border","");
+                flag = true;
+            }else {
+                $("#password").css("border","1px solid red");
+                alert('请输入密码');
+                flag = false;
+                return flag;
+            }
+
+
+            return flag;
+        }
+
+
+
+        $(function () {
+            //表单提交校验所有组件
+            $("#loginData").submit(function (){
+                //发送数据到服务器
+                if(checkUsername()){
+                    //通过了就发送ajax请求，提交数据,异步提交
+                    $.post("/userlogin.do",$(this).serialize(),function(data){//先获取数据
+                        //处理服务器响应
+                        if(data.status == 1){
+                            alert(data.msg + ",点击返回首页");
+                            window.location.replace("http://localhost:9090/index.jsp");
+                        }else if (data.status == 0) {
+                            $("#errorMsg").text(data.msg);
+                        }
+                    });
+                }
+                return false;
+
+            });
+
+        });
+    </script>
+
+
+
 </head>
 
 <body data-type="login">
@@ -34,12 +92,12 @@
         </div>
         <div class="am-u-sm-10 login-am-center">
             <form class="am-form">
-                <fieldset>
+                <fieldset id="loginData">
                     <div class="am-form-group">
-                        <input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                        <input type="email" class="" id="doc-ipt-username-1" placeholder="输入电子邮件">
                     </div>
                     <div class="am-form-group">
-                        <input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+                        <input type="password" class="" id="doc-ipt-password-1" placeholder="设置个密码吧">
                     </div>
                     <p><button type="submit" class="am-btn am-btn-default">登录</button></p>
                 </fieldset>
