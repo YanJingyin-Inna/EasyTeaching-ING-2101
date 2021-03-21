@@ -16,7 +16,7 @@
     uid, username, password, email, role, create_time, updatetime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from tb_person
     where uid = #{uid,jdbcType=INTEGER}
@@ -26,252 +26,18 @@
     where uid = #{uid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="team.project.easyTeaching.pojo.User">
-    insert into tb_person (uid, username, password, 
-      email, role, create_time, 
-      updatetime)
-    values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updatetime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.User">
-    insert into tb_person
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="uid != null">
-        uid,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="email != null">
-        email,
-      </if>
-      <if test="role != null">
-        role,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updatetime != null">
-        updatetime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="uid != null">
-        #{uid,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="role != null">
-        #{role,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null">
-        #{updatetime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.User">
-    update tb_person
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="role != null">
-        role = #{role,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null">
-        updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where uid = #{uid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.User">
-    update tb_person
-    set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      role = #{role,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where uid = #{uid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.User">
-    <constructor>
-      <idArg column="uid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="role" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="updatetime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    uid, username, password, email, role, create_time, updatetime
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from tb_person
-    where uid = #{uid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from tb_person
-    where uid = #{uid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="team.project.easyTeaching.pojo.User">
-    insert into tb_person (uid, username, password, 
-      email, role, create_time, 
-      updatetime)
-    values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updatetime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.User">
-    insert into tb_person
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="uid != null">
-        uid,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="email != null">
-        email,
-      </if>
-      <if test="role != null">
-        role,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updatetime != null">
-        updatetime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="uid != null">
-        #{uid,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="role != null">
-        #{role,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null">
-        #{updatetime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.User">
-    update tb_person
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="role != null">
-        role = #{role,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null">
-        updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where uid = #{uid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.User">
-    update tb_person
-    set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      role = #{role,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where uid = #{uid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.User">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="question" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="answer" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="role" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, username, password, email, phone, question, answer, role, create_time, update_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from tb_person
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from tb_person
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="team.project.easyTeaching.pojo.User">
-    insert into tb_person (id, username, password,
+    insert into tb_person (uid, username, password,
       email, role, create_time,
-      update_time)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR}, 
-      #{answer,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, now(),
-      now())
+      updatetime)
+    values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+      #{updatetime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.User">
     insert into tb_person
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
+      <if test="uid != null">
+        uid,
       </if>
       <if test="username != null">
         username,
@@ -282,28 +48,19 @@
       <if test="email != null">
         email,
       </if>
-<!--      <if test="phone != null">-->
-<!--        phone,-->
-<!--      </if>-->
-<!--      <if test="question != null">-->
-<!--        question,-->
-<!--      </if>-->
-<!--      <if test="answer != null">-->
-<!--        answer,-->
-<!--      </if>-->
       <if test="role != null">
         role,
       </if>
       <if test="createTime != null">
         create_time,
       </if>
-      <if test="updateTime != null">
-        update_time,
+      <if test="updatetime != null">
+        updatetime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
       </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
@@ -314,28 +71,19 @@
       <if test="email != null">
         #{email,jdbcType=VARCHAR},
       </if>
-<!--      <if test="phone != null">-->
-<!--        #{phone,jdbcType=VARCHAR},-->
-<!--      </if>-->
-<!--      <if test="question != null">-->
-<!--        #{question,jdbcType=VARCHAR},-->
-<!--      </if>-->
-<!--      <if test="answer != null">-->
-<!--        #{answer,jdbcType=VARCHAR},-->
-<!--      </if>-->
       <if test="role != null">
         #{role,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        now(),
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
-        now(),
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.User">
-    update mmall_user
+    update tb_person
     <set>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -346,42 +94,30 @@
       <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="question != null">
-        question = #{question,jdbcType=VARCHAR},
-      </if>
-      <if test="answer != null">
-        answer = #{answer,jdbcType=VARCHAR},
-      </if>
       <if test="role != null">
         role = #{role,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
-        update_time = now(),
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.User">
     update tb_person
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      question = #{question,jdbcType=VARCHAR},
-      answer = #{answer,jdbcType=VARCHAR},
       role = #{role,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = now()
-    where id = #{id,jdbcType=INTEGER}
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where uid = #{uid,jdbcType=INTEGER}
   </update>
-  
-  
+
+
   <select id="checkUsername" parameterType="string" resultType="int">
     select count(1) from mmall_user
     where username = #{username}
@@ -395,7 +131,7 @@
 
   <select id="selectLogin" parameterType="map" resultMap="BaseResultMap">
     SELECT
---     *???//这样真的好么?答案就是,这样不好.
+    --     *???//这样真的好么?答案就是,这样不好.
     <include refid="Base_Column_List" />
     from tb_person
     where username = #{username}
@@ -425,7 +161,7 @@
     where username = #{username}
   </update>
 
-   <select id="checkPassword" parameterType="map" resultType="int">
+  <select id="checkPassword" parameterType="map" resultType="int">
     SELECT
     count(1)
     from tb_person
