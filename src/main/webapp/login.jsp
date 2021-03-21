@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html>
 
@@ -16,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <!--导入jquery-->
+    <script src="assets/js/jquery-3.3.1.js"></script>
 
 
     <script>
@@ -34,7 +37,7 @@
             }
 
             if($.trim(password) ){
-                $("#content").css("border","");
+                $("#password").css("border","");
                 flag = true;
             }else {
                 $("#password").css("border","1px solid red");
@@ -55,11 +58,11 @@
                 //发送数据到服务器
                 if(checkUsername()){
                     //通过了就发送ajax请求，提交数据,异步提交
-                    $.post("/userlogin.do",$(this).serialize(),function(data){//先获取数据
+                    $.post("user/login.do",$(this).serialize(),function(data){//先获取数据
                         //处理服务器响应
                         if(data.status == 1){
                             alert(data.msg + ",点击返回首页");
-                            window.location.replace("http://localhost:9090/index.jsp");
+                            window.location.replace("http://localhost:8089/index.jsp");
                         }else if (data.status == 0) {
                             $("#errorMsg").text(data.msg);
                         }
@@ -91,15 +94,18 @@
             <i>Log In </i> or <span> Sign Up</span>
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form">
-                <fieldset id="loginData">
+            <form class="am-form" id="loginData">
+                <fieldset >
                     <div class="am-form-group">
-                        <input type="email" class="" id="doc-ipt-username-1" placeholder="输入电子邮件">
+                        <input type="text" class="" id="doc-ipt-username-1" placeholder="输入用户名">
                     </div>
                     <div class="am-form-group">
-                        <input type="password" class="" id="doc-ipt-password-1" placeholder="设置个密码吧">
+                        <input type="password" class="" id="doc-ipt-password-1" placeholder="输入密码">
                     </div>
                     <p><button type="submit" class="am-btn am-btn-default">登录</button></p>
+
+                    <div class="reg">没有账户？<a href="register.jsp">立即注册</a></div>
+
                 </fieldset>
             </form>
         </div>
