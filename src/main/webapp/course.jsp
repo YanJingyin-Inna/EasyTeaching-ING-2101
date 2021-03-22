@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EasyTeaching-首页</title>
-    <meta name="description" content="网站首页">
+    <title>EasyTeaching</title>
+    <meta name="description" content="个人课程首页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -205,12 +205,12 @@
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="question-list.jsp">
+                                    <a href="pages/question-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>试题库</span>
                                     </a>
 
-                                    <a href="test-list.jsp">
+                                    <a href="pages/test-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -224,13 +224,13 @@
                             </ul>
                                 </li>
 
-                                <li class="tpl-left-nav-item">
-                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
-                                        <i class="am-icon-key"></i>
-                                        <span>登录</span>
+<%--                                <li class="tpl-left-nav-item">--%>
+<%--                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">--%>
+<%--                                        <i class="am-icon-key"></i>--%>
+<%--                                        <span>登录</span>--%>
 
-                                    </a>
-                                </li>
+<%--                                    </a>--%>
+<%--                                </li>--%>
                             </ul>
         </div>
     </div>
@@ -238,23 +238,22 @@
 
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
-            课程情况
+            个人课程页
         </div>
         <ol class="am-breadcrumb">
             <li><a href="./" class="am-icon-home">主页</a></li>
-<!--            <li><a href="">课程</a></li>-->
             <li class="am-active">课程</li>
         </ol>
-        <div class="tpl-content-scope">
-            <div class="note note-info">
-                <h3>Amaze UI 为移动而生
-                    <span class="close" data-close="note"></span>
-                </h3>
-                <p> Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
-                <p><span class="label label-danger">提示:</span> Amaze UI 关注中文排版，根据用户代理调整字体，实现更好的中文排版效果。
-                </p>
-            </div>
-        </div>
+<%--        <div class="tpl-content-scope">--%>
+<%--            <div class="note note-info">--%>
+<%--                <h3>Amaze UI 为移动而生--%>
+<%--                    <span class="close" data-close="note"></span>--%>
+<%--                </h3>--%>
+<%--                <p> Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>--%>
+<%--                <p><span class="label label-danger">提示:</span> Amaze UI 关注中文排版，根据用户代理调整字体，实现更好的中文排版效果。--%>
+<%--                </p>--%>
+<%--            </div>--%>
+<%--        </div>--%>
 
         <div class="row">
             <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
@@ -264,9 +263,9 @@
                     </div>
                     <div class="details">
                         <div class="number"> 课程1 </div>
-                        <div class="desc"> 新消息 </div>
+                        <div class="desc"> 学期1 </div>
                     </div>
-                    <a class="more" href="course-single.jsp"> 查看更多
+                    <a class="more" href="course-single.jsp"> 进入课程
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EasyTeaching-首页</title>
+    <title>EasyTeaching</title>
     <meta name="description" content="网站首页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -211,7 +211,7 @@
 
                                 <a href="course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
-                                    <span>测试库</span>
+                                    <span>试题库</span>
                                 </a>
 
                                 <a href="course-vote-list.jsp"  class="active">
@@ -224,10 +224,6 @@
                                     <span>成绩</span>
                                 </a>
 
-<%--                                <a href="form-news-list.html">--%>
-<%--                                    <i class="am-icon-angle-right"></i>--%>
-<%--                                    <span>成绩册</span>--%>
-<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -267,7 +263,7 @@
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="form-line.html">
+                                    <a href="/pages/question-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>试题库</span>
                                     </a>
@@ -286,13 +282,6 @@
                             </ul>
                                 </li>
 
-                                <li class="tpl-left-nav-item">
-                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
-                                        <i class="am-icon-key"></i>
-                                        <span>登录</span>
-
-                                    </a>
-                                </li>
                             </ul>
         </div>
     </div>
@@ -307,74 +296,158 @@
             <li><a href="course.jsp">课程</a></li>
             <li class="am-active">投票反馈</li>
         </ol>
-        <div class="tpl-content-scope">
-            <div class="note note-info">
-                <h3>Amaze UI 为移动而生
-                    <span class="close" data-close="note"></span>
-                </h3>
-                <p> Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
-                <p><span class="label label-danger">提示:</span> Amaze UI 关注中文排版，根据用户代理调整字体，实现更好的中文排版效果。
-                </p>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat blue">
-                    <div class="visual">
-                        <i class="am-icon-comments-o"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 1349 </div>
-                        <div class="desc"> 新消息 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 投票列表
                 </div>
-            </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat red">
-                    <div class="visual">
-                        <i class="am-icon-bar-chart-o"></i>
+                <div class="tpl-portlet-input tpl-fz-ml">
+                    <div class="portlet-input input-small input-inline">
+                        <div class="input-icon right">
+                            <i class="am-icon-search"></i>
+                            <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
                     </div>
-                    <div class="details">
-                        <div class="number"> 62% </div>
-                        <div class="desc"> 收视率 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
                 </div>
+
+
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat green">
-                    <div class="visual">
-                        <i class="am-icon-apple"></i>
+            <div class="tpl-block">
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-btn-toolbar">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
+                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
+                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
+                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="details">
-                        <div class="number"> 653 </div>
-                        <div class="desc"> 苹果设备 </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-form-group">
+                            <select data-am-selected="{btnSize: 'sm'}">
+                                <option value="option1">所有类别</option>
+                                <option value="option2">IT业界</option>
+                                <option value="option3">数码产品</option>
+                                <option value="option3">笔记本电脑</option>
+                                <option value="option3">平板电脑</option>
+                                <option value="option3">只能手机</option>
+                                <option value="option3">超极本</option>
+                            </select>
+                        </div>
                     </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-input-group am-input-group-sm">
+                            <input type="text" class="am-form-field">
+                            <span class="am-input-group-btn">
+            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
+          </span>
+                        </div>
+                    </div>
                 </div>
+
+                <ul class="tpl-task-list tpl-task-remind">
+                    <li>
+                        <div class="cosB">
+                            12分钟前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco">
+                        <i class="am-icon-bell-o"></i>
+                      </span>
+
+                            <span> 注意：Chrome 和 Firefox 下， display: inline-block; 或 display: block; 的元素才会应用旋转动画。<span class="tpl-label-info"> 提取文件
+                                                            <i class="am-icon-share"></i>
+                                                        </span></span>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="cosB">
+                            36分钟前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco label-danger">
+                        <i class="am-icon-bolt"></i>
+                      </span>
+
+                            <span> FontAwesome 在绘制图标的时候不同图标宽度有差异， 添加 .am-icon-fw 将图标设置为固定的宽度，解决宽度不一致问题（v2.3 新增）。</span>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <div class="cosB">
+                            2小时前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco label-info">
+                        <i class="am-icon-bullhorn"></i>
+                      </span>
+
+                            <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="cosB">
+                            1天前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco label-warning">
+                        <i class="am-icon-plus"></i>
+                      </span>
+
+                            <span> 部分用户反应在过长的 Tabs 中滚动页面时会意外触发 Tab 切换事件，用户可以选择禁用触控操作。</span>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="cosB">
+                            12分钟前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco">
+                        <i class="am-icon-bell-o"></i>
+                      </span>
+
+                            <span> 注意：Chrome 和 Firefox 下， display: inline-block; 或 display: block; 的元素才会应用旋转动画。<span class="tpl-label-info"> 提取文件
+                                                            <i class="am-icon-share"></i>
+                                                        </span></span>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="cosB">
+                            36分钟前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco label-danger">
+                        <i class="am-icon-bolt"></i>
+                      </span>
+
+                            <span> FontAwesome 在绘制图标的时候不同图标宽度有差异， 添加 .am-icon-fw 将图标设置为固定的宽度，解决宽度不一致问题（v2.3 新增）。</span>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <div class="cosB">
+                            2小时前
+                        </div>
+                        <div class="cosA">
+                                <span class="cosIco label-info">
+                        <i class="am-icon-bullhorn"></i>
+                      </span>
+
+                            <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
+                        </div>
+
+                    </li>
+                </ul>
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat purple">
-                    <div class="visual">
-                        <i class="am-icon-android"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 786 </div>
-                        <div class="desc"> 安卓设备 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
+
         </div>
 
         </div>

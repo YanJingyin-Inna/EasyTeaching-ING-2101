@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EasyTeaching-首页</title>
+    <title>EasyTeaching</title>
     <meta name="description" content="网站首页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -211,7 +211,7 @@
 
                                 <a href="course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
-                                    <span>测试库</span>
+                                    <span>试题库</span>
                                 </a>
 
                                 <a href="course-vote-list.jsp" >
@@ -224,10 +224,6 @@
                                     <span>成绩</span>
                                 </a>
 
-<%--                                <a href="form-news-list.html">--%>
-<%--                                    <i class="am-icon-angle-right"></i>--%>
-<%--                                    <span>成绩册</span>--%>
-<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -286,13 +282,7 @@
                             </ul>
                                 </li>
 
-                                <li class="tpl-left-nav-item">
-                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
-                                        <i class="am-icon-key"></i>
-                                        <span>登录</span>
 
-                                    </a>
-                                </li>
                             </ul>
         </div>
     </div>
