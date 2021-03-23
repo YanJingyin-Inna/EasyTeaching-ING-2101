@@ -70,7 +70,7 @@
                             window.location.replace("http://localhost:9090/index.jsp");
                         }else if (data.status == 1) {
                             $("#errorMsg").text(data.msg);
-                            window.location.replace("http://localhost:9090/student/stu_login_ok.jsp");
+                            window.location.replace("http://localhost:9090/student/work_public.jsp");
                         }
                     });
                 }
