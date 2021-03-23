@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 郑素华
-  Date: 2021/3/23
-  Time: 17:02
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,13 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-    <link rel="stylesheet" href="assets/css/admin.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <script src="../assets/js/echarts.min.js"></script>
+
+    <!--导入jquery-->
+    <script src="../assets/js/jquery-3.3.1.js"></script>
 </head>
 <body>
 
@@ -90,51 +87,6 @@
 
                 </ul>
             </li>
-            <%--            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>--%>
-            <%--                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">--%>
-            <%--                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>--%>
-            <%--                </a>--%>
-            <%--                <ul class="am-dropdown-content tpl-dropdown-content">--%>
-            <%--                    <li class="tpl-dropdown-content-external">--%>
-            <%--                        <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>--%>
-            <%--                    <li>--%>
-            <%--                        <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-            <%--                                <span class="task">--%>
-            <%--                        <span class="desc">Amaze UI 用户中心 v1.2 </span>--%>
-            <%--                                <span class="percent">45%</span>--%>
-            <%--                                </span>--%>
-            <%--                            <span class="progress">--%>
-            <%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>--%>
-            <%--                    </span>--%>
-            <%--                        </a>--%>
-            <%--                    </li>--%>
-            <%--                    <li>--%>
-            <%--                        <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-            <%--                                <span class="task">--%>
-            <%--                        <span class="desc">新闻内容页 </span>--%>
-            <%--                                <span class="percent">30%</span>--%>
-            <%--                                </span>--%>
-            <%--                            <span class="progress">--%>
-            <%--                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>--%>
-            <%--                    </span>--%>
-            <%--                        </a>--%>
-            <%--                    </li>--%>
-            <%--                    <li>--%>
-            <%--                        <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-            <%--                                <span class="task">--%>
-            <%--                        <span class="desc">管理中心 </span>--%>
-            <%--                                <span class="percent">60%</span>--%>
-            <%--                                </span>--%>
-            <%--                            <span class="progress">--%>
-            <%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>--%>
-            <%--                    </span>--%>
-            <%--                        </a>--%>
-            <%--                    </li>--%>
-
-            <%--                </ul>--%>
-            <%--            </li>--%>
-            <%--            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>--%>
-
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                     <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
@@ -149,6 +101,7 @@
         </ul>
     </div>
 </header>
+
 <div class="tpl-page-container tpl-page-header-fixed">
 
     <div class="tpl-left-nav tpl-left-nav-hover">
@@ -166,84 +119,44 @@
                 <li class="tpl-left-nav-item">
                     <a href="course.jsp" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-calendar"></i>
-                        <span>课程</span>
+                        <span>我的课程</span>
                         <i class="tpl-left-nav-content tpl-badge-danger">
                             12
                         </i>
                     </a>
                 </li>
-
-                <%--                <li class="tpl-left-nav-item">--%>
-                <%--                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">--%>
-                <%--                        <i class="am-icon-table"></i>--%>
-                <%--                        <span>表格</span>--%>
-                <%--                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>--%>
-                <%--                    </a>--%>
-                <%--                    <ul class="tpl-left-nav-sub-menu">--%>
-                <%--                        <li>--%>
-                <%--                            <a href="table-font-list.html">--%>
-                <%--                                <i class="am-icon-angle-right"></i>--%>
-                <%--                                <span>文字表格</span>--%>
-                <%--                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>--%>
-                <%--                            </a>--%>
-
-                <%--                            <a href="table-images-list.html">--%>
-                <%--                                <i class="am-icon-angle-right"></i>--%>
-                <%--                                <span>图片表格</span>--%>
-                <%--                                <i class="tpl-left-nav-content tpl-badge-success">--%>
-                <%--                                    18--%>
-                <%--                                </i>--%>
-                <%--                            </a>--%>
-                <%--                                <a href="form-news.html">--%>
-                <%--                                    <i class="am-icon-angle-right"></i>--%>
-                <%--                                    <span>消息列表</span>--%>
-                <%--                                    <i class="tpl-left-nav-content tpl-badge-primary">--%>
-                <%--                                        5--%>
-                <%--                                    </i>--%>
-                <%--                                </a>--%>
-
-                <%--                                    <a href="form-news-list.html">--%>
-                <%--                                        <i class="am-icon-angle-right"></i>--%>
-                <%--                                        <span>文字列表</span>--%>
-
-                <%--                                    </a>--%>
-                <%--                        </li>--%>
-                <%--                    </ul>--%>
-                <%--                </li>--%>
-
                 <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
                         <i class="am-icon-wpforms"></i>
-                        <span>作业区</span>
-                        <%--                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>--%>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        <span>作业管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
                     </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <%--                    <ul class="tpl-left-nav-sub-menu" style="display: block;">--%>
+                    <ul class="tpl-left-nav-sub-menu" style="display: block">
                         <li>
-                            <a href="feedback.html">
+                            <a href="work_public.jsp">
                                 <i class="am-icon-angle-right"></i>
-                                <span>反馈</span>
+                                <span>作业发布表</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
-
-                            <a href="form-line.html">
+                            <a href="work_submit.jsp" class="active">
                                 <i class="am-icon-angle-right"></i>
-                                <span>线条表单</span>
+                                <span>作业提交表</span>
                             </a>
                         </li>
                     </ul>
                 </li>
 
+
+
+
                 <li class="tpl-left-nav-item">
                     <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-wpforms"></i>
                         <span>测试区</span>
-                        <%--                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>--%>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
-                        <%--                    <ul class="tpl-left-nav-sub-menu" style="display: block;">--%>
                         <li>
                             <a href="question-list.jsp">
                                 <i class="am-icon-angle-right"></i>
@@ -265,12 +178,30 @@
                 </li>
 
                 <li class="tpl-left-nav-item">
-                    <a href="login.jsp" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-key"></i>
-                        <span>登录</span>
-
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>考勤</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <%--                    <ul class="tpl-left-nav-sub-menu" style="display: block;">--%>
+                        <li>
+                            <%--                            //教师端才有的功能--%>
+                            <%--                            <a href="feedback.html">--%>
+                            <%--                                <i class="am-icon-angle-right"></i>--%>
+                            <%--                                <span>发起考勤</span>--%>
+                            <%--                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>--%>
+                            <%--                            </a>--%>
+
+                            <a href="form-line.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>考勤详情</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
+
             </ul>
         </div>
     </div>
@@ -356,10 +287,10 @@
     </div>
 </div>
 
-<script src="jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/iscroll.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/js/amazeui.min.js"></script>
+<script src="../assets/js/iscroll.js"></script>
+<script src="../assets/js/app.js"></script>
 
 </body>
 </html>
