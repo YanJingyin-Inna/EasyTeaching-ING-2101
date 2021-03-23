@@ -18,4 +18,6 @@ public interface ITermService {
 
     ServerResponse<String>  deleteTerm(Integer termId);
 
+    ServerResponse<String> updateTerm(Term term);
+
 }

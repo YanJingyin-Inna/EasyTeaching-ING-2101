@@ -44,4 +44,13 @@ public class TermServiceImpl implements ITermService {
         }
         return ServerResponse.createBySuccess("删除成功");
     }
+
+    @Override
+    public ServerResponse<String> updateTerm(Term term) {
+        int resultCount = termMapper.updateByPrimaryKeySelective(term);
+        if(resultCount <= 0){
+            return ServerResponse.createByErrorMessage("修改失败");
+        }
+        return ServerResponse.createBySuccess("修改成功");
+    }
 }

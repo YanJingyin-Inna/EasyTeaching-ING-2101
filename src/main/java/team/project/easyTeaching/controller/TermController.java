@@ -45,6 +45,12 @@ public class TermController {
         return  iTermService.deleteTerm(termId);
     }
 
+    @RequestMapping(value = "update_term.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> updateTerm(Term term){
+        return  iTermService.updateTerm(term);
+    }
+
 
 
 }
