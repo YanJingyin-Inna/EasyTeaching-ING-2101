@@ -119,12 +119,12 @@
 
 
   <select id="checkUsername" parameterType="string" resultType="int">
-    select count(1) from mmall_user
+    select count(1) from tb_person
     where username = #{username}
   </select>
 
   <select id="checkEmail" parameterType="string" resultType="int">
-    select count(1) from mmall_user
+    select count(1) from tb_person
     where email = #{email}
   </select>
 

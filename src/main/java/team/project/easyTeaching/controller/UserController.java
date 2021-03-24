@@ -27,9 +27,9 @@ public class UserController {
      * @return
      */
 
-    @RequestMapping(value = "login.do",method = RequestMethod.POST)
+    @RequestMapping(value = "login.do")
     @ResponseBody
-    public ServerResponse<User> login(String  username, String password, HttpSession session){
+    public ServerResponse<User> login(String username, String password, HttpSession session){
         //service-->mybatis-->dao
 
         ServerResponse<User> response = iUserService.login(username,password);
@@ -40,7 +40,8 @@ public class UserController {
         return response;
     }
 
-    @RequestMapping(value = "logout.do",method = RequestMethod.POST)
+   // @RequestMapping(value = "logout.do",method = RequestMethod.POST)
+   @RequestMapping(value = "logout.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> logout(HttpSession session){
         session.removeAttribute(Const.CURRENT_USER);

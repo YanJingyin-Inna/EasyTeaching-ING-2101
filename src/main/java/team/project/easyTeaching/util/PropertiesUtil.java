@@ -8,23 +8,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-/**
- * Created by geely
- */
+
 public class PropertiesUtil {
 
+    //private static Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
     private static Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
 
     private static Properties props;
 
     static {
-        String fileName = "mmall.properties";
+        //EasyTeaching-ING-2101
         props = new Properties();
         try {
+            String fileName = "EasyTeaching-ING-2101.properties";
+            //props.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
+            //props.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
             props.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
         } catch (IOException e) {
-            logger.error("配置文件读取异常",e);
+            //logger.error("配置文件读取异常",e);
+            logger.error("配置文件独取异常");
         }
+
     }
 
     public static String getProperty(String key){
@@ -43,7 +47,5 @@ public class PropertiesUtil {
         }
         return value.trim();
     }
-
-
 
 }
