@@ -205,12 +205,12 @@
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="question-list.jsp">
+                                    <a href="pages/question-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>试题库</span>
                                     </a>
 
-                                    <a href="test-list.jsp">
+                                    <a href="pages/test-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -224,6 +224,7 @@
                             </ul>
                                 </li>
 
+<<<<<<< HEAD
                                 <li class="tpl-left-nav-item">
                                     <a href="login.html" class="nav-link tpl-left-nav-link-list">
                                         <i class="am-icon-key"></i>
@@ -231,6 +232,15 @@
 
                                     </a>
                                 </li>
+=======
+<%--                                <li class="tpl-left-nav-item">--%>
+<%--                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">--%>
+<%--                                        <i class="am-icon-key"></i>--%>
+<%--                                        <span>登录</span>--%>
+
+<%--                                    </a>--%>
+<%--                                </li>--%>
+>>>>>>> parent of a3e9651... 1.部分修改
                             </ul>
         </div>
     </div>

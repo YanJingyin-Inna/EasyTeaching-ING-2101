@@ -12,13 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-    <link rel="stylesheet" href="assets/css/admin.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <script src="../assets/js/echarts.min.js"></script>
 </head>
 
 <body data-type="index">
@@ -27,7 +27,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <a href="javascript:;" class="tpl-logo">
-            <img src="assets/img/myLogo.png" alt="">
+            <img src="../assets/img/myLogo.png" alt="">
         </a>
     </div>
     <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -67,7 +67,7 @@
                     <li>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user02.png" alt=""> </span>
+                      <img src="../assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> 禁言小张 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
@@ -76,7 +76,7 @@
                         </a>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user03.png" alt=""> </span>
+                      <img src="../assets/img/user03.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> Steam </span>
                                 <span class="tpl-dropdown-content-time">18分钟前</span>
@@ -134,7 +134,7 @@
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="../assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -156,13 +156,13 @@
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
                 <li class="tpl-left-nav-item">
-                    <a href="index.jsp" class="nav-link ">
+                    <a href="../index.jsp" class="nav-link ">
                         <i class="am-icon-home"></i>
                         <span>主页</span>
                     </a>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="course.jsp" class="nav-link tpl-left-nav-link-list">
+                    <a href="../course.jsp" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-calendar"></i>
                         <span>课程</span>
                         <i class="tpl-left-nav-content tpl-badge-danger">
@@ -179,47 +179,47 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu" style="display: block;">
                         <li>
-                            <a href="course-class.jsp">
+                            <a href="../course-class.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>班级学生</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="course-resource.jsp">
+                            <a href="../course-resource.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>课程资源</span>
                                 <i class="tpl-left-nav-content tpl-badge-success">
                                     18
                                 </i>
                             </a>
-                            <a href="form-news.html">
+                            <a href="../form-news.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>考勤</span>
                                 <i class="tpl-left-nav-content tpl-badge-primary">
                                     5
                                 </i>
 
-                                <a href="form-news-list.html">
+                                <a href="../form-news-list.html">
                                     <i class="am-icon-angle-right"></i>
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp">
+                                <a href="../course-test-main.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="../course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试库</span>
                                 </a>
 
-                                <a href="course-vote-list.jsp"  class="active">
+                                <a href="../course-vote-list.jsp" class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>投票反馈</span>
                                 </a>
 
-                                <a href="course-score.jsp">
+                                <a href="../course-score.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>成绩</span>
                                 </a>
@@ -243,13 +243,13 @@
                     <ul class="tpl-left-nav-sub-menu">
 <!--                                            <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="feedback.html">
+                            <a href="../feedback.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>反馈</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="form-line.html">
+                            <a href="../form-line.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>线条表单</span>
                             </a>
@@ -267,18 +267,18 @@
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="form-line.html">
+                                    <a href="../form-line.html">
                                         <i class="am-icon-angle-right"></i>
                                         <span>试题库</span>
                                     </a>
 
-                                    <a href="course-test-main.jsp">
+                                    <a href="../course-test-main.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                     </a>
 
-                                    <a href="form-line.html">
+                                    <a href="../form-line.html">
                                         <i class="am-icon-angle-right"></i>
                                         <span>自主练习</span>
                                     </a>
@@ -287,7 +287,7 @@
                                 </li>
 
                                 <li class="tpl-left-nav-item">
-                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
+                                    <a href="../login.html" class="nav-link tpl-left-nav-link-list">
                                         <i class="am-icon-key"></i>
                                         <span>登录</span>
 
@@ -303,8 +303,8 @@
             投票反馈
         </div>
         <ol class="am-breadcrumb">
-            <li><a href="index.jsp" class="am-icon-home">主页</a></li>
-            <li><a href="course.jsp">课程</a></li>
+            <li><a href="../index.jsp" class="am-icon-home">主页</a></li>
+            <li><a href="../course.jsp">课程</a></li>
             <li class="am-active">投票反馈</li>
         </ol>
         <div class="tpl-content-scope">
@@ -384,9 +384,9 @@
 </div>
 
 
-<script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="../assets/js/jquery-1.11.0.min.js"></script>
+<script src="../assets/js/amazeui.min.js"></script>
+<script src="../assets/js/app.js"></script>
 </body>
 
 </html>
