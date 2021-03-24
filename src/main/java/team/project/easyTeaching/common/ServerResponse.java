@@ -12,7 +12,7 @@ import java.io.Serializable;
 @JsonSerialize(include =  JsonSerialize.Inclusion.NON_NULL)
 //保证序列化json的时候,如果是null的对象,key也会消失
 public class ServerResponse<T> implements Serializable {
-
+    //ServerResponse响应对象有三个类型
     private int status;
     private String msg;
     private T data;
@@ -40,7 +40,7 @@ public class ServerResponse<T> implements Serializable {
     @JsonIgnore
     //使之不在json序列化结果当中
     public boolean isSuccess(){
-        return this.status == ResponseCode.SUCCESS.getCode();
+        return this.status == ResponseCode.SUCCESS.getCode();//status是0返回true
     }
 
     public int getStatus(){

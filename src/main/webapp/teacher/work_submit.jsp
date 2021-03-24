@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 郑素华
-  Date: 2021/3/23
-  Time: 14:31
+  Date: 2021/3/24
+  Time: 15:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>学生考勤详情界面</title>
+    <title>教师查看作业界面</title>
     <meta name="description" content="网站首页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,9 +27,9 @@
 
     <!--导入jquery-->
     <script src="../assets/js/jquery-3.3.1.js"></script>
-
 </head>
 <body>
+
 
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
@@ -94,7 +94,6 @@
 
                 </ul>
             </li>
-
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                     <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="../assets/img/user01.png"></span>
@@ -119,7 +118,7 @@
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
                 <li class="tpl-left-nav-item">
-                    <a href="index.jsp" class="nav-link active">
+                    <a href="../index.jsp" class="nav-link active">
                         <i class="am-icon-home"></i>
                         <span>主页</span>
                     </a>
@@ -188,14 +187,14 @@
                 </li>
 
                 <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                    <a href="check.jsp" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-wpforms"></i>
                         <span>考勤</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="checkInfo.jsp">
+                            <a href="check.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>考勤详情</span>
                             </a>
@@ -210,12 +209,11 @@
 
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
-            我的考勤
+            作业管理
         </div>
         <ol class="am-breadcrumb">
             <li><a href="#" class="am-icon-home">首页</a></li>
-            <li><a href="#">考勤</a></li>
-            <li class="am-active">考勤详情</li>
+            <li class="am-active">作业提交表</li>
         </ol>
         <div class="tpl-portlet-components">
             <div class="portlet-title">
@@ -233,28 +231,27 @@
 
             </div>
             <div class="tpl-block">
-<%--                教师发布作业才需要有的功能--%>
-<%--                <div class="am-g">--%>
-<%--                    <div class="am-u-sm-12 am-u-md-6">--%>
-<%--                        <div class="am-btn-toolbar">--%>
-<%--                            <div class="am-btn-group am-btn-group-xs">--%>
-<%--                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>--%>
-<%--                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>--%>
-<%--                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>--%>
-<%--                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
+                <div class="am-g">
+                    <%--                    <div class="am-u-sm-12 am-u-md-6">--%>
+                    <%--                        <div class="am-btn-toolbar">--%>
+                    <%--                            <div class="am-btn-group am-btn-group-xs">--%>
+                    <%--                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>--%>
+                    <%--                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>--%>
+                    <%--                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>--%>
+                    <%--                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+                    <%--                    </div>--%>
                     <div class="am-u-sm-12 am-u-md-3">
                         <div class="am-form-group">
                             <select data-am-selected="{btnSize: 'sm'}">
-                                <option value="option1">参加的课程</option>
-                                <option value="option2">数据库原理</option>
-                                <option value="option3">数据库工程</option>
-                                <option value="option3">软件工程</option>
-                                <option value="option3">大数据</option>
-                                <option value="option3">操作系统实践</option>
-                                <option value="option3">数据结构</option>
+                                <option value="option1">所有班级</option>
+                                <option value="option2">软工1701班</option>
+                                <option value="option3">软工1702班</option>
+                                <option value="option3">软工1703班</option>
+                                <option value="option3">软工1704班</option>
+                                <option value="option3">计科1701班</option>
+                                <option value="option3">计科1702班</option>
                             </select>
                         </div>
                     </div>
@@ -267,74 +264,64 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="am-g">
                     <div class="am-u-sm-12">
                         <form class="am-form">
                             <table class="am-table am-table-striped am-table-hover table-main">
-
                                 <thead>
-                                <tr>
-                                    <th class="table-title" data-status="1">
-                                        <div>
-                                            出勤：
-                                            <span id="attendance">24</span>
-                                        </div>
-                                    </th>
-                                    <th class="table-title" data-status="1">
-                                        <div>
-                                            缺勤：
-                                            <span id="absence">0</span>
-                                        </div>
-                                    </th>
-                                    <th class="table-title" data-status="1">
-                                        <div>
-                                            病假/公假：
-                                            <span id="sick">0</span>
-                                        </div>
-                                    </th>
-                                    <th class="table-title" data-status="1">
-                                        <div>
-                                            事假：
-                                            <span id="others">1</span>
-                                        </div>
-                                    </th>
-                                </tr>
-<%--                                <tr>--%>
-<%--                                    <th class="table-author am-hide-sm-only">出勤</th>--%>
-<%--                                    <th class="table-author am-hide-sm-only">缺勤</th>--%>
-<%--                                    <th class="table-author am-hide-sm-only">病假/公假</th>--%>
-<%--                                    <th class="table-author am-hide-sm-only">事假</th>--%>
-<%--                                </tr>--%>
-
                                 <tr>
                                     <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
                                     <th class="table-id">ID</th>
-                                    <th class="table-title">课程id</th>
-                                    <th class="table-author am-hide-sm-only">发起者</th>
-                                    <th class="table-date am-hide-sm-only">考勤日期</th>
-                                    <th class="table-date am-hide-sm-only">修改日期</th>
+                                    <th class="table-title">课程名称</th>
+                                    <th class="table-type">类别</th>
+                                    <th class="table-author am-hide-sm-only">学生名字</th>
+                                    <th class="longblob">作业附件</th>
+<%--                                    <th class="table-longblob ">作业附件</th>--%>
+                                    <th class="table-date am-hide-sm-only">最后一次提交日期</th>
+                                    <th class="table-set">操作</th>
                                 </tr>
                                 </thead>
+                                <tbody>
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>1</td>
-                                    <td><a href="#">数据库原理</a></td>
-<%--                                    <td>default</td>--%>
-                                    <td class="am-hide-sm-only">王老师</td>
+                                    <td class="am-hide-sm-only">数据库工程</td>
+                                    <td>个人作业</td>
+                                    <td class="am-hide-sm-only">张三</td>
                                     <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-                                    <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-<%--                                    教师发布考勤才需要用的功能--%>
-<%--                                    <td>--%>
-<%--                                        <div class="am-btn-toolbar">--%>
-<%--                                            <div class="am-btn-group am-btn-group-xs">--%>
-<%--                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>--%>
-<%--                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>--%>
-<%--                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </td>--%>
+                                    <td class=""><a href="readWork.jsp">提交作业附件</a></td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <span><input name="score" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" placeholder="评分"></span>
+<%--                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 评分</button>--%>
+                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 查看</button>&nbsp;
+                                                <%--                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>--%>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td class="am-hide-sm-only">数据库原理</td>
+                                    <td class="table-type">小组作业</td>
+                                    <td class="am-hide-sm-only">李四</td>
+                                    <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                    <td class=""><a href="#">提交作业附件</a></td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <span><input name="score" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" placeholder="评分"></span>
+                                                <%--                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 评分</button>--%>
+                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 查看</button>&nbsp;
+                                                <%--                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>--%>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                </tbody>
                             </table>
                             <div class="am-cf">
 
@@ -360,12 +347,7 @@
             <div class="tpl-alert"></div>
         </div>
     </div>
+
 </div>
-
-
-<script src="../assets/jquery.min.js"></script>
-<script src="../assets/js/amazeui.min.js"></script>
-<script src="../assets/js/iscroll.js"></script>
-<script src="../assets/js/app.js"></script>
 </body>
 </html>

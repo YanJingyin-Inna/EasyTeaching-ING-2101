@@ -27,7 +27,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <a href="javascript:;" class="tpl-logo">
-            <img src="assets/img/myLogo.png" alt="">
+            <img src="../assets/img/myLogo.png" alt="">
         </a>
     </div>
     <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -67,7 +67,7 @@
                     <li>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user02.png" alt=""> </span>
+                      <img src="../assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> 禁言小张 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
@@ -76,7 +76,7 @@
                         </a>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user03.png" alt=""> </span>
+                      <img src="../assets/img/user03.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> Steam </span>
                                 <span class="tpl-dropdown-content-time">18分钟前</span>
@@ -89,7 +89,7 @@
             </li>
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="../assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>

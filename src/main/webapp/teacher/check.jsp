@@ -33,7 +33,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <a href="javascript:;" class="tpl-logo">
-            <img src="assets/img/myLogo.png" alt="">
+            <img src="../assets/img/myLogo.png" alt="">
         </a>
     </div>
     <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -73,7 +73,7 @@
                     <li>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user02.png" alt=""> </span>
+                      <img src="../assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> 禁言小张 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
@@ -82,7 +82,7 @@
                         </a>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user03.png" alt=""> </span>
+                      <img src="../assets/img/user03.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> Steam </span>
                                 <span class="tpl-dropdown-content-time">18分钟前</span>
@@ -140,7 +140,7 @@
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="../assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -280,7 +280,7 @@
                     <div class="am-u-sm-12 am-u-md-6">
                         <div class="am-btn-toolbar">
                             <div class="am-btn-group am-btn-group-xs">
-                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
+                                <a href="newCheck.jsp"   class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</a>
                                 <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 导出</button>
 <%--                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>--%>
                                 <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
