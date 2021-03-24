@@ -216,7 +216,7 @@
 
                                 <a href="course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
-                                    <span>测试库</span>
+                                    <span>试题库</span>
                                 </a>
 
                                 <a href="course-vote-list.jsp" >
@@ -308,7 +308,7 @@
             </div>
             <ol class="am-breadcrumb">
                 <li><a href="index.jsp" class="am-icon-home">主页</a></li>
-                <li><a href="course-single.jsp">课程</a></li>
+                <li><a href="course.jsp">课程</a></li>
                 <li class="am-active">测试</li>
             </ol>
             <div class="tpl-portlet-components">

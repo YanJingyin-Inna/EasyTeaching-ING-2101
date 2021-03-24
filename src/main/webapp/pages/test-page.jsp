@@ -298,7 +298,7 @@
             </div>
             <ol class="am-breadcrumb">
                 <li><a href="../index.jsp" class="am-icon-home">主页</a></li>
-                <li><a href="../course-single.jsp">课程</a></li>
+                <li><a href="../course.jsp">课程</a></li>
                 <li class="am-active">测试</li>
             </ol>
             <div class="tpl-portlet-components">

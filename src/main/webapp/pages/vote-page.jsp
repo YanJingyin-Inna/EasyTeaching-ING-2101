@@ -211,7 +211,7 @@
 
                                 <a href="../course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
-                                    <span>测试库</span>
+                                    <span>试题库</span>
                                 </a>
 
                                 <a href="../course-vote-list.jsp" class="active">
