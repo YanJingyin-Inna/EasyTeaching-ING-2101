@@ -209,7 +209,7 @@
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>

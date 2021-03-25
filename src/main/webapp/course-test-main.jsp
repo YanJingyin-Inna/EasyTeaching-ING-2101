@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EasyTeaching-首页</title>
-    <meta name="description" content="网站首页">
+    <title>测试</title>
+    <meta name="description" content="测试">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -87,51 +87,6 @@
 
                 </ul>
             </li>
-<%--                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>--%>
-<%--                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">--%>
-<%--                        <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>--%>
-<%--                    </a>--%>
-<%--                    <ul class="am-dropdown-content tpl-dropdown-content">--%>
-<%--                        <li class="tpl-dropdown-content-external">--%>
-<%--                            <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>--%>
-<%--                        <li>--%>
-<%--                            <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-<%--                                <span class="task">--%>
-<%--                        <span class="desc">Amaze UI 用户中心 v1.2 </span>--%>
-<%--                                <span class="percent">45%</span>--%>
-<%--                                </span>--%>
-<%--                                <span class="progress">--%>
-<%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>--%>
-<%--                    </span>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
-<%--                        <li>--%>
-<%--                            <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-<%--                                <span class="task">--%>
-<%--                        <span class="desc">新闻内容页 </span>--%>
-<%--                                <span class="percent">30%</span>--%>
-<%--                                </span>--%>
-<%--                                <span class="progress">--%>
-<%--                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>--%>
-<%--                    </span>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
-<%--                        <li>--%>
-<%--                            <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-<%--                                <span class="task">--%>
-<%--                        <span class="desc">管理中心 </span>--%>
-<%--                                <span class="percent">60%</span>--%>
-<%--                                </span>--%>
-<%--                                <span class="progress">--%>
-<%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>--%>
-<%--                    </span>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
-
-<%--                    </ul>--%>
-<%--                </li>--%>
-<%--                <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>--%>
-
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
@@ -214,7 +169,7 @@
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -229,10 +184,6 @@
                                     <span>成绩</span>
                                 </a>
 
-<%--                                <a href="form-news-list.html">--%>
-<%--                                    <i class="am-icon-angle-right"></i>--%>
-<%--                                    <span>成绩册</span>--%>
-<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -272,12 +223,12 @@
                     <ul class="tpl-left-nav-sub-menu">
                         <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="pages/question-list.jsp">
+                            <a href="pages/question-detail.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>试题库</span>
                             </a>
 
-                            <a href="pages/test-list.jsp">
+                            <a href="pages/test-result.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>测试</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -291,13 +242,6 @@
                     </ul>
                 </li>
 
-                <li class="tpl-left-nav-item">
-                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-key"></i>
-                        <span>登录</span>
-
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
@@ -316,49 +260,11 @@
                     <div class="caption font-green bold">
                         <span class="am-icon-code"></span> 测试列表
                     </div>
-                    <div class="tpl-portlet-input tpl-fz-ml">
-                        <div class="portlet-input input-small input-inline">
-                            <div class="input-icon right">
-                                <i class="am-icon-search"></i>
-                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
-                        </div>
-                    </div>
 
 
                 </div>
                 <div class="tpl-block">
                     <div class="am-g">
-                        <div class="am-u-sm-12 am-u-md-6">
-                            <div class="am-btn-toolbar">
-                                <div class="am-btn-group am-btn-group-xs">
-                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="am-u-sm-12 am-u-md-3">
-                            <div class="am-form-group">
-                                <select data-am-selected="{btnSize: 'sm'}">
-                                    <option value="option1">所有类别</option>
-                                    <option value="option2">IT业界</option>
-                                    <option value="option3">数码产品</option>
-                                    <option value="option3">笔记本电脑</option>
-                                    <option value="option3">平板电脑</option>
-                                    <option value="option3">只能手机</option>
-                                    <option value="option3">超极本</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="am-u-sm-12 am-u-md-3">
-                            <div class="am-input-group am-input-group-sm">
-                                <input type="text" class="am-form-field">
-                                <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
-          </span>
-                            </div>
-                        </div>
                     </div>
 
                     <ul class="tpl-task-list">
@@ -367,33 +273,17 @@
                                 <input type="hidden" value="1" name="test">
                                 <input type="checkbox" class="liChild" value="2" name="test"> </div>
                             <div class="task-title">
-                                <span class="task-title-sp"> Amaze UI Icon 组件目前使用了 Font Awesome </span>
-                                <span class="label label-sm label-success">技术部</span>
+                                <span class="task-title-sp"> 小测2 </span>
+                                <span class="label label-sm label-danger">正在进行</span>
                                 <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
+                                            <i class="am-text-danger am-icon-bell-o"></i>
                                         </span>
+
                             </div>
                             <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 进入考试</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
                                 </div>
                             </div>
                         </li>
@@ -403,31 +293,14 @@
                                 <input type="hidden" value="1" name="test">
                                 <input type="checkbox" class="liChild" value="2" name="test"> </div>
                             <div class="task-title">
-                                <span class="task-title-sp"> 在 data-am-dropdown 里指定要适应到的元素，下拉内容的宽度会设置为该元素的宽度。当然可以直接在 CSS 里设置下拉内容的宽度。 </span>
-                                <span class="label label-sm label-danger">运营</span>
+                                <span class="task-title-sp"> 期中测试 </span>
+                                <span class="label label-sm label-default">未开始</span>
 
                             </div>
                             <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 进入考试</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
                                 </div>
                             </div>
                         </li>
@@ -437,521 +310,25 @@
                                 <input type="hidden" value="1" name="test">
                                 <input type="checkbox" class="liChild" value="2" name="test"> </div>
                             <div class="task-title">
-                                <span class="task-title-sp"> 使用 LESS： 通过设置变量 @fa-font-path 覆盖默认的值，如 @fa-font-path: "../fonts";。这个变量定义在 icon.less 里。 </span>
-                                <span class="label label-sm label-warning">市场部</span>
+                                <span class="task-title-sp"> 第一章测试 </span>
+                                <span class="label label-sm label-success">已完成</span>
 
                             </div>
                             <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 进入考试</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
                                 </div>
                             </div>
                         </li>
 
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 按照示例组织好 HTML 结构（不加 data-am-dropdown 属性），然后通过 JS 来调用。 </span>
-                                <span class="label label-sm label-success">技术部</span>
-                                <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
-                                        </span>
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 使用 LESS： 通过设置变量 @fa-font-path 覆盖默认的值，如 @fa-font-path: "../fonts";。这个变量定义在 icon.less 里。 </span>
-                                <span class="label label-sm label-warning">市场部</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 按照示例组织好 HTML 结构（不加 data-am-dropdown 属性），然后通过 JS 来调用。 </span>
-                                <span class="label label-sm label-success">技术部</span>
-                                <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
-                                        </span>
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 使用 LESS： 通过设置变量 @fa-font-path 覆盖默认的值，如 @fa-font-path: "../fonts";。这个变量定义在 icon.less 里。 </span>
-                                <span class="label label-sm label-warning">市场部</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 按照示例组织好 HTML 结构（不加 data-am-dropdown 属性），然后通过 JS 来调用。 </span>
-                                <span class="label label-sm label-success">技术部</span>
-                                <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
-                                        </span>
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 使用 LESS： 通过设置变量 @fa-font-path 覆盖默认的值，如 @fa-font-path: "../fonts";。这个变量定义在 icon.less 里。 </span>
-                                <span class="label label-sm label-warning">市场部</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>
-                                <span class="label label-sm label-default">已废弃</span>
-
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="task-checkbox">
-                                <input type="hidden" value="1" name="test">
-                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
-                            <div class="task-title">
-                                <span class="task-title-sp"> 按照示例组织好 HTML 结构（不加 data-am-dropdown 属性），然后通过 JS 来调用。 </span>
-                                <span class="label label-sm label-success">技术部</span>
-                                <span class="task-bell">
-                                            <i class="am-icon-bell-o"></i>
-                                        </span>
-                            </div>
-                            <div class="task-config">
-                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
-                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
-                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
-                                    </a>
-                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-check"></i> 保存 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-pencil"></i> 编辑 </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="am-icon-trash-o"></i> 删除 </a>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-                            </div>
-                        </li>
                     </ul>
+
                 </div>
-
             </div>
-
         </div>
+</div>
 
-    </div>
 
 
     <script src="assets/js/jquery.min.js"></script>

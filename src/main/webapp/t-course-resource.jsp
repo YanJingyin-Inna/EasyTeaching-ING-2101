@@ -164,7 +164,7 @@
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -218,12 +218,12 @@
                     <ul class="tpl-left-nav-sub-menu">
                         <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="pages/question-list.jsp">
+                            <a href="pages/question-detail.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>试题库</span>
                             </a>
 
-                            <a href="pages/test-list.jsp">
+                            <a href="pages/test-result.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>测试</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -256,13 +256,10 @@
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 课程资源
+                        <span class="am-icon-code"></span> 课程资源列表
                     </div>
                     <div class="tpl-portlet-input tpl-fz-ml">
                         <div class="portlet-input input-small input-inline">
-<%--                            <div class="input-icon right">--%>
-<%--                                <i class="am-icon-search"></i>--%>
-<%--                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>--%>
                         </div>
                     </div>
 
@@ -275,7 +272,7 @@
                                 <div class="am-btn-group am-btn-group-xs">
                                     <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
                                     <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 下载</button>
+<%--                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 下载</button>--%>
 <%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 下载</button>--%>
                                 </div>
                             </div>

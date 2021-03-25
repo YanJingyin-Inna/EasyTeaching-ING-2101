@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>测试</title>
+    <title>试卷</title>
     <meta name="description" content="测试">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -164,7 +164,7 @@
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -218,12 +218,12 @@
                     <ul class="tpl-left-nav-sub-menu">
                         <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="pages/question-list.jsp">
+                            <a href="pages/question-detail.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>试题库</span>
                             </a>
 
-                            <a href="pages/test-list.jsp">
+                            <a href="pages/test-result.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>测试</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -262,7 +262,6 @@
                         </div>
                     </div>
 
-
                 </div>
                 <div class="tpl-block">
                     <div class="am-g">
@@ -271,7 +270,7 @@
                                 <div class="am-btn-group am-btn-group-xs">
                                     <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
                                     <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-bell"></span> 发布</button>
+<%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-bell"></span> 发布</button>--%>
                                     <%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 下载</button>--%>
                                 </div>
                             </div>
@@ -299,7 +298,7 @@
                                     <tr>
                                         <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
                                         <th class="table-id">序号</th>
-                                        <th class="table-title">测试名称</th>
+                                        <th class="table-title">试卷名称</th>
                                         <th class="table-type">班级</th>
                                         <th class="table-author am-hide-sm-only">状态</th>
                                         <th class="table-date am-hide-sm-only">创建时间</th>
@@ -313,7 +312,7 @@
                                         <td><a href="#">第一章小测</a></td>
                                         <td>1901</td>
                                         <td class="am-hide-sm-only">已发布</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
@@ -331,13 +330,14 @@
                                         <td><a href="#">小测2</a></td>
                                         <td>1901</td>
                                         <td class="am-hide-sm-only">已完成</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -348,13 +348,14 @@
                                         <td><a href="#">期中测试</a></td>
                                         <td>1901</td>
                                         <td class="am-hide-sm-only">未发布</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -365,13 +366,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -382,13 +384,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -399,13 +402,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -416,13 +420,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -433,13 +438,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -450,13 +456,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -467,13 +474,14 @@
                                         <td><a href="#">Business management</a></td>
                                         <td>default</td>
                                         <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                 </div>
                                             </div>
                                         </td>

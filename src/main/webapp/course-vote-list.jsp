@@ -209,7 +209,7 @@
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -224,10 +224,6 @@
                                     <span>成绩</span>
                                 </a>
 
-<%--                                <a href="form-news-list.html">--%>
-<%--                                    <i class="am-icon-angle-right"></i>--%>
-<%--                                    <span>成绩册</span>--%>
-<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -285,14 +281,6 @@
                                 </li>
                             </ul>
                                 </li>
-
-                                <li class="tpl-left-nav-item">
-                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
-                                        <i class="am-icon-key"></i>
-                                        <span>登录</span>
-
-                                    </a>
-                                </li>
                             </ul>
         </div>
     </div>
@@ -307,75 +295,76 @@
             <li><a href="course.jsp">课程</a></li>
             <li class="am-active">投票反馈</li>
         </ol>
-        <div class="tpl-content-scope">
-            <div class="note note-info">
-                <h3>Amaze UI 为移动而生
-                    <span class="close" data-close="note"></span>
-                </h3>
-                <p> Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
-                <p><span class="label label-danger">提示:</span> Amaze UI 关注中文排版，根据用户代理调整字体，实现更好的中文排版效果。
-                </p>
-            </div>
-        </div>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 投票列表
+                </div>
 
-        <div class="row">
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat blue">
-                    <div class="visual">
-                        <i class="am-icon-comments-o"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 1349 </div>
-                        <div class="desc"> 新消息 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
+
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat red">
-                    <div class="visual">
-                        <i class="am-icon-bar-chart-o"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 62% </div>
-                        <div class="desc"> 收视率 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
+            <div class="tpl-block">
+                <div class="am-g">
                 </div>
+
+                <ul class="tpl-task-list">
+                    <li>
+                        <div class="task-checkbox">
+                            <input type="hidden" value="1" name="test">
+                            <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                        <div class="task-title">
+                            <span class="task-title-sp"> 小测2 </span>
+                            <span class="label label-sm label-danger">最新</span>
+                            <span class="task-bell">
+                                            <i class="am-text-danger am-icon-bell-o"></i>
+                                        </span>
+
+                        </div>
+                        <div class="task-config">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 参与投票</button>
+                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="task-checkbox">
+                            <input type="hidden" value="1" name="test">
+                            <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                        <div class="task-title">
+                            <span class="task-title-sp"> 期中测试 </span>
+<%--                            <span class="label label-sm label-default">未开始</span>--%>
+
+                        </div>
+                        <div class="task-config">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 参与投票</button>
+                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="task-checkbox">
+                            <input type="hidden" value="1" name="test">
+                            <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                        <div class="task-title">
+                            <span class="task-title-sp"> 第一章测试 </span>
+<%--                            <span class="label label-sm label-success">已完成</span>--%>
+
+                        </div>
+                        <div class="task-config">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 参与投票</button>
+                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat green">
-                    <div class="visual">
-                        <i class="am-icon-apple"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 653 </div>
-                        <div class="desc"> 苹果设备 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat purple">
-                    <div class="visual">
-                        <i class="am-icon-android"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 786 </div>
-                        <div class="desc"> 安卓设备 </div>
-                    </div>
-                    <a class="more" href="#"> 查看更多
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
 
         </div>
 
