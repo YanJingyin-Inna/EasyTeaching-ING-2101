@@ -211,7 +211,7 @@
 
                                 <a href="course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
-                                    <span>测试库</span>
+                                    <span>试题库</span>
                                 </a>
 
                                 <a href="course-vote-list.jsp" >
@@ -286,13 +286,6 @@
                             </ul>
                                 </li>
 
-                                <li class="tpl-left-nav-item">
-                                    <a href="login.html" class="nav-link tpl-left-nav-link-list">
-                                        <i class="am-icon-key"></i>
-                                        <span>登录</span>
-
-                                    </a>
-                                </li>
                             </ul>
         </div>
     </div>
