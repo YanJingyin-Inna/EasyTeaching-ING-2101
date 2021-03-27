@@ -164,7 +164,7 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp" class="active">
+                                <a href="course-test-list.jsp" class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>

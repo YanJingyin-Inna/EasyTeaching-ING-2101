@@ -19,6 +19,24 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+    <script>
+        $(function() {
+            $('#check-toggle').on('click', function() {
+                $('#check').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body data-type="index">
@@ -159,7 +177,7 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp">
+                                <a href="course-test-list.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
@@ -282,7 +300,6 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12">
-                        <form class="am-form">
                             <table class="am-table am-table-striped am-table-hover table-main">
                                 <thead>
                                 <tr>
@@ -306,7 +323,7 @@
                                     <td>
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 查看</button>
+                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="check-toggle" ><span class="am-icon-book"></span> 查看</button>
                                                 <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-save"></span> 下载</button>
                                             </div>
                                         </div>
@@ -473,8 +490,6 @@
                                 </div>
                             </div>
                             <hr>
-
-                        </form>
                     </div>
 
                 </div>
@@ -485,9 +500,49 @@
 
 </div>
 
+<%--模块窗口--%>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="check">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">资源详情</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        资源标题
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" readonly>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        资源描述
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <textarea rows="2" class="am-modal-prompt-input" readonly></textarea>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        上传时间
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" readonly>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>下载</span>
+        </div>
+    </div>
+</div>
+
 <script src="assets/js/app.js"></script>
 </body>
 

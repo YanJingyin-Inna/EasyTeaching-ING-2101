@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>试卷</title>
+    <title>测试</title>
     <meta name="description" content="测试">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,55 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+
+    <script>
+        $(function() {
+            $('#add-toggle').on('click', function() {
+                $('#add').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $('#edit-toggle').on('click', function() {
+                $('#edit').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $('#result-toggle').on('click', function() {
+                $('#result').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+    </script>
+
 </head>
 
 <body data-type="index">
@@ -159,7 +208,7 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp" class="active">
+                                <a href="course-test-list.jsp" class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
@@ -268,9 +317,9 @@
                         <div class="am-u-sm-12 am-u-md-6">
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
+                                    <button type="button" class="am-btn am-btn-default am-btn-success" id="add-toggle"><span class="am-icon-plus"></span> 新增</button>
                                     <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
-<%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-bell"></span> 发布</button>--%>
+                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-bell"></span> 发布</button>
                                     <%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 下载</button>--%>
                                 </div>
                             </div>
@@ -292,13 +341,12 @@
 
                     <div class="am-g">
                         <div class="am-u-sm-12">
-                            <form class="am-form">
                                 <table class="am-table am-table-striped am-table-hover table-main">
                                     <thead>
                                     <tr>
                                         <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
                                         <th class="table-id">序号</th>
-                                        <th class="table-title">试卷名称</th>
+                                        <th class="table-title">测试名称</th>
                                         <th class="table-type">班级</th>
                                         <th class="table-author am-hide-sm-only">状态</th>
                                         <th class="table-date am-hide-sm-only">创建时间</th>
@@ -316,9 +364,9 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
+                                                    <button type="button" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" onclick="location.href='t-course-test-result.jsp'"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                                                 </div>
                                             </div>
@@ -334,7 +382,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
@@ -352,7 +400,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
@@ -370,7 +418,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
@@ -388,7 +436,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
@@ -406,7 +454,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
@@ -504,7 +552,7 @@
                                 </div>
                                 <hr>
 
-                            </form>
+
                         </div>
 
                     </div>
@@ -517,9 +565,158 @@
     </div>
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/amazeui.min.js"></script>
+
     <script src="assets/js/app.js"></script>
 </body>
+
+<%--模块窗口--%>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="edit">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">编辑测试</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        测试标题
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        测试试卷
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <div class="am-form-group-sm am-align-left">
+                            <select data-am-selected="{btnSize: 'sm'}">
+                                <option value="option1">选择试卷</option>
+                                <option value="option2">1901</option>
+                                <option value="option3">1902</option>
+                                <%--                                      <option value="option3">笔记本电脑</option>--%>
+                                <%--                                      <option value="option3">平板电脑</option>--%>
+                                <%--                                      <option value="option3">只能手机</option>--%>
+                                <%--                                      <option value="option3">超极本</option>--%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        测试时长
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        开考时间
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="datetime-local" class="am-form-field am-input-sm" placeholder="时间">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        发布时间
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <div class="am-form-group am-form-icon">
+                            <i class="am-icon-calendar"></i>
+                            <input type="datetime-local" class="am-form-field am-input-sm" placeholder="时间">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>保存</span>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="add">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">新建测试</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        测试标题
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        测试试卷
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <div class="am-form-group-sm am-align-left">
+                            <select data-am-selected="{btnSize: 'sm'}">
+                                <option value="option1">选择试卷</option>
+                                <option value="option2">1901</option>
+                                <option value="option3">1902</option>
+                                <%--                                      <option value="option3">笔记本电脑</option>--%>
+                                <%--                                      <option value="option3">平板电脑</option>--%>
+                                <%--                                      <option value="option3">只能手机</option>--%>
+                                <%--                                      <option value="option3">超极本</option>--%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        测试时长
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        开考时间
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <div class="am-form-group am-form-icon">
+                            <i class="am-icon-calendar"></i>
+                            <input type="datetime-local" class="am-form-field am-input-sm" placeholder="时间">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        发布时间
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <div class="am-form-group am-form-icon">
+                            <i class="am-icon-calendar"></i>
+                            <input type="datetime-local" class="am-form-field am-input-sm" placeholder="时间">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>创建</span>
+        </div>
+    </div>
+</div>
+
 
 </html>

@@ -204,7 +204,7 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="../course-test-main.jsp">
+                                <a href="../course-test-list.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
@@ -272,7 +272,7 @@
                                         <span>试题库</span>
                                     </a>
 
-                                    <a href="../course-test-main.jsp">
+                                    <a href="../course-test-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>

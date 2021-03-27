@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>测试</title>
-    <meta name="description" content="测试">
+    <title>试卷库</title>
+    <meta name="description" content="试卷库">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+
 </head>
 
 <body data-type="index">
@@ -103,6 +108,11 @@
     </header>
 
 
+
+
+
+
+
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -159,12 +169,12 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp" class="active">
+                                <a href="course-test-list.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
 
-                                <a href="t-course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -179,6 +189,10 @@
                                     <span>成绩</span>
                                 </a>
 
+<%--                                <a href="form-news-list.html">--%>
+<%--                                    <i class="am-icon-angle-right"></i>--%>
+<%--                                    <span>成绩册</span>--%>
+<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -236,31 +250,30 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </div>
 
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                测试
+                试卷库
             </div>
             <ol class="am-breadcrumb">
                 <li><a href="index.jsp" class="am-icon-home">主页</a></li>
                 <li><a href="course.jsp">课程</a></li>
-                <li class="am-active">测试</li>
+                <li class="am-active">试卷库</li>
             </ol>
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 测试列表
+                        <span class="am-icon-code"></span> 试卷列表
                     </div>
                     <div class="tpl-portlet-input tpl-fz-ml">
                         <div class="portlet-input input-small input-inline">
-                            <%--                            <div class="input-icon right">--%>
-                            <%--                                <i class="am-icon-search"></i>--%>
-                            <%--                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>--%>
                         </div>
                     </div>
+
 
                 </div>
                 <div class="tpl-block">
@@ -268,9 +281,9 @@
                         <div class="am-u-sm-12 am-u-md-6">
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
+                                    <button type="button" class="am-btn am-btn-default am-btn-success"  onclick="location.href='t-course-paper-detail.jsp'"><span class="am-icon-plus"></span> 新增</button>
                                     <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-bell"></span> 发布</button>
+                                    <%--                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 下载</button>--%>
                                     <%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 下载</button>--%>
                                 </div>
                             </div>
@@ -278,7 +291,7 @@
                         <div class="am-u-sm-12 am-u-md-3">
                             <div class="am-form-group">
                                 <select data-am-selected="{btnSize: 'sm'}">
-                                    <option value="option1">班级选择</option>
+                                    <option value="option1">课程选择</option>
                                     <option value="option2">1901</option>
                                     <option value="option3">1902</option>
                                     <%--                                      <option value="option3">笔记本电脑</option>--%>
@@ -289,18 +302,15 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="am-g">
                         <div class="am-u-sm-12">
-                            <form class="am-form">
                                 <table class="am-table am-table-striped am-table-hover table-main">
                                     <thead>
                                     <tr>
                                         <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
                                         <th class="table-id">序号</th>
-                                        <th class="table-title">测试名称</th>
-                                        <th class="table-type">班级</th>
-                                        <th class="table-author am-hide-sm-only">状态</th>
+                                        <th class="table-title">试卷题目</th>
+                                        <th class="table-type">课程</th>
                                         <th class="table-date am-hide-sm-only">创建时间</th>
                                         <th class="table-set">操作</th>
                                     </tr>
@@ -309,178 +319,13 @@
                                     <tr>
                                         <td><input type="checkbox"></td>
                                         <td>1</td>
-                                        <td><a href="#">第一章小测</a></td>
-                                        <td>1901</td>
-                                        <td class="am-hide-sm-only">已发布</td>
+                                        <td><a href="#">试卷1</a></td>
+                                        <td>数据库原理</td>
                                         <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>2</td>
-                                        <td><a href="#">小测2</a></td>
-                                        <td>1901</td>
-                                        <td class="am-hide-sm-only">已完成</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>3</td>
-                                        <td><a href="#">期中测试</a></td>
-                                        <td>1901</td>
-                                        <td class="am-hide-sm-only">未发布</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>4</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>5</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>6</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>7</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>8</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>9</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>10</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>default</td>
-                                        <td class="am-hide-sm-only">测试1号</td>
-                                        <td class="am-hide-sm-only">2021年9月4日 7:28:47</td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-warning am-hide-sm-only"><span class="am-icon-bell"></span> 发布</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 结果</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"  onclick="location.href='t-course-paper-detail.jsp'"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                                                 </div>
                                             </div>
@@ -503,23 +348,19 @@
                                     </div>
                                 </div>
                                 <hr>
-
-                            </form>
                         </div>
 
                     </div>
                 </div>
-
+                <div class="tpl-alert"></div>
             </div>
 
         </div>
 
     </div>
 
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/amazeui.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
+
 
 </html>

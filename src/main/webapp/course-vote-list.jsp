@@ -19,6 +19,39 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+    <script>
+        $(function() {
+            $('#voting-toggle').on('click', function() {
+                $('#voting').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $('#result-toggle').on('click', function() {
+                $('#result').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+    </script>
+
 </head>
 
 <body data-type="index">
@@ -87,51 +120,6 @@
 
                 </ul>
             </li>
-<!--            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>-->
-<!--                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">-->
-<!--                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>-->
-<!--                </a>-->
-<!--                <ul class="am-dropdown-content tpl-dropdown-content">-->
-<!--                    <li class="tpl-dropdown-content-external">-->
-<!--                        <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>-->
-<!--                    <li>-->
-<!--                        <a href="javascript:;" class="tpl-dropdown-content-progress">-->
-<!--                                <span class="task">-->
-<!--                        <span class="desc">Amaze UI 用户中心 v1.2 </span>-->
-<!--                                <span class="percent">45%</span>-->
-<!--                                </span>-->
-<!--                            <span class="progress">-->
-<!--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>-->
-<!--                    </span>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="javascript:;" class="tpl-dropdown-content-progress">-->
-<!--                                <span class="task">-->
-<!--                        <span class="desc">新闻内容页 </span>-->
-<!--                                <span class="percent">30%</span>-->
-<!--                                </span>-->
-<!--                            <span class="progress">-->
-<!--                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>-->
-<!--                    </span>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="javascript:;" class="tpl-dropdown-content-progress">-->
-<!--                                <span class="task">-->
-<!--                        <span class="desc">管理中心 </span>-->
-<!--                                <span class="percent">60%</span>-->
-<!--                                </span>-->
-<!--                            <span class="progress">-->
-<!--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>-->
-<!--                    </span>-->
-<!--                        </a>-->
-<!--                    </li>-->
-
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>-->
-
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                     <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
@@ -204,7 +192,7 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp">
+                                <a href="course-test-list.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
@@ -268,7 +256,7 @@
                                         <span>试题库</span>
                                     </a>
 
-                                    <a href="course-test-main.jsp">
+                                    <a href="course-test-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -301,7 +289,6 @@
                     <span class="am-icon-code"></span> 投票列表
                 </div>
 
-
             </div>
             <div class="tpl-block">
                 <div class="am-g">
@@ -309,9 +296,6 @@
 
                 <ul class="tpl-task-list">
                     <li>
-                        <div class="task-checkbox">
-                            <input type="hidden" value="1" name="test">
-                            <input type="checkbox" class="liChild" value="2" name="test"> </div>
                         <div class="task-title">
                             <span class="task-title-sp"> 小测2 </span>
                             <span class="label label-sm label-danger">最新</span>
@@ -322,16 +306,13 @@
                         </div>
                         <div class="task-config">
                             <div class="am-btn-group am-btn-group-xs">
-                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 参与投票</button>
-                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="voting-toggle"><span class="am-icon-book"></span> 参与投票</button>
+                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only" id="result-toggle"><span class="am-icon-check"></span> 查看结果</button>
                             </div>
                         </div>
                     </li>
 
                     <li>
-                        <div class="task-checkbox">
-                            <input type="hidden" value="1" name="test">
-                            <input type="checkbox" class="liChild" value="2" name="test"> </div>
                         <div class="task-title">
                             <span class="task-title-sp"> 期中测试 </span>
 <%--                            <span class="label label-sm label-default">未开始</span>--%>
@@ -346,9 +327,6 @@
                     </li>
 
                     <li>
-                        <div class="task-checkbox">
-                            <input type="hidden" value="1" name="test">
-                            <input type="checkbox" class="liChild" value="2" name="test"> </div>
                         <div class="task-title">
                             <span class="task-title-sp"> 第一章测试 </span>
 <%--                            <span class="label label-sm label-success">已完成</span>--%>
@@ -373,9 +351,138 @@
 </div>
 
 
-<script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 
+
+<%----%>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="voting">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">投票</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group-sm am-text-left" >
+                    <div class="am-u-sm-12  am-text-left" id="title">
+                        投票好了，本篇文章就给大家说到这里，大家自己下来可以自己找例子写一下试一试到底能不能实现我们所说的效果，以后在写页面的的遇到这种问题的时候直接复制使用即可。
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-2 am-text-left">
+                        <input type="radio"></input>
+                    </div>
+                    <div class="am-u-sm-10 am-text-left">
+                        选项1
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-2 am-text-left">
+                        <input type="radio"></input>
+                    </div>
+                    <div class="am-u-sm-10 am-text-left">
+                        选项2
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-2 am-text-left">
+                        <input type="radio"></input>
+                    </div>
+                    <div class="am-u-sm-10 am-text-left">
+                        选项3
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-2 am-text-left">
+                        <input type="radio"></input>
+                    </div>
+                    <div class="am-u-sm-10 am-text-left">
+                        选项4
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确认</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="result">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">投票结果</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group-sm am-text-left" >
+                    <div class="am-u-sm-12  am-text-left" id="title-result">
+                        投票好了，本篇文章就给大家说到这里，大
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-10 am-text-left">
+                        选项1
+                    </div>
+                </div>
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-8 am-text-left">
+                        <div id=0 style="background-color:#acd6ff; width:10px; height:30px; border-width:10px;"></div>
+                    </div>
+                    <div class="am-u-sm-2 am-text-left">
+                        <label id="label0">0</label>票
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-10 am-text-left">
+                        选项2
+                    </div>
+                </div>
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-8 am-text-left">
+                        <div id=1 style="background-color:#acd6ff; width:50px; height:30px; border-width:10px;"></div>
+                    </div>
+                    <div class="am-u-sm-2 am-text-left">
+                        <label id="label1">0</label>票
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-10 am-text-left">
+                        选项3
+                    </div>
+                </div>
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-8 am-text-left">
+                        <div id=2 style="background-color:#acd6ff; width:30px; height:30px; border-width:10px;"></div>
+                    </div>
+                    <div class="am-u-sm-2 am-text-left">
+                        <label id="label2">0</label>票
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-10 am-text-left">
+                        选项4
+                    </div>
+                </div>
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-8 am-text-left">
+                        <div id=3 style="background-color:#acd6ff; width:10px; height:30px; border-width:10px;"></div>
+                    </div>
+                    <div class="am-u-sm-2 am-text-left">
+                        <label id="label3">0</label>票
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+        </div>
+    </div>
+</div>
 </html>
