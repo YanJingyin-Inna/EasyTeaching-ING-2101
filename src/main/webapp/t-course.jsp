@@ -24,12 +24,22 @@
     <script src="assets/js/amazeui.min.js"></script>
 
     <script>
+        function checkAddContext(){
+            var termName = $("#termName").val();
+            if($.trim(termName)){
+                $("#term_name").css("border-color","#d6d6d6");
+                return true;
+            }
+            $("#term_name").css("border-color","red");
+            return false;
+        }
+
         $(function() {
             $(".add-course-toggle").on('click', function() {
                 $('#add-course').modal({
-                    relatedElement: this,
-                    onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                    // relatedElement: this,
+                    onConfirm: function() {
+                        alert('提交!');
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -42,8 +52,20 @@
             $(".add-term-toggle").on('click', function() {
                 $('#add-term').modal({
                     relatedElement: this,
-                    onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                    onConfirm:function() {
+                        var termName =document.getElementById("termName").value;
+                        alert("确认新增学期？" + termName);
+                        // $("#add-term-form").submit(function () {
+                            $.post("term/add_term.do",$('#add-term-form').serialize(),function(data){//先获取数据
+                                //处理服务器响应
+                                if(data.status == 0){
+                                    alert(data.msg);
+                                    // window.location.replace("http://localhost:9090/index.jsp");
+                                }else if (data.status == 1) {
+                                    $("#errorMsg").text(data.msg);
+                                }
+                            });
+                        // });
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -444,13 +466,13 @@
     <div class="am-modal-dialog">
         <div class="am-modal-hd">新建学期</div>
         <div class="am-modal-bd">
-            <form class="am-form am-form-horizontal">
+            <form class="am-form am-form-horizontal add-term-form" id="add-term-form" name="add-term-form" method="post">
                 <div class="am-g am-margin-top am-form-group-sm">
                     <div class="am-u-sm-4 am-u-md-3 am-text-right">
                         学期名称
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <input type="text" class="am-modal-prompt-input" >
+                        <input type="text" class="am-modal-prompt-input" id="termName" name="termName" onmouseout="checkAddContext()">
                     </div>
                 </div>
 
@@ -459,14 +481,14 @@
                         学期描述
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <textarea rows="5" ></textarea>
+                        <textarea rows="5" name="term_desc"></textarea>
                     </div>
                 </div>
             </form>
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>返回</span>
-            <span class="am-modal-btn" data-am-modal-confirm>创建</span>
+            <span class="am-modal-btn"  data-am-modal-confirm>创建</span>
         </div>
     </div>
 </div>

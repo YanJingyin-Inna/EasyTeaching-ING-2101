@@ -5,10 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import team.project.easyTeaching.common.Const;
 import team.project.easyTeaching.common.ServerResponse;
 import team.project.easyTeaching.pojo.Term;
+import team.project.easyTeaching.pojo.User;
 import team.project.easyTeaching.service.ITermService;
 
+import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.util.List;
 
@@ -35,6 +38,10 @@ public class TermController {
     @RequestMapping(value = "add_term.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> addTerm(Term term){
+//        User teacher = (User) session.getAttribute(Const.CURRENT_USER);
+//        Integer id = teacher.getUid();
+
+        term.setTeacherId(1);
         return  iTermService.addTerm(term);
     }
 

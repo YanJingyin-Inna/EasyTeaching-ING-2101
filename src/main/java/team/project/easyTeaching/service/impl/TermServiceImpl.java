@@ -34,7 +34,7 @@ public class TermServiceImpl implements ITermService {
         if (resultCount <= 0){
             return ServerResponse.createByErrorMessage("添加失败");
         }
-        return ServerResponse.createBySuccessMessage("添加成功");
+        return ServerResponse.createBySuccess("添加成功","sucess");
     }
 
     @Override
