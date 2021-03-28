@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team.project.easyTeaching.dao.TestMapper">
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.Test">
+    <constructor>
+      <idArg column="test_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="test_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="test_desc" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="test_score" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="test_length" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="open_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="show_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="available_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="paper_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="class_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="updatetime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    test_id, test_name, test_desc, test_score, test_length, open_time, show_time, available_time, 
+    paper_id, class_id, create_time, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_test
+    where test_id = #{testId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_test
+    where test_id = #{testId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.Test">
+    insert into tb_test (test_id, test_name, test_desc, 
+      test_score, test_length, open_time, 
+      show_time, available_time, paper_id, 
+      class_id, create_time, updatetime
+      )
+    values (#{testId,jdbcType=INTEGER}, #{testName,jdbcType=VARCHAR}, #{testDesc,jdbcType=VARCHAR}, 
+      #{testScore,jdbcType=INTEGER}, #{testLength,jdbcType=INTEGER}, #{openTime,jdbcType=TIMESTAMP}, 
+      #{showTime,jdbcType=TIMESTAMP}, #{availableTime,jdbcType=TIMESTAMP}, #{paperId,jdbcType=INTEGER}, 
+      #{classId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.Test">
+    insert into tb_test
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="testId != null">
+        test_id,
+      </if>
+      <if test="testName != null">
+        test_name,
+      </if>
+      <if test="testDesc != null">
+        test_desc,
+      </if>
+      <if test="testScore != null">
+        test_score,
+      </if>
+      <if test="testLength != null">
+        test_length,
+      </if>
+      <if test="openTime != null">
+        open_time,
+      </if>
+      <if test="showTime != null">
+        show_time,
+      </if>
+      <if test="availableTime != null">
+        available_time,
+      </if>
+      <if test="paperId != null">
+        paper_id,
+      </if>
+      <if test="classId != null">
+        class_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="testId != null">
+        #{testId,jdbcType=INTEGER},
+      </if>
+      <if test="testName != null">
+        #{testName,jdbcType=VARCHAR},
+      </if>
+      <if test="testDesc != null">
+        #{testDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="testScore != null">
+        #{testScore,jdbcType=INTEGER},
+      </if>
+      <if test="testLength != null">
+        #{testLength,jdbcType=INTEGER},
+      </if>
+      <if test="openTime != null">
+        #{openTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="showTime != null">
+        #{showTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="availableTime != null">
+        #{availableTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paperId != null">
+        #{paperId,jdbcType=INTEGER},
+      </if>
+      <if test="classId != null">
+        #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.Test">
+    update tb_test
+    <set>
+      <if test="testName != null">
+        test_name = #{testName,jdbcType=VARCHAR},
+      </if>
+      <if test="testDesc != null">
+        test_desc = #{testDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="testScore != null">
+        test_score = #{testScore,jdbcType=INTEGER},
+      </if>
+      <if test="testLength != null">
+        test_length = #{testLength,jdbcType=INTEGER},
+      </if>
+      <if test="openTime != null">
+        open_time = #{openTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="showTime != null">
+        show_time = #{showTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="availableTime != null">
+        available_time = #{availableTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paperId != null">
+        paper_id = #{paperId,jdbcType=INTEGER},
+      </if>
+      <if test="classId != null">
+        class_id = #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where test_id = #{testId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.Test">
+    update tb_test
+    set test_name = #{testName,jdbcType=VARCHAR},
+      test_desc = #{testDesc,jdbcType=VARCHAR},
+      test_score = #{testScore,jdbcType=INTEGER},
+      test_length = #{testLength,jdbcType=INTEGER},
+      open_time = #{openTime,jdbcType=TIMESTAMP},
+      show_time = #{showTime,jdbcType=TIMESTAMP},
+      available_time = #{availableTime,jdbcType=TIMESTAMP},
+      paper_id = #{paperId,jdbcType=INTEGER},
+      class_id = #{classId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where test_id = #{testId,jdbcType=INTEGER}
+  </update>
+</mapper>

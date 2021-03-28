@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team.project.easyTeaching.dao.QuestionMapper">
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.Question">
+    <constructor>
+      <idArg column="question_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="question_title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="course_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="question_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="question_option" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="question_answer" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    question_id, question_title, course_id, question_type, question_option, question_answer, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_question
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_question
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.Question">
+    insert into tb_question (question_id, question_title, course_id, 
+      question_type, question_option, question_answer, 
+      create_time, update_time)
+    values (#{questionId,jdbcType=INTEGER}, #{questionTitle,jdbcType=VARCHAR}, #{courseId,jdbcType=INTEGER}, 
+      #{questionType,jdbcType=INTEGER}, #{QuestionOptionJson,jdbcType=VARCHAR}, #{QuestionAnswerJson,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.Question">
+    insert into tb_question
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="questionId != null">
+        question_id,
+      </if>
+      <if test="questionTitle != null">
+        question_title,
+      </if>
+      <if test="courseId != null">
+        course_id,
+      </if>
+      <if test="questionType != null">
+        question_type,
+      </if>
+      <if test="QuestionOptionJson != null">
+        question_option,
+      </if>
+      <if test="QuestionAnswerJson != null">
+        question_answer,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="questionId != null">
+        #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="questionTitle != null">
+        #{questionTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="questionType != null">
+        #{questionType,jdbcType=INTEGER},
+      </if>
+      <if test="QuestionOptionJson != null">
+        #{QuestionOptionJson,jdbcType=VARCHAR},
+      </if>
+      <if test="QuestionAnswerJson != null">
+        #{QuestionAnswerJson,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.Question">
+    update tb_question
+    <set>
+      <if test="questionTitle != null">
+        question_title = #{questionTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        course_id = #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="questionType != null">
+        question_type = #{questionType,jdbcType=INTEGER},
+      </if>
+      <if test="QuestionOptionJson != null">
+        question_option = #{QuestionOptionJson,jdbcType=VARCHAR},
+      </if>
+      <if test="QuestionAnswerJson != null">
+        question_answer = #{QuestionAnswerJson,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.Question">
+    update tb_question
+    set question_title = #{questionTitle,jdbcType=VARCHAR},
+      course_id = #{courseId,jdbcType=INTEGER},
+      question_type = #{questionType,jdbcType=INTEGER},
+      question_option = #{QuestionOptionJson,jdbcType=VARCHAR},
+      question_answer = #{QuestionAnswerJson,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+</mapper>

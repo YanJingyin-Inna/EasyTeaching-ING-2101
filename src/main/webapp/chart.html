@@ -17,6 +17,24 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+    <script>
+        $(function() {
+            $('#doc-prompt-toggle').on('click', function() {
+                $('#my-prompt').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        alert('不想说!');
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body data-type="chart">
@@ -146,11 +164,6 @@
     </header>
 
 
-
-
-
-
-
     <div class="tpl-page-container tpl-page-header-fixed">
 
         <div class="tpl-left-nav tpl-left-nav-hover">
@@ -253,6 +266,21 @@
                 <li><a href="#">表单</a></li>
                 <li class="am-active">Amaze UI 表单</li>
             </ol>
+            <button class="am-btn am-btn-success" id="doc-prompt-toggle">Prompt</button>
+
+            <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+                <div class="am-modal-dialog">
+                    <div class="am-modal-hd">Amaze UI</div>
+                    <div class="am-modal-bd">
+                        来来来，吐槽点啥吧
+                        <input type="text" class="am-modal-prompt-input">
+                    </div>
+                    <div class="am-modal-footer">
+                        <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                        <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                    </div>
+                </div>
+            </div>
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
@@ -265,6 +293,7 @@
                                 <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
                         </div>
                     </div>
+
 
 
                 </div>

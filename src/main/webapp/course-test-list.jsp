@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EasyTeaching-首页</title>
-    <meta name="description" content="网站首页">
+    <title>测试</title>
+    <meta name="description" content="测试">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -87,51 +87,6 @@
 
                 </ul>
             </li>
-<%--                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>--%>
-<%--                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">--%>
-<%--                        <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>--%>
-<%--                    </a>--%>
-<%--                    <ul class="am-dropdown-content tpl-dropdown-content">--%>
-<%--                        <li class="tpl-dropdown-content-external">--%>
-<%--                            <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>--%>
-<%--                        <li>--%>
-<%--                            <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-<%--                                <span class="task">--%>
-<%--                        <span class="desc">Amaze UI 用户中心 v1.2 </span>--%>
-<%--                                <span class="percent">45%</span>--%>
-<%--                                </span>--%>
-<%--                                <span class="progress">--%>
-<%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>--%>
-<%--                    </span>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
-<%--                        <li>--%>
-<%--                            <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-<%--                                <span class="task">--%>
-<%--                        <span class="desc">新闻内容页 </span>--%>
-<%--                                <span class="percent">30%</span>--%>
-<%--                                </span>--%>
-<%--                                <span class="progress">--%>
-<%--                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>--%>
-<%--                    </span>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
-<%--                        <li>--%>
-<%--                            <a href="javascript:;" class="tpl-dropdown-content-progress">--%>
-<%--                                <span class="task">--%>
-<%--                        <span class="desc">管理中心 </span>--%>
-<%--                                <span class="percent">60%</span>--%>
-<%--                                </span>--%>
-<%--                                <span class="progress">--%>
-<%--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>--%>
-<%--                    </span>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
-
-<%--                    </ul>--%>
-<%--                </li>--%>
-<%--                <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>--%>
-
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
@@ -209,7 +164,7 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-list.jsp" >
+                                <a href="course-test-list.jsp" class="active">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
@@ -224,15 +179,11 @@
                                     <span>投票反馈</span>
                                 </a>
 
-                                <a href="course-score.jsp" class="active">
+                                <a href="course-score.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>成绩</span>
                                 </a>
 
-<%--                                <a href="form-news-list.html">--%>
-<%--                                    <i class="am-icon-angle-right"></i>--%>
-<%--                                    <span>成绩册</span>--%>
-<%--                                </a>--%>
                             </a>
                         </li>
                     </ul>
@@ -290,75 +241,95 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </div>
-    
+
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                成绩
+                测试
             </div>
             <ol class="am-breadcrumb">
                 <li><a href="index.jsp" class="am-icon-home">主页</a></li>
                 <li><a href="course.jsp">课程</a></li>
-                <li class="am-active">成绩</li>
+                <li class="am-active">测试</li>
             </ol>
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 成绩情况
-                    </div>
-                    <div class="tpl-portlet-input tpl-fz-ml">
-<%--                        <div class="portlet-input input-small input-inline">--%>
-<%--                            <div class="input-icon right">--%>
-<%--                                <i class="am-icon-search"></i>--%>
-<%--                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>--%>
-<%--                        </div>--%>
+                        <span class="am-icon-code"></span> 测试列表
                     </div>
 
 
                 </div>
-                <div class="am-g">
-                    <div class="am-u-sm-12">
-                        <form class="am-form">
-                            <table class="am-table am-table-striped am-table-hover table-main">
-                                <thead>
-                                <tr>
-                                    <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
-                                    <th class="table-id">学号</th>
-                                    <th class="table-name">姓名</th>
-                                    <th class="table-name">班级</th>
-                                    <th class="table-name">考勤</th>
-                                    <th class="table-name am-hide-sm-only">作业</th>
-                                    <th class="table-name am-hide-sm-only">测试</th>
-                                    <th class="table-name am-hide-sm-only">最终总结果</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td class="am-hide-sm-only">1</td>
-                                    <td><a href="#">颜静茵</a></td>
-                                    <td class="am-hide-sm-only">1901</td>
-                                    <td class="am-hide-sm-only">10</td>
-                                    <td class="am-hide-sm-only">40</td>
-                                    <td class="am-hide-sm-only">50</td>
-                                    <td class="am-hide-sm-only">100</td>
-
-                                </tr>
-                                </tbody>
-                            </table>
-                            <hr>
-
-                        </form>
+                <div class="tpl-block">
+                    <div class="am-g">
                     </div>
 
-                </div>
+                    <ul class="tpl-task-list">
+                        <li>
+                            <div class="task-checkbox">
+                                <input type="hidden" value="1" name="test">
+                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                            <div class="task-title">
+                                <span class="task-title-sp"> 小测2 </span>
+                                <span class="label label-sm label-danger">正在进行</span>
+                                <span class="task-bell">
+                                            <i class="am-text-danger am-icon-bell-o"></i>
+                                        </span>
 
+                            </div>
+                            <div class="task-config">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 进入考试</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="task-checkbox">
+                                <input type="hidden" value="1" name="test">
+                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                            <div class="task-title">
+                                <span class="task-title-sp"> 期中测试 </span>
+                                <span class="label label-sm label-default">未开始</span>
+
+                            </div>
+                            <div class="task-config">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 进入考试</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="task-checkbox">
+                                <input type="hidden" value="1" name="test">
+                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                            <div class="task-title">
+                                <span class="task-title-sp"> 第一章测试 </span>
+                                <span class="label label-sm label-success">已完成</span>
+
+                            </div>
+                            <div class="task-config">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-book"></span> 进入考试</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-check"></span> 查看结果</button>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
         </div>
-
-    </div>
 </div>
+
+
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/amazeui.min.js"></script>

@@ -209,12 +209,12 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp">
+                                <a href="course-test-list.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -272,12 +272,12 @@
                     <ul class="tpl-left-nav-sub-menu">
                         <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="pages/question-list.jsp">
+                            <a href="pages/question-detail.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>试题库</span>
                             </a>
 
-                            <a href="pages/test-list.jsp">
+                            <a href="pages/test-result.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>测试</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -659,16 +659,6 @@
                 </div>
                 <div class="tpl-alert"></div>
             </div>
-
-
-
-
-
-
-
-
-
-
         </div>
 
     </div>

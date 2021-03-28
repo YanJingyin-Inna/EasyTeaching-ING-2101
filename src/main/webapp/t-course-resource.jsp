@@ -19,6 +19,66 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+    <script>
+        $(function() {
+            $('#edit-toggle').on('click', function() {
+                $('#edit').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $('#add-toggle').on('click', function() {
+                $('#add').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $('#delete-toggle').on('click', function() {
+                $('#delete').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $('#delete-select-toggle').on('click', function() {
+                $('#delete-select').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body data-type="index">
@@ -159,12 +219,12 @@
                                     <span>作业</span>
                                 </a>
 
-                                <a href="course-test-main.jsp">
+                                <a href="course-test-list.jsp">
                                     <i class="am-icon-angle-right"></i>
                                     <span>测试</span>
                                 </a>
 
-                                <a href="course-question-list.jsp" >
+                                <a href="t-course-question-list.jsp" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>试题库</span>
                                 </a>
@@ -218,12 +278,12 @@
                     <ul class="tpl-left-nav-sub-menu">
                         <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="pages/question-list.jsp">
+                            <a href="pages/question-detail.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>试题库</span>
                             </a>
 
-                            <a href="pages/test-list.jsp">
+                            <a href="pages/test-result.jsp">
                                 <i class="am-icon-angle-right"></i>
                                 <span>测试</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -256,13 +316,10 @@
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 课程资源
+                        <span class="am-icon-code"></span> 课程资源列表
                     </div>
                     <div class="tpl-portlet-input tpl-fz-ml">
                         <div class="portlet-input input-small input-inline">
-<%--                            <div class="input-icon right">--%>
-<%--                                <i class="am-icon-search"></i>--%>
-<%--                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>--%>
                         </div>
                     </div>
 
@@ -273,9 +330,9 @@
                         <div class="am-u-sm-12 am-u-md-6">
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
-                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 下载</button>
+                                    <button type="button" class="am-btn am-btn-default am-btn-success" id="add-toggle"><span class="am-icon-plus"></span> 新增</button>
+                                    <button type="button" class="am-btn am-btn-default am-btn-danger" id="delete-select-toggle"><span class="am-icon-trash-o"></span> 删除</button>
+<%--                                    <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 下载</button>--%>
 <%--                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 下载</button>--%>
                                 </div>
                             </div>
@@ -296,7 +353,6 @@
                     </div>
                     <div class="am-g">
                         <div class="am-u-sm-12">
-                            <form class="am-form">
                                 <table class="am-table am-table-striped am-table-hover table-main">
                                     <thead>
                                         <tr>
@@ -320,8 +376,8 @@
                                             <td>
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary" id="edit-toggle"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" id="delete-toggle"><span class="am-icon-trash-o"></span> 删除</button>
                                                         <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
                                                     </div>
                                                 </div>
@@ -497,31 +553,120 @@
                                     </div>
                                 </div>
                                 <hr>
-
-                            </form>
                         </div>
 
                     </div>
                 </div>
                 <div class="tpl-alert"></div>
             </div>
-
-
-
-
-
-
-
-
-
-
         </div>
 
     </div>
 
+<%--模块窗口--%>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="edit">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">资源详情</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        资源标题
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/amazeui.min.js"></script>
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        资源描述
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <textarea rows="2" class="am-modal-prompt-input" ></textarea>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        班级
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>保存</span>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="add">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">新建资源</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        资源标题
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input" >
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        资源描述
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <textarea rows="2" class="am-modal-prompt-input" ></textarea>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        班级
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+<%--                        <input type="text" class="am-modal-prompt-input" >--%>
+                        <div class="am-form-group am-align-left">
+                            <select data-am-selected="{btnSize: 'sm'}">
+                                <option value="option1">班级选择</option>
+                                <option value="option2">1901</option>
+                                <option value="option3">1902</option>
+                                <%--                                      <option value="option3">笔记本电脑</option>--%>
+                                <%--                                      <option value="option3">平板电脑</option>--%>
+                                <%--                                      <option value="option3">只能手机</option>--%>
+                                <%--                                      <option value="option3">超极本</option>--%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        上传
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input class="style_file_content" accept=".rar" type="file" id="upload_file_id"/>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>创建</span>
+        </div>
+    </div>
+</div>
+
+
     <script src="assets/js/app.js"></script>
 </body>
 

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team.project.easyTeaching.dao.ScoreResultMapper">
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.ScoreResult">
+    <constructor>
+      <idArg column="score_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="check_score" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="work_score" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="test_score" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="class_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="student_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="updatetime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    score_id, check_score, work_score, test_score, class_id, student_id, create_time, 
+    updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_score_result
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_score_result
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.ScoreResult">
+    insert into tb_score_result (score_id, check_score, work_score, 
+      test_score, class_id, student_id, 
+      create_time, updatetime)
+    values (#{scoreId,jdbcType=INTEGER}, #{checkScore,jdbcType=DECIMAL}, #{WorkScoreJson,jdbcType=VARCHAR}, 
+      #{TestScoreJson,jdbcType=VARCHAR}, #{classId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.ScoreResult">
+    insert into tb_score_result
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scoreId != null">
+        score_id,
+      </if>
+      <if test="checkScore != null">
+        check_score,
+      </if>
+      <if test="WorkScoreJson != null">
+        work_score,
+      </if>
+      <if test="TestScoreJson != null">
+        test_score,
+      </if>
+      <if test="classId != null">
+        class_id,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scoreId != null">
+        #{scoreId,jdbcType=INTEGER},
+      </if>
+      <if test="checkScore != null">
+        #{checkScore,jdbcType=DECIMAL},
+      </if>
+      <if test="WorkScoreJson != null">
+        #{WorkScoreJson,jdbcType=VARCHAR},
+      </if>
+      <if test="TestScoreJson != null">
+        #{TestScoreJson,jdbcType=VARCHAR},
+      </if>
+      <if test="classId != null">
+        #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.ScoreResult">
+    update tb_score_result
+    <set>
+      <if test="checkScore != null">
+        check_score = #{checkScore,jdbcType=DECIMAL},
+      </if>
+      <if test="WorkScoreJson != null">
+        work_score = #{WorkScoreJson,jdbcType=VARCHAR},
+      </if>
+      <if test="TestScoreJson != null">
+        test_score = #{TestScoreJson,jdbcType=VARCHAR},
+      </if>
+      <if test="classId != null">
+        class_id = #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.ScoreResult">
+    update tb_score_result
+    set check_score = #{checkScore,jdbcType=DECIMAL},
+      work_score = #{WorkScoreJson,jdbcType=VARCHAR},
+      test_score = #{TestScoreJson,jdbcType=VARCHAR},
+      class_id = #{classId,jdbcType=INTEGER},
+      student_id = #{studentId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </update>
+</mapper>

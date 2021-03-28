@@ -6,19 +6,19 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>课程</title>
-    <meta name="description" content="">
+    <title>EasyTeaching-首页</title>
+    <meta name="description" content="网站首页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-    <link rel="stylesheet" href="assets/css/admin.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <script src="../assets/js/echarts.min.js"></script>
 </head>
 
 <body data-type="index">
@@ -27,7 +27,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <a href="javascript:;" class="tpl-logo">
-            <img src="assets/img/myLogo.png" alt="">
+            <img src="../assets/img/myLogo.png" alt="">
         </a>
     </div>
     <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -67,7 +67,7 @@
                     <li>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user02.png" alt=""> </span>
+                      <img src="../assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> 禁言小张 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
@@ -76,7 +76,7 @@
                         </a>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="assets/img/user03.png" alt=""> </span>
+                      <img src="../assets/img/user03.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> Steam </span>
                                 <span class="tpl-dropdown-content-time">18分钟前</span>
@@ -87,9 +87,54 @@
 
                 </ul>
             </li>
+<!--            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>-->
+<!--                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">-->
+<!--                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>-->
+<!--                </a>-->
+<!--                <ul class="am-dropdown-content tpl-dropdown-content">-->
+<!--                    <li class="tpl-dropdown-content-external">-->
+<!--                        <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>-->
+<!--                    <li>-->
+<!--                        <a href="javascript:;" class="tpl-dropdown-content-progress">-->
+<!--                                <span class="task">-->
+<!--                        <span class="desc">Amaze UI 用户中心 v1.2 </span>-->
+<!--                                <span class="percent">45%</span>-->
+<!--                                </span>-->
+<!--                            <span class="progress">-->
+<!--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>-->
+<!--                    </span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="javascript:;" class="tpl-dropdown-content-progress">-->
+<!--                                <span class="task">-->
+<!--                        <span class="desc">新闻内容页 </span>-->
+<!--                                <span class="percent">30%</span>-->
+<!--                                </span>-->
+<!--                            <span class="progress">-->
+<!--                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>-->
+<!--                    </span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="javascript:;" class="tpl-dropdown-content-progress">-->
+<!--                                <span class="task">-->
+<!--                        <span class="desc">管理中心 </span>-->
+<!--                                <span class="percent">60%</span>-->
+<!--                                </span>-->
+<!--                            <span class="progress">-->
+<!--                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>-->
+<!--                    </span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>-->
+
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="../assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -111,19 +156,81 @@
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
                 <li class="tpl-left-nav-item">
-                    <a href="index.jsp" class="nav-link ">
+                    <a href="../index.jsp" class="nav-link ">
                         <i class="am-icon-home"></i>
                         <span>主页</span>
                     </a>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="" class="nav-link tpl-left-nav-link-list active">
+                    <a href="../course.jsp" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-calendar"></i>
                         <span>课程</span>
                         <i class="tpl-left-nav-content tpl-badge-danger">
                             12
                         </i>
                     </a>
+                </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list ">
+                        <i class="am-icon-table"></i>
+                        <span>课程功能</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                        <li>
+                            <a href="../course-class.jsp">
+                                <i class="am-icon-angle-right"></i>
+                                <span>班级学生</span>
+                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                            </a>
+
+                            <a href="../course-resource.jsp">
+                                <i class="am-icon-angle-right"></i>
+                                <span>课程资源</span>
+                                <i class="tpl-left-nav-content tpl-badge-success">
+                                    18
+                                </i>
+                            </a>
+                            <a href="../form-news.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>考勤</span>
+                                <i class="tpl-left-nav-content tpl-badge-primary">
+                                    5
+                                </i>
+
+                                <a href="../form-news-list.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>作业</span>
+                                </a>
+
+                                <a href="../course-test-list.jsp">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>测试</span>
+                                </a>
+
+                                <a href="../t-course-question-list.jsp" >
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>试题库</span>
+                                </a>
+
+                                <a href="../course-vote-list.jsp" class="active">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>投票反馈</span>
+                                </a>
+
+                                <a href="../course-score.jsp">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>成绩</span>
+                                </a>
+
+<%--                                <a href="form-news-list.html">--%>
+<%--                                    <i class="am-icon-angle-right"></i>--%>
+<%--                                    <span>成绩册</span>--%>
+<%--                                </a>--%>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="tpl-left-nav-item">
@@ -136,13 +243,13 @@
                     <ul class="tpl-left-nav-sub-menu">
 <!--                                            <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                         <li>
-                            <a href="feedback.html">
+                            <a href="../feedback.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>反馈</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="form-line.html">
+                            <a href="../form-line.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>线条表单</span>
                             </a>
@@ -160,18 +267,18 @@
                             <ul class="tpl-left-nav-sub-menu">
 <!--                                                   <ul class="tpl-left-nav-sub-menu" style="display: block;">-->
                                 <li>
-                                    <a href="pages/question-list.jsp">
+                                    <a href="../form-line.html">
                                         <i class="am-icon-angle-right"></i>
                                         <span>试题库</span>
                                     </a>
 
-                                    <a href="pages/test-list.jsp">
+                                    <a href="../course-test-list.jsp">
                                         <i class="am-icon-angle-right"></i>
                                         <span>测试</span>
                                         <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                     </a>
 
-                                    <a href="form-line.html">
+                                    <a href="../form-line.html">
                                         <i class="am-icon-angle-right"></i>
                                         <span>自主练习</span>
                                     </a>
@@ -179,6 +286,13 @@
                             </ul>
                                 </li>
 
+                                <li class="tpl-left-nav-item">
+                                    <a href="../login.html" class="nav-link tpl-left-nav-link-list">
+                                        <i class="am-icon-key"></i>
+                                        <span>登录</span>
+
+                                    </a>
+                                </li>
                             </ul>
         </div>
     </div>
@@ -186,14 +300,23 @@
 
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
-            课程情况
+            投票反馈
         </div>
         <ol class="am-breadcrumb">
-            <li><a href="./" class="am-icon-home">主页</a></li>
-<!--            <li><a href="">课程</a></li>-->
-            <li class="am-active">课程</li>
+            <li><a href="../index.jsp" class="am-icon-home">主页</a></li>
+            <li><a href="../course.jsp">课程</a></li>
+            <li class="am-active">投票反馈</li>
         </ol>
-
+        <div class="tpl-content-scope">
+            <div class="note note-info">
+                <h3>Amaze UI 为移动而生
+                    <span class="close" data-close="note"></span>
+                </h3>
+                <p> Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
+                <p><span class="label label-danger">提示:</span> Amaze UI 关注中文排版，根据用户代理调整字体，实现更好的中文排版效果。
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
@@ -202,10 +325,10 @@
                         <i class="am-icon-comments-o"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库原理 </div>
-                        <div class="desc"> 21上 </div>
+                        <div class="number"> 1349 </div>
+                        <div class="desc"> 新消息 </div>
                     </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
+                    <a class="more" href="#"> 查看更多
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -216,10 +339,10 @@
                         <i class="am-icon-bar-chart-o"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库实践 </div>
-                        <div class="desc"> 21下 </div>
+                        <div class="number"> 62% </div>
+                        <div class="desc"> 收视率 </div>
                     </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
+                    <a class="more" href="#"> 查看更多
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -230,10 +353,10 @@
                         <i class="am-icon-apple"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库原理 </div>
-                        <div class="desc"> 19上 </div>
+                        <div class="number"> 653 </div>
+                        <div class="desc"> 苹果设备 </div>
                     </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
+                    <a class="more" href="#"> 查看更多
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -244,10 +367,10 @@
                         <i class="am-icon-android"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库原理 </div>
-                        <div class="desc"> 18上 </div>
+                        <div class="number"> 786 </div>
+                        <div class="desc"> 安卓设备 </div>
                     </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
+                    <a class="more" href="#"> 查看更多
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -261,9 +384,9 @@
 </div>
 
 
-<script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="../assets/js/jquery-1.11.0.min.js"></script>
+<script src="../assets/js/amazeui.min.js"></script>
+<script src="../assets/js/app.js"></script>
 </body>
 
 </html>

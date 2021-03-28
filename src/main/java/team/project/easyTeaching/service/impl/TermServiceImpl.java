@@ -23,7 +23,8 @@ public class TermServiceImpl implements ITermService {
 
     @Override
     public ServerResponse<List<String>> selectAllTerms(Integer teacher_id) {
-        List<String> termList =  termMapper.selectAllTermsByTeacher(teacher_id);
+        List<String> termList = null;
+//        List<String> termList =  termMapper.selectAllTermsByTeacher(teacher_id);
         return ServerResponse.createBySuccess(termList);
     }
 
