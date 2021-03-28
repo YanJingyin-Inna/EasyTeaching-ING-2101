@@ -266,9 +266,10 @@
                     <div class="am-g tpl-amazeui-form">
                         <div class="am-u-sm-12 am-u-md-9">
                             <form class="am-form am-form-horizontal">
-                                <div class="am-form-group">
+                                <div class="am-form-group" style="font-weight: bold">
                                     <p>一、选择题  (20小题，共60分)</p>
                                 </div>
+                                <hr/>
 
                                 <div class="am-form-group">
                                     <p>1.题目题目</p>
@@ -316,9 +317,10 @@
                                     <div class="am-u-sm-10 am-text-left">选项内容</div>
                                 </div>
 
-                                <div class="am-form-group">
+                                <div class="am-form-group" style="font-weight: bold">
                                     <p>二、填空题  (20小题，共60分)</p>
                                 </div>
+                                <hr/>
 
                                 <div class="am-form-group">
                                     <p>1.题目题目</p>

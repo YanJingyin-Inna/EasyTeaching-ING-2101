@@ -19,6 +19,88 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+
+    <script>
+        $(function() {
+            $(".join-class-toggle").on('click', function() {
+                $('#join-class').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(".out-class-toggle").on('click', function() {
+                $('#out-class').modal({
+                    relatedElement: this,
+                    onConfirm: function(data) {
+                        alert('你输入的是：' + data)
+                    },
+                    onCancel: function() {
+                        // alert('不想说!');
+                    }
+                });
+            });
+        });
+
+        var TempArr = []; //存储option
+        $(function () {
+            /*先将数据存入数组*/
+            $("#typenum option").each(function (index, el) {
+                TempArr[index] = $(this).text();
+            });
+            $(document).bind('click', function (e) {
+                var e = e || window.event; //浏览器兼容性
+                var elem = e.target || e.srcElement;
+                while (elem) { //循环判断至跟节点，防止点击的是div子元素
+                    if (elem.id && (elem.id == 'typenum' || elem.id == "makeupCo")) {
+                        return;
+                    }
+                    elem = elem.parentNode;
+                }
+                $('#typenum').css('display', 'none'); //点击的不是div或其子元素
+            });
+        })
+
+        function changeF(this_) {
+            $(this_).prev("input").val($(this_).find("option:selected").text());
+            $("#typenum").css({
+                "display": "none"
+            });
+        }
+
+        function setfocus(this_) {
+            $("#typenum").css({
+                "display": ""
+            });
+            var select = $("#typenum");
+            for (i = 0; i < TempArr.length; i++) {
+                var option = $("<option></option>").text(TempArr[i]);
+                select.append(option);
+            }
+        }
+
+        function setinput(this_) {
+            var select = $("#typenum");
+            select.html("");
+            for (i = 0; i < TempArr.length; i++) {
+                //若找到以txt的内容开头的，添option
+                if (TempArr[i].substring(0, this_.value.length).indexOf(this_.value) == 0) {
+                    var option = $("<option></option>").text(TempArr[i]);
+                    select.append(option);
+                }
+            }
+        }
+    </script>
 </head>
 
 <body data-type="index">
@@ -194,8 +276,35 @@
             <li class="am-active">课程</li>
         </ol>
 
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 课程列表
+                </div>
+                <div class="tpl-portlet-input tpl-fz-ml">
+                    <div class="portlet-input input-small input-inline">
+                        <%--                            <div class="input-icon right">--%>
+                        <%--                                <i class="am-icon-search"></i>--%>
+                        <%--                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>--%>
+                    </div>
+                </div>
+            </div>
 
-        <div class="row">
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-md-6">
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <button type="button" class="am-btn am-btn-default am-btn-primary join-class-toggle"><span class="am-icon-plus"></span> 加入课程班级</button>
+                            <button type="button" class="am-btn am-btn-default am-btn-danger out-class-toggle"><span class="am-icon-trash-o"></span> 退出课程班级</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-3">
+                </div>
+            </div>
+            <hr/>
+
+            <div class="row">
             <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
                 <div class="dashboard-stat blue">
                     <div class="visual">
@@ -253,17 +362,139 @@
                 </div>
             </div>
         </div>
-
         </div>
+
+    </div>
 
     </div>
 
 </div>
 
-
-<script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="join-class">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">加入课程班级</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        课程名称
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setfocus(this)"
+                               oninput="setinput(this);" placeholder="请选择或输入" />
+                        <select name="makeupCoSe" id="typenum" onchange="changeF(this)" size="10" style="display:none;">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">12323</option>
+                            <option value="">31</option>
+                            <option value="">1332</option>
+                            <option value="">412</option>
+                            <option value="">42</option>
+                            <option value="">11</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        班级
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <%--                        <input type="text" class="am-modal-prompt-input" >--%>
+                        <div class="am-form-group-sm am-align-left">
+                            <select data-am-selected="{btnSize: 'sm'}">
+                                <option value="option1">班级选择</option>
+                                <option value="option2">19上</option>
+                                <option value="option3">19下</option>
+                                <%--                                      <option value="option3">笔记本电脑</option>--%>
+                                <%--                                      <option value="option3">平板电脑</option>--%>
+                                <%--                                      <option value="option3">只能手机</option>--%>
+                                <%--                                      <option value="option3">超极本</option>--%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        课程描述
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <textarea rows="5" readonly></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>加入</span>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="out-class">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">退出课程班级</div>
+        <div class="am-modal-bd">
+            <form class="am-form am-form-horizontal">
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        课程名称
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setfocus(this)"
+                               oninput="setinput(this);" placeholder="请选择或输入" />
+                        <select name="makeupCoSe" id="typenum" onchange="changeF(this)" size="10" style="display:none;">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">12323</option>
+                            <option value="">31</option>
+                            <option value="">1332</option>
+                            <option value="">412</option>
+                            <option value="">42</option>
+                            <option value="">11</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        班级
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <%--                        <input type="text" class="am-modal-prompt-input" >--%>
+                        <div class="am-form-group-sm am-align-left">
+                            <select data-am-selected="{btnSize: 'sm'}">
+                                <option value="option1">班级选择</option>
+                                <option value="option2">19上</option>
+                                <option value="option3">19下</option>
+                                <%--                                      <option value="option3">笔记本电脑</option>--%>
+                                <%--                                      <option value="option3">平板电脑</option>--%>
+                                <%--                                      <option value="option3">只能手机</option>--%>
+                                <%--                                      <option value="option3">超极本</option>--%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        课程描述
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <textarea rows="5" readonly></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>返回</span>
+            <span class="am-modal-btn" data-am-modal-confirm>退出</span>
+        </div>
+    </div>
+</div>
 
 </html>
