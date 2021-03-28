@@ -1,42 +1,30 @@
 package team.project.easyTeaching.pojo;
 
-import java.util.Date;
-
+/**
+ *
+ */
 public class User {
-    private Integer uid;
-
     private String username;
 
     private String password;
+
+    private Integer uid;
 
     private String email;
 
     private Integer role;
 
-    private Date createTime;
+    public User(String username, String password, Integer uid, String email, Integer role) {
 
-    private Date updatetime;
-
-    public User(Integer uid, String username, String password, String email, Integer role, Date createTime, Date updatetime) {
-        this.uid = uid;
         this.username = username;
         this.password = password;
+        this.uid = uid;
         this.email = email;
         this.role = role;
-        this.createTime = createTime;
-        this.updatetime = updatetime;
     }
 
     public User() {
         super();
-    }
-
-    public Integer getUid() {
-        return uid;
-    }
-
-    public void setUid(Integer uid) {
-        this.uid = uid;
     }
 
     public String getUsername() {
@@ -55,6 +43,14 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -71,19 +67,14 @@ public class User {
         this.role = role;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", uid=" + uid +
+                ", email='" + email + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

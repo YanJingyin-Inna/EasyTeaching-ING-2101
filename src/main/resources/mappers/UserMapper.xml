@@ -1,183 +1,129 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="team.project.easyTeaching.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.User">
-    <constructor>
-      <idArg column="uid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="role" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="updatetime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.project.easyTeaching.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.User" >
+    <constructor >
+      <idArg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="uid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="role" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List">
-    uid, username, password, email, role, create_time, updatetime
+  <sql id="Base_Column_List" >
+    username, password, uid, email, role
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
     <include refid="Base_Column_List" />
     from tb_person
-    where uid = #{uid,jdbcType=INTEGER}
+    where username = #{username,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from tb_person
-    where uid = #{uid,jdbcType=INTEGER}
+    where username = #{username,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="team.project.easyTeaching.pojo.User">
-    insert into tb_person (uid, username, password,
-      email, role, create_time,
-      updatetime)
-    values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-      #{email,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
-      #{updatetime,jdbcType=TIMESTAMP})
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.User" >
+    insert into tb_person (username, password, uid, 
+      email, role)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.User">
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.User" >
     insert into tb_person
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="uid != null">
-        uid,
-      </if>
-      <if test="username != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="username != null" >
         username,
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         password,
       </if>
-      <if test="email != null">
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="email != null" >
         email,
       </if>
-      <if test="role != null">
+      <if test="role != null" >
         role,
       </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updatetime != null">
-        updatetime,
-      </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="uid != null">
-        #{uid,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="username != null" >
         #{username,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="role != null">
+      <if test="role != null" >
         #{role,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null">
-        #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.User">
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.User" >
     update tb_person
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
+    <set >
+      <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="role != null">
+      <if test="role != null" >
         role = #{role,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null">
-        updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      </if>
     </set>
-    where uid = #{uid,jdbcType=INTEGER}
+    where username = #{username,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.User">
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.User" >
     update tb_person
-    set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
+    set password = #{password,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
       email = #{email,jdbcType=VARCHAR},
-      role = #{role,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where uid = #{uid,jdbcType=INTEGER}
+      role = #{role,jdbcType=INTEGER}
+    where username = #{username,jdbcType=VARCHAR}
   </update>
-
-
   <select id="checkUsername" parameterType="string" resultType="int">
     select count(1) from tb_person
     where username = #{username}
   </select>
 
-  <select id="checkEmail" parameterType="string" resultType="int">
-    select count(1) from tb_person
-    where email = #{email}
-  </select>
 
 
-  <select id="selectLogin" parameterType="map" resultMap="BaseResultMap">
-    SELECT
-    --     *???//这样真的好么?答案就是,这样不好.
-    <include refid="Base_Column_List" />
-    from tb_person
-    where username = #{username}
-    and password = #{password}
-  </select>
-
-
-  <select id="selectQuestionByUsername" parameterType="string" resultType="string">
+  <select id="selectLogin2" resultMap="BaseResultMap" parameterType="team.project.easyTeaching.pojo.User">
     select
-    question
+    *
     from tb_person
     where username = #{username}
   </select>
 
-  <select id="checkAnswer" parameterType="map" resultType="int">
-    SELECT
-    count(1)
-    from tb_person
-    where username=#{username}
-    and question = #{question}
-    and answer = #{answer}
-  </select>
+<!--  <insert id="register" parameterType="team.project.easyTeaching.pojo.User" >-->
 
-  <update id="updatePasswordByUsername" parameterType="map">
-    update tb_person
-    SET password = #{passwordNew},update_time = now()
+<!--    insert into tb_person (username,password,uid,email,role)-->
+<!--    values (#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{uid,jdbcType=INTEGER},#{email,jdbcType=VARCHAR},#{role,jdbcType=INTEGER})-->
+
+<!--  </insert>-->
+  <insert id="register"  parameterType="team.project.easyTeaching.pojo.User" >
+    <selectKey order="AFTER" resultType="int" keyProperty="username">
+      select LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_person (username,password,uid,email,role) values (#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{uid,jdbcType=INTEGER},#{email,jdbcType=VARCHAR},#{role,jdbcType=INTEGER})
+  </insert>
+
+  <select id="checkRole" parameterType="java.lang.Integer" resultType="int">
+    select role
+    from tb_person
     where username = #{username}
-  </update>
 
-  <select id="checkPassword" parameterType="map" resultType="int">
-    SELECT
-    count(1)
-    from tb_person
-    where password = #{password}
-    and id = #{uid}
   </select>
-
-
-  <select id="checkEmailByUserId" parameterType="map" resultType="int">
-    select count(1) from tb_person
-    where email = #{email}
-    and id != #{userId}
-  </select>
-
-
-
-
 
 </mapper>

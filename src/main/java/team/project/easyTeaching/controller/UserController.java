@@ -2,11 +2,10 @@ package team.project.easyTeaching.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import team.project.easyTeaching.common.Const;
-import team.project.easyTeaching.common.ResponseCode;
 import team.project.easyTeaching.common.ServerResponse;
 import team.project.easyTeaching.pojo.User;
 import team.project.easyTeaching.service.IUserService;
@@ -18,9 +17,12 @@ import javax.servlet.http.HttpSession;
 public class UserController {
 
     @Autowired
+    //private IUserService iUserService;
     private IUserService iUserService;
+
     /**
      * 用户登录
+     *
      * @param username
      * @param password
      * @param session
@@ -28,99 +30,114 @@ public class UserController {
      */
 
     @RequestMapping(value = "login.do")
-    @ResponseBody
-    public ServerResponse<User> login(String username, String password, HttpSession session){
+//    @ResponseBody
+//    public ServerResponse<User> login(String username, String password, Integer role, HttpSession session){
+    public String login(String username, String password, Integer role, HttpSession session) {
         //service-->mybatis-->dao
+        //0是学生，1是教师
+        //查数据，判断逻辑
 
-        ServerResponse<User> response = iUserService.login(username,password);
-        if(response.isSuccess()){
-            session.setAttribute(Const.CURRENT_USER,response.getData());
+        //1.username     sql  --> 是否存在
+
+        /*------1check username ------*/
+
+        if (iUserService.checkusername(username) == 0) {
+            session.setAttribute("msg", "用户不存在");
+            return "forward:/login.jsp";
+        }
+        User user = iUserService.login(username);
+//        System.out.println("我是usercontroller user"+user.toString());
+        /*------check pwd------*/
+        if (!user.getPassword().equals(password)) {
+            session.setAttribute("msg", "密码错误");
+            return "forward:/login.jsp";
+        }
+        /*------check role------*/
+        if (user.getRole() != role) {
+            session.setAttribute("msg", "身份选择错误");
+            return "forward:/login.jsp";
         }
 
-        return response;
-    }
+        if (role == 0) {
+            session.setAttribute("user", user);
 
-   // @RequestMapping(value = "logout.do",method = RequestMethod.POST)
-   @RequestMapping(value = "logout.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> logout(HttpSession session){
+            return "forward:/student/stu_login_ok.jsp";
+        }
+        if (role == 1) {
+            session.setAttribute("user", user);
+            return "forward:/teacher/tea_login_ok.jsp";
+        }
+
+        return "forward:/index.jsp";
+
+
+    }
+    //页面跳转
+//    @RequestMapping(value = "register.jsp")
+//    public String turnToRegister(){
+//        System.out.println("我是controller, 这是turnToRegister");
+//        return "forward:/register.jsp";
+//    }
+    //登出接口
+    @RequestMapping(value = "login.do" ,method = RequestMethod.GET )
+    public String logout(HttpSession session){
         session.removeAttribute(Const.CURRENT_USER);
-        return ServerResponse.createBySuccess();
+        return "forward:/index.jsp";
     }
 
 
-    @RequestMapping(value = "register.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> register(User user){
-        return iUserService.register(user);
-    }
+//    @Rollback(false)
+    @RequestMapping(value = "register.do")
+    public String register(String username, String password, Integer role, String email, Integer uid, HttpSession session) {
+        //数据库插入数据
+//        User user = iUserService.register(username,password,uid,email,role);
+//        System.out.println("我是usercontroller user" + user.toString());
+        if (iUserService.checkusername(username) > 0) {
+            session.setAttribute("msg", "用户已存在,不能注册");
+            return "forward:/register.jsp";
 
-    @RequestMapping(value = "check_valid.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> checkValid(String str,String type){
-        return iUserService.checkValid(str,type);
-    }
-
-    @RequestMapping(value = "get_user_info.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<User> getUserInfo(HttpSession session){
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if(user != null){
-            return ServerResponse.createBySuccess(user);
         }
-        return ServerResponse.createByErrorMessage("用户未登录,无法获取当前用户的信息");
-    }
-
-
-    @RequestMapping(value = "forget_get_question.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> forgetGetQuestion(String username){
-        return iUserService.selectQuestion(username);
-    }
-
-
-    @RequestMapping(value = "forget_check_answer.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> CheckAnswer(String username,String question,String answer){
-        return iUserService.checkAnswer(username, question, answer);
-    }
-
-//    忘记密码中的重置密码
-    @RequestMapping(value = "forget_reset_password.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> forgetRestPassword(String username,String passwordNew,String forgetToken){
-        return iUserService.forgetResetPassword(username,passwordNew,forgetToken);
-    }
-
-    @RequestMapping(value = "reset_password.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<String> resetPassword(HttpSession session,String passwordOld,String passwordNew){
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
-        if(user == null){
-            return ServerResponse.createByErrorMessage("用户未登录");
+        Integer result = iUserService.register(username, password, uid, email, role);
+        if (result > 0 && role == 0){
+            return "redirect:/student/stu_login_ok.jsp";
+        }else if (result > 0 && role ==1){
+            return "redirect:/teacher/tea_login_ok.jsp";
+        }else{
+            return "forward:/index.jsp";
         }
-        return iUserService.resetPassword(passwordOld,passwordNew,user);
+
+//        if(iUserService.checkRole(role) == 0){
+//            return "forward:/student/stu_login_ok.jsp";
+//        }
+//        if (iUserService.checkRole(role) == 1){
+//            return "forward:/teacher/stu_login_ok.jsp";
+//        }
+            //数据插入成功了，用checkRole来确定注册者的身份，判断返回到学生还是老师的登录成功页面
+
+
+
+//        System.out.println("到这一步了嘛？");
+//        if (user.getRole() == 0){
+//            return "forward:/student/stu_login_ok.jsp";
+//        }
+//        if (user.getRole() == 1){
+//            return "forward:/teacher/stu_login_ok.jsp";
+//        }
+        //register是插入数据只能返回int？？？
+//        if (iUserService.register_ok(role) == 0){
+//            return "forward:/student/stu_login_ok.jsp";
+//        }
+//        if (iUserService.register_ok(role) == 1) {
+//            return "forward:/teacher/stu_login_ok.jsp";
+//        }
+//        int resultRole = iUserService.register(role);
+//        if (iUserService.register(role) ==0) {
+//            return "forward:/student/stu_login_ok.jsp";
+//        }
+//        if (iUserService.register_ok(role) == 1) {
+//            return "forward:/teacher/stu_login_ok.jsp";
+//        }
+
+//        return "forward:/index.jsp";
     }
-
-
-    //更新用户信息
-    @RequestMapping(value = "update_information.do",method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse<User> update_information(HttpSession session,User user){
-        User currentUser = (User)session.getAttribute(Const.CURRENT_USER);
-        if(currentUser == null){
-            return ServerResponse.createByErrorMessage("用户未登录");
-        }
-        user.setUid(currentUser.getUid());
-        user.setUsername(currentUser.getUsername());
-        ServerResponse<User> response = iUserService.updateInformation(user);
-        if(response.isSuccess()){
-            response.getData().setUsername(currentUser.getUsername());
-            session.setAttribute(Const.CURRENT_USER,response.getData());
-        }
-        return response;
-    }
-
-
-
 }

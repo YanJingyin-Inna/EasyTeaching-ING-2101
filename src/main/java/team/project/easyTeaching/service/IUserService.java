@@ -1,23 +1,38 @@
 package team.project.easyTeaching.service;
 
-import team.project.easyTeaching.common.ServerResponse;
 import team.project.easyTeaching.pojo.User;
 
 public interface IUserService {
 
-    ServerResponse<User> login(String username, String password);
+//    ServerResponse<User> login(String username, String password, Integer role);
 
-    ServerResponse<String> register(User user);
+//    ServerResponse<String> register(User user);
+//
+//    ServerResponse<String> checkValid(String str, String type);
+//
+//    ServerResponse selectQuestion(String username);
+//
+//    ServerResponse<String> checkAnswer(String username, String question, String answer);
+//
+//    ServerResponse<String> forgetResetPassword(String username,String passwordNew,String forgetToken);
+//
+//    ServerResponse<String> resetPassword(String passwordOld,String passwordNew,User user);
+//
+//    ServerResponse<User> updateInformation(User user);
 
-    ServerResponse<String> checkValid(String str, String type);
+    User login(String username);
 
-    ServerResponse selectQuestion(String username);
+    int checkusername(String username);
 
-    ServerResponse<String> checkAnswer(String username, String question, String answer);
+     int checkRole(Integer role);
 
-    ServerResponse<String> forgetResetPassword(String username,String passwordNew,String forgetToken);
+   int register(String username,String password,Integer uid,String email,Integer role);
 
-    ServerResponse<String> resetPassword(String passwordOld,String passwordNew,User user);
+    //int register_ok(Integer role);
 
-    ServerResponse<User> updateInformation(User user);
+//    User register(String username, String password, Integer uid, String email, Integer role);
+
+//    int register_ok(Integer role);
+
+//    User register(String username, String password, int uid, String email, Integer role);
 }
