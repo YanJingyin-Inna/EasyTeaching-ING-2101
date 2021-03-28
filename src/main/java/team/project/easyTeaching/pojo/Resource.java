@@ -5,6 +5,10 @@ import java.util.Date;
 public class Resource {
     private Integer resourceId;
 
+    private String resourceName;
+
+    private String resourceDesc;
+
     private String resourcePath;
 
     private Integer uploadId;
@@ -17,8 +21,10 @@ public class Resource {
 
     private Date updateTime;
 
-    public Resource(Integer resourceId, String resourcePath, Integer uploadId, Integer courseId, Integer classId, Date createTime, Date updateTime) {
+    public Resource(Integer resourceId, String resourceName, String resourceDesc, String resourcePath, Integer uploadId, Integer courseId, Integer classId, Date createTime, Date updateTime) {
         this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.resourceDesc = resourceDesc;
         this.resourcePath = resourcePath;
         this.uploadId = uploadId;
         this.courseId = courseId;
@@ -37,6 +43,22 @@ public class Resource {
 
     public void setResourceId(Integer resourceId) {
         this.resourceId = resourceId;
+    }
+
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName == null ? null : resourceName.trim();
+    }
+
+    public String getResourceDesc() {
+        return resourceDesc;
+    }
+
+    public void setResourceDesc(String resourceDesc) {
+        this.resourceDesc = resourceDesc == null ? null : resourceDesc.trim();
     }
 
     public String getResourcePath() {

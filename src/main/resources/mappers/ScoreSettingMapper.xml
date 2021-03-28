@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team.project.easyTeaching.dao.ScoreSettingMapper">
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.ScoreSetting">
+    <constructor>
+      <idArg column="setting_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="setting" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="course_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="class_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="updatetime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    setting_id, setting, course_id, class_id, create_time, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_score_setting
+    where setting_id = #{settingId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_score_setting
+    where setting_id = #{settingId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.ScoreSetting">
+    insert into tb_score_setting (setting_id, setting, course_id, 
+      class_id, create_time, updatetime
+      )
+    values (#{settingId,jdbcType=INTEGER}, #{SettingJson,jdbcType=VARCHAR}, #{courseId,jdbcType=INTEGER}, 
+      #{classId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.ScoreSetting">
+    insert into tb_score_setting
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="settingId != null">
+        setting_id,
+      </if>
+      <if test="SettingJson != null">
+        setting,
+      </if>
+      <if test="courseId != null">
+        course_id,
+      </if>
+      <if test="classId != null">
+        class_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="settingId != null">
+        #{settingId,jdbcType=INTEGER},
+      </if>
+      <if test="SettingJson != null">
+        #{SettingJson,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="classId != null">
+        #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.ScoreSetting">
+    update tb_score_setting
+    <set>
+      <if test="SettingJson != null">
+        setting = #{SettingJson,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        course_id = #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="classId != null">
+        class_id = #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where setting_id = #{settingId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.ScoreSetting">
+    update tb_score_setting
+    set setting = #{SettingJson,jdbcType=VARCHAR},
+      course_id = #{courseId,jdbcType=INTEGER},
+      class_id = #{classId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where setting_id = #{settingId,jdbcType=INTEGER}
+  </update>
+</mapper>

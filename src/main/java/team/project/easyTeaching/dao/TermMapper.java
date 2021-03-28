@@ -2,8 +2,6 @@ package team.project.easyTeaching.dao;
 
 import team.project.easyTeaching.pojo.Term;
 
-import java.util.List;
-
 public interface TermMapper {
     int deleteByPrimaryKey(Integer termId);
 
@@ -16,6 +14,4 @@ public interface TermMapper {
     int updateByPrimaryKeySelective(Term record);
 
     int updateByPrimaryKey(Term record);
-
-    List<String> selectAllTermsByTeacher(Integer teacher_id);
 }

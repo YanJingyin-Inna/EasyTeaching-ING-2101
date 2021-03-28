@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team.project.easyTeaching.dao.PaperContentMapper">
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.PaperContent">
+    <constructor>
+      <idArg column="paper_qid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="question_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="question_level" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="question_score" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paper_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="updatetime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    paper_qid, question_id, question_level, question_score, paper_id, create_time, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_paper_content
+    where paper_qid = #{paperQid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_paper_content
+    where paper_qid = #{paperQid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.PaperContent">
+    insert into tb_paper_content (paper_qid, question_id, question_level, 
+      question_score, paper_id, create_time, 
+      updatetime)
+    values (#{paperQid,jdbcType=INTEGER}, #{questionId,jdbcType=INTEGER}, #{questionLevel,jdbcType=INTEGER}, 
+      #{questionScore,jdbcType=INTEGER}, #{paperId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.PaperContent">
+    insert into tb_paper_content
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="paperQid != null">
+        paper_qid,
+      </if>
+      <if test="questionId != null">
+        question_id,
+      </if>
+      <if test="questionLevel != null">
+        question_level,
+      </if>
+      <if test="questionScore != null">
+        question_score,
+      </if>
+      <if test="paperId != null">
+        paper_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="paperQid != null">
+        #{paperQid,jdbcType=INTEGER},
+      </if>
+      <if test="questionId != null">
+        #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="questionLevel != null">
+        #{questionLevel,jdbcType=INTEGER},
+      </if>
+      <if test="questionScore != null">
+        #{questionScore,jdbcType=INTEGER},
+      </if>
+      <if test="paperId != null">
+        #{paperId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.PaperContent">
+    update tb_paper_content
+    <set>
+      <if test="questionId != null">
+        question_id = #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="questionLevel != null">
+        question_level = #{questionLevel,jdbcType=INTEGER},
+      </if>
+      <if test="questionScore != null">
+        question_score = #{questionScore,jdbcType=INTEGER},
+      </if>
+      <if test="paperId != null">
+        paper_id = #{paperId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where paper_qid = #{paperQid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.PaperContent">
+    update tb_paper_content
+    set question_id = #{questionId,jdbcType=INTEGER},
+      question_level = #{questionLevel,jdbcType=INTEGER},
+      question_score = #{questionScore,jdbcType=INTEGER},
+      paper_id = #{paperId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where paper_qid = #{paperQid,jdbcType=INTEGER}
+  </update>
+</mapper>
