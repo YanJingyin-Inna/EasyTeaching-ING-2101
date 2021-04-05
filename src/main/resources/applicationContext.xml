@@ -18,20 +18,4 @@
 
     <import resource="applicationContext-datasource.xml"/>
 
-
-    <!-- 注册拦截器 -->
-    <mvc:interceptors>
-        <!-- 注册1个拦截器 -->
-        <mvc:interceptor>
-            <!-- 对哪些资源起拦截作用 -->
-            <mvc:mapping path="/**" />
-            <!-- 对哪些资源不起拦截作用 -->
-            <mvc:exclude-mapping path="/user/" />
-            <!-- 哪个Bean是拦截器 -->
-            <bean class="team.project.easyTeaching.interceptor.CheckLoginInterceptor" />
-        </mvc:interceptor>
-    </mvc:interceptors>
-
-
-
 </beans>

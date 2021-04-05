@@ -89,7 +89,7 @@
             </li>
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                        <span class="tpl-header-list-user-nick">学生A</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -266,82 +266,123 @@
                     <div class="am-g tpl-amazeui-form">
                         <div class="am-u-sm-12 am-u-md-9">
                             <form class="am-form am-form-horizontal">
+                                <div class="am-form-group" style="font-weight: bold">
+                                    <p>一、选择题  (2小题，共30分)</p>
+                                </div>
+                                <hr/>
+
                                 <div class="am-form-group">
-                                    <p>一、选择题  (20小题，共60分)</p>
+                                    <p>1.在 SELECT 语句中，需对分组情况满足的条件进行判断时，应使用</p>
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">A</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">WHERE </div>
+
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">B</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">GROUP BY</div>
+
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">C</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">GROUP CONDITION </div>
+
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">D</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">HAVING</div>
+                                    <div id="user-choice" style="color: green"><span>你的选择：D</span></div>
+                                    <div id="question-answer" style="color: red"><span>参考答案：</span>D</div>
                                 </div>
 
                                 <div class="am-form-group">
-                                    <p>1.题目题目</p>
+                                    <p>2.视图建立后，在数据字典中存放的是</p>
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项1</input>
+                                        <input type="radio">A</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">查询语句</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项2</input>
+                                        <input type="radio">B</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">组成视图的表的内容</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项3</input>
+                                        <input type="radio">C</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">视图的定义</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项4</input>
+                                        <input type="radio">D</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">视图对应的表的定义</div>
+                                    <div id="user-choice" style="color: green"><span>你的选择：</span>A</div>
+                                    <div id="question-answer" style="color: red"><span>参考答案：</span>C</div>
+                                </div>
+
+                                <div class="am-form-group" style="font-weight: bold">
+                                    <p>二、判断题  (2小题，共30分)</p>
+                                </div>
+                                <hr/>
+
+                                <div class="am-form-group">
+                                    <p>1.等值连接与自然连接是同一个概念</p>
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">A</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">对 </div>
+
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">B</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">错</div>
+                                    <div id="user-choice" style="color: green"><span>你的选择：</span>A</div>
+                                    <div id="question-answer" style="color: red"><span>参考答案：</span>B</div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <p>2.在关系模式中，候选码可以有多个，主码只能有一个。</p>
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">A</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">对</div>
+
+                                    <div class="am-u-sm-2 am-text-left">
+                                        <input type="radio">8</input>
+                                    </div>
+                                    <div class="am-u-sm-10 am-text-left">错</div>
                                     <div id="user-choice" style="color: green"><span>你的选择：</span>A</div>
                                     <div id="question-answer" style="color: red"><span>参考答案：</span>A</div>
                                 </div>
 
-                                <div class="am-form-group">
-                                    <p>2.题目题目</p>
-                                    <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项1</input>
-                                    </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
-
-                                    <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项2</input>
-                                    </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
-
-                                    <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项3</input>
-                                    </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
-
-                                    <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项4</input>
-                                    </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
-                                    <div id="user-choice" style="color: green"><span>你的选择：</span>A</div>
-                                    <div id="question-answer" style="color: red"><span>参考答案：</span>A</div>
+                                <div class="am-form-group" style="font-weight: bold">
+                                    <p>三、简答题  (2小题，共40分)</p>
                                 </div>
+                                <hr/>
 
                                 <div class="am-form-group">
-                                    <p>二、填空题  (20小题，共60分)</p>
-                                </div>
-
-                                <div class="am-form-group">
-                                    <p>1.题目题目</p>
+                                    <p>1.什么是视图？使用视图有什么好处？</p>
                                     <div class=" am-text-left">
                                         <textarea rows="5"></textarea>
                                     </div>
-                                    <div id="question-answer" style="color: red"><span>参考答案：</span>A</div>
+                                    <div id="question-answer" style="color: red">参考答案：<span>视图是从一个或几个基本表（或视图）导出的表，数据库只存放视图的定义而不存放视图对应的数据，这些数据仍存放在原来的基本表中。所以基本表中数据发生变化，从视图查询出的数据也会随之改变。</span></div>
                                 </div>
 
                                 <div class="am-form-group">
-                                    <p>2.题目题目</p>
+                                    <p>2.什么是数据库中的事务？它有哪些特性？</p>
                                     <div class=" am-text-left">
                                         <textarea rows="5"></textarea>
                                     </div>
-                                    <div id="question-answer" style="color: red"><span>参考答案：</span>A</div>
+                                    <div id="question-answer" style="color: red">参考答案：<span>事务是用户定义的一个数据库操作序列，这些操作要么全做要么全不做，是一个不可分割的工作单位。例如在关系数据库中，一个事务可以是一条SQL语句、一组SQL语句。
+
+事务的特性：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持续性（Durability），简称ACID
+</span></div>
+
                                 </div>
 
                                 <div class="am-form-group">
-                                    <button type="button" class="am-btn am-btn-primary am-align-left">交卷</button>
+                                    <button type="button" class="am-btn am-btn-primary am-align-left">返回</button>
                                 </div>
                             </form>
                         </div>

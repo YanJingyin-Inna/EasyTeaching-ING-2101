@@ -33,7 +33,7 @@
                 $('#join-class').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        alert('加入成功');
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -155,7 +155,7 @@
                                 <span class="tpl-dropdown-content-photo">
                       <img src="assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
-                      <span class="tpl-dropdown-content-from"> 禁言小张 </span>
+                      <span class="tpl-dropdown-content-from"> 学生一 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
                                 </span>
                             <span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </span>
@@ -175,7 +175,7 @@
             </li>
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick" id="current-user">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick" id="current-user">学生A</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -309,41 +309,41 @@
             <hr/>
 
             <div class="row">
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
                 <div class="dashboard-stat blue">
                     <div class="visual">
                         <i class="am-icon-comments-o"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库原理 </div>
-                        <div class="desc"> 21上 </div>
+                        <div class="number"> 数据库实践 </div>
+                        <div class="desc"> 20下 </div>
                     </div>
                     <a class="more" href="course-class.jsp"> 进入课程
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
                 <div class="dashboard-stat red">
                     <div class="visual">
                         <i class="am-icon-bar-chart-o"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库实践 </div>
-                        <div class="desc"> 21下 </div>
+                        <div class="number"> 数据库原理 </div>
+                        <div class="desc"> 20上 </div>
                     </div>
                     <a class="more" href="course-class.jsp"> 进入课程
                         <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
                 <div class="dashboard-stat green">
                     <div class="visual">
                         <i class="am-icon-apple"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 数据库原理 </div>
+                        <div class="number"> Java </div>
                         <div class="desc"> 19上 </div>
                     </div>
                     <a class="more" href="course-class.jsp"> 进入课程
@@ -351,21 +351,21 @@
                     </a>
                 </div>
             </div>
-            <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat purple">
-                    <div class="visual">
-                        <i class="am-icon-android"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 数据库原理 </div>
-                        <div class="desc"> 18上 </div>
-                    </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+<%--                <div class="dashboard-stat purple">--%>
+<%--                    <div class="visual">--%>
+<%--                        <i class="am-icon-android"></i>--%>
+<%--                    </div>--%>
+<%--                    <div class="details">--%>
+<%--                        <div class="number"> C++ </div>--%>
+<%--                        <div class="desc"> 18上 </div>--%>
+<%--                    </div>--%>
+<%--                    <a class="more" href="course-class.jsp"> 进入课程--%>
+<%--                        <i class="m-icon-swapright m-icon-white"></i>--%>
+<%--                    </a>--%>
+<%--                </div>--%>
             </div>
-        </div>
+            </div>
         </div>
 
     </div>
@@ -390,14 +390,10 @@
                         <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setfocus(this)"
                                oninput="setinput(this);" placeholder="请选择或输入" />
                         <select name="makeupCoSe" id="typenum" onchange="changeF(this)" size="10" style="display:none;">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">12323</option>
-                            <option value="">31</option>
-                            <option value="">1332</option>
-                            <option value="">412</option>
-                            <option value="">42</option>
-                            <option value="">11</option>
+                            <option value="">数据库原理</option>
+                            <option value="">高数1</option>
+                            <option value="">数据库实践</option>
+                            <option value="">Java程序设计</option>
                         </select>
                     </div>
                 </div>
@@ -411,8 +407,8 @@
                         <div class="am-form-group-sm am-align-left">
                             <select data-am-selected="{btnSize: 'sm'}">
                                 <option value="option1">班级选择</option>
-                                <option value="option2">19上</option>
-                                <option value="option3">19下</option>
+                                <option value="option2">1901</option>
+                                <option value="option3">1902</option>
                                 <%--                                      <option value="option3">笔记本电脑</option>--%>
                                 <%--                                      <option value="option3">平板电脑</option>--%>
                                 <%--                                      <option value="option3">只能手机</option>--%>
@@ -427,7 +423,7 @@
                         课程描述
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <textarea rows="5" readonly></textarea>
+                        <textarea rows="5" readonly>本课程为教师A的Java程序设计</textarea>
                     </div>
                 </div>
             </form>

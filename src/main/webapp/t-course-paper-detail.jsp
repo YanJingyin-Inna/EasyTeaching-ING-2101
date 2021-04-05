@@ -158,7 +158,7 @@
             </li>
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                        <span class="tpl-header-list-user-nick">教师A</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -189,9 +189,7 @@
                     <a href="course.jsp" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-calendar"></i>
                         <span>课程</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">
-                            12
-                        </i>
+
                     </a>
                 </li>
 
@@ -206,22 +204,18 @@
                             <a href="course-class.jsp" >
                                 <i class="am-icon-angle-right"></i>
                                 <span>班级学生</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+<%--                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>--%>
                             </a>
 
                             <a href="course-resource.jsp" >
                                 <i class="am-icon-angle-right"></i>
                                 <span>课程资源</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
+
                             </a>
                             <a href="form-news.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>考勤</span>
-                                <i class="tpl-left-nav-content tpl-badge-primary">
-                                    5
-                                </i>
+
 
                                 <a href="form-news-list.html">
                                     <i class="am-icon-angle-right"></i>
@@ -329,23 +323,7 @@
                     <div class="am-g tpl-amazeui-form">
                         <div class="am-u-sm-12 am-u-md-9">
                             <form class="am-form am-form-horizontal">
-                                <div class="am-form-group">
-                                    <div class="am-u-sm-2 am-text-left">
-                                        课程
-                                    </div>
-                                    <div class="am-u-sm-8 am-u-md-4">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-                                            <option value="option1">课程选择</option>
-                                            <option value="option2">1901</option>
-                                            <option value="option3">1902</option>
-                                            <%--                                      <option value="option3">笔记本电脑</option>--%>
-                                            <%--                                      <option value="option3">平板电脑</option>--%>
-                                            <%--                                      <option value="option3">只能手机</option>--%>
-                                            <%--                                      <option value="option3">超极本</option>--%>
-                                        </select>
-                                    </div>
-                                    <div class=" am-u-sm-2 am-form-group-sm am-align-left"></div>
-                                </div>
+
 
                                 <div class="am-form-group">
                                     <div class="am-u-sm-2 am-text-left">
@@ -359,114 +337,114 @@
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left" style="font-weight: bold">一、选择题  (20小题，共60分)</div>
+                                    <div class="am-u-sm-9 am-text-left" style="font-weight: bold">一、选择题  (2小题，共30分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-success add-toggle" ><span class="am-icon-plus"></span> 添加</button>
                                     </div>
                                 </div>
 
                                 <div class="am-form-group ">
-                                    <div class="am-u-sm-9 am-text-left">1.题目题目<span>(5</span>分)</div>
+                                    <div class="am-u-sm-9 am-text-left">1.需对分组情况满足的条件进行判断时，应使用<span>(15</span>分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                     </div>
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项1</input>
+                                        <input type="radio">A</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">WHERE </div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项2</input>
+                                        <input type="radio">B</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">GROUP BY</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项3</input>
+                                        <input type="radio">C</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">GROUP CONDITION </div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项4</input>
+                                        <input type="radio">D</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">HAVING</div>
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left">2.题目题目<span>(5</span>分)</div>
+                                    <div class="am-u-sm-9 am-text-left">2.视图建立后，在数据字典中存放的是<span>(15</span>分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                     </div>
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项1</input>
+                                        <input type="radio">A</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">查询语句</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项2</input>
+                                        <input type="radio">B</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">组成视图的表的内容</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项3</input>
+                                        <input type="radio">C</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">视图的定义</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项4</input>
+                                        <input type="radio">D</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">视图对应的表的定义</div>
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left" style="font-weight: bold">二、判断题  (20小题，共60分)</div>
+                                    <div class="am-u-sm-9 am-text-left" style="font-weight: bold">二、判断题  (2小题，共30分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-success add-toggle" ><span class="am-icon-plus"></span> 添加</button>
                                     </div>
                                 </div>
 
                                 <div class="am-form-group ">
-                                    <div class="am-u-sm-9 am-text-left" >1.题目题目<span>(5</span>分)</div>
+                                    <div class="am-u-sm-9 am-text-left" >1.等值连接与自然连接是同一个概念<span>(15</span>分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                     </div>
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项1</input>
+                                        <input type="radio">A</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">对 </div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项2</input>
+                                        <input type="radio">B</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">错</div>
 
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left">2.题目题目<span>(5</span>分)</div>
+                                    <div class="am-u-sm-9 am-text-left">2.在关系模式中，候选码可以有多个，主码只能有一个。<span>(15</span>分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                     </div>
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项1</input>
+                                        <input type="radio">A</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">对</div>
 
                                     <div class="am-u-sm-2 am-text-left">
-                                        <input type="radio">选项2</input>
+                                        <input type="radio">8</input>
                                     </div>
-                                    <div class="am-u-sm-10 am-text-left">选项内容</div>
+                                    <div class="am-u-sm-10 am-text-left">错</div>
 
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left" style="font-weight: bold">三、填空题  (20小题，共60分)</div>
+                                    <div class="am-u-sm-9 am-text-left" style="font-weight: bold">三、简答题  (20小题，共40分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-success add-toggle" ><span class="am-icon-plus"></span> 添加</button>
                                     </div>
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left">1.题目题目<span>(5</span>分)</div>
+                                    <div class="am-u-sm-9 am-text-left">1.什么是视图？使用视图有什么好处？<span>(20</span>分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                     </div>
@@ -476,7 +454,7 @@
                                 </div>
 
                                 <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-text-left">2.题目题目<span>(5</span>分)</div>
+                                    <div class="am-u-sm-9 am-text-left">2.什么是数据库中的事务？它有哪些特性？<span>(20</span>分)</div>
                                     <div class="am-btn-group am-btn-group-xs">
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                     </div>
@@ -510,24 +488,24 @@
         <div class="am-modal-hd">添加试题</div>
         <div class="am-modal-bd">
             <form class="am-form am-form-horizontal">
-                <div class="am-g am-margin-top am-form-group-sm">
-                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
-                        课程选择
-                    </div>
-                    <div class="am-u-sm-8 am-align-left">
-                        <div class="am-form-group-sm am-align-left">
-                            <select data-am-selected="{btnSize: 'sm'}">
-                                <option value="option1">课程选择</option>
-                                <option value="option2">1901</option>
-                                <option value="option3">1902</option>
-                                <%--                                      <option value="option3">笔记本电脑</option>--%>
-                                <%--                                      <option value="option3">平板电脑</option>--%>
-                                <%--                                      <option value="option3">只能手机</option>--%>
-                                <%--                                      <option value="option3">超极本</option>--%>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+<%--                <div class="am-g am-margin-top am-form-group-sm">--%>
+<%--                    <div class="am-u-sm-4 am-u-md-3 am-text-right">--%>
+<%--                        课程选择--%>
+<%--                    </div>--%>
+<%--                    <div class="am-u-sm-8 am-align-left">--%>
+<%--                        <div class="am-form-group-sm am-align-left">--%>
+<%--                            <select data-am-selected="{btnSize: 'sm'}">--%>
+<%--                                <option value="option1">课程选择</option>--%>
+<%--                                <option value="option2">1901</option>--%>
+<%--                                <option value="option3">1902</option>--%>
+<%--                                &lt;%&ndash;                                      <option value="option3">笔记本电脑</option>&ndash;%&gt;--%>
+<%--                                &lt;%&ndash;                                      <option value="option3">平板电脑</option>&ndash;%&gt;--%>
+<%--                                &lt;%&ndash;                                      <option value="option3">只能手机</option>&ndash;%&gt;--%>
+<%--                                &lt;%&ndash;                                      <option value="option3">超极本</option>&ndash;%&gt;--%>
+<%--                            </select>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
 
 
                 <div class="am-g am-margin-top am-form-group-sm">
@@ -559,23 +537,6 @@
                     </div>
                 </div>
 
-                <div class="am-g am-margin-top am-form-group-sm">
-                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
-                        选项三
-                    </div>
-                    <div class="am-u-sm-8 am-align-left">
-                        <input type="text" class="am-modal-prompt-input" >
-                    </div>
-                </div>
-
-                <div class="am-g am-margin-top am-form-group-sm">
-                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
-                        选项四
-                    </div>
-                    <div class="am-u-sm-8 am-align-left">
-                        <input type="text" class="am-modal-prompt-input" >
-                    </div>
-                </div>
 
             </form>
         </div>

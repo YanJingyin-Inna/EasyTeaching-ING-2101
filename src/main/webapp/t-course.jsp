@@ -39,7 +39,7 @@
                 $('#add-course').modal({
                     // relatedElement: this,
                     onConfirm: function() {
-                        alert('提交!');
+                        alert('成功创建!');
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -188,7 +188,7 @@
                                 <span class="tpl-dropdown-content-photo">
                       <img src="assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
-                      <span class="tpl-dropdown-content-from"> 禁言小张 </span>
+                      <span class="tpl-dropdown-content-from"> 教师A </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
                                 </span>
                             <span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </span>
@@ -208,7 +208,7 @@
             </li>
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick">教师A</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -349,8 +349,8 @@
                             <i class="am-icon-comments-o"></i>
                         </div>
                         <div class="details">
-                            <div class="number"> 数据库原理 </div>
-                            <div class="desc"> 21上 </div>
+                            <div class="number"> 数据库实践 </div>
+                            <div class="desc"> 21下 </div>
                         </div>
                         <a class="more" href="course-class.jsp"> 进入课程
                             <i class="m-icon-swapright m-icon-white"></i>
@@ -363,8 +363,8 @@
                             <i class="am-icon-bar-chart-o"></i>
                         </div>
                         <div class="details">
-                            <div class="number"> 数据库实践 </div>
-                            <div class="desc"> 21下 </div>
+                            <div class="number"> 数据库原理 </div>
+                            <div class="desc"> 21上 </div>
                         </div>
                         <a class="more" href="course-class.jsp"> 进入课程
                             <i class="m-icon-swapright m-icon-white"></i>

@@ -28,7 +28,7 @@
                 $('#voting').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        alert('投票成功')
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -102,7 +102,7 @@
                                 <span class="tpl-dropdown-content-photo">
                       <img src="assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
-                      <span class="tpl-dropdown-content-from"> 禁言小张 </span>
+                      <span class="tpl-dropdown-content-from"> 学生A </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
                                 </span>
                             <span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </span>
@@ -122,7 +122,7 @@
             </li>
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick">学生A</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -297,7 +297,7 @@
                 <ul class="tpl-task-list">
                     <li>
                         <div class="task-title">
-                            <span class="task-title-sp"> 小测2 </span>
+                            <span class="task-title-sp"> 20日课堂小测</span>
                             <span class="label label-sm label-danger">最新</span>
                             <span class="task-bell">
                                             <i class="am-text-danger am-icon-bell-o"></i>
@@ -314,7 +314,7 @@
 
                     <li>
                         <div class="task-title">
-                            <span class="task-title-sp"> 期中测试 </span>
+                            <span class="task-title-sp"> 课堂提问 </span>
 <%--                            <span class="label label-sm label-default">未开始</span>--%>
 
                         </div>
@@ -328,7 +328,7 @@
 
                     <li>
                         <div class="task-title">
-                            <span class="task-title-sp"> 第一章测试 </span>
+                            <span class="task-title-sp"> 第一章提问 </span>
 <%--                            <span class="label label-sm label-success">已完成</span>--%>
 
                         </div>
@@ -363,7 +363,7 @@
             <form class="am-form am-form-horizontal">
                 <div class="am-g am-margin-top am-form-group-sm am-text-left" >
                     <div class="am-u-sm-12  am-text-left" id="title">
-                        投票好了，本篇文章就给大家说到这里，大家自己下来可以自己找例子写一下试一试到底能不能实现我们所说的效果，以后在写页面的的遇到这种问题的时候直接复制使用即可。
+                        对于课堂上的提问，以下提供4个选项，请选择
                     </div>
                 </div>
 
@@ -419,7 +419,7 @@
             <form class="am-form am-form-horizontal">
                 <div class="am-g am-margin-top am-form-group-sm am-text-left" >
                     <div class="am-u-sm-12  am-text-left" id="title-result">
-                        投票好了，本篇文章就给大家说到这里，大
+                        对于课堂上的提问，以下提供4个选项，请选择
                     </div>
                 </div>
 
@@ -433,7 +433,7 @@
                         <div id=0 style="background-color:#acd6ff; width:10px; height:30px; border-width:10px;"></div>
                     </div>
                     <div class="am-u-sm-2 am-text-left">
-                        <label id="label0">0</label>票
+                        <label id="label0">1</label>票
                     </div>
                 </div>
 
@@ -447,7 +447,7 @@
                         <div id=1 style="background-color:#acd6ff; width:50px; height:30px; border-width:10px;"></div>
                     </div>
                     <div class="am-u-sm-2 am-text-left">
-                        <label id="label1">0</label>票
+                        <label id="label1">10</label>票
                     </div>
                 </div>
 
@@ -461,7 +461,7 @@
                         <div id=2 style="background-color:#acd6ff; width:30px; height:30px; border-width:10px;"></div>
                     </div>
                     <div class="am-u-sm-2 am-text-left">
-                        <label id="label2">0</label>票
+                        <label id="label2">7</label>票
                     </div>
                 </div>
 
@@ -475,7 +475,7 @@
                         <div id=3 style="background-color:#acd6ff; width:10px; height:30px; border-width:10px;"></div>
                     </div>
                     <div class="am-u-sm-2 am-text-left">
-                        <label id="label3">0</label>票
+                        <label id="label3">1</label>票
                     </div>
                 </div>
             </form>

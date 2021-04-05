@@ -28,7 +28,7 @@
                 $('#my-prompt').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        alert('成功')
                     },
                     onCancel: function() {
                         alert('不想说!');
@@ -42,7 +42,7 @@
                 $('#check-score').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        alert('成功')
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -56,7 +56,7 @@
                 $('#work-score').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        alert('成功')
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -70,7 +70,7 @@
                 $('#test-score').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        alert('成功')
                     },
                     onCancel: function() {
                         // alert('不想说!');
@@ -129,7 +129,7 @@
                                 <span class="tpl-dropdown-content-photo">
                       <img src="assets/img/user02.png" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
-                      <span class="tpl-dropdown-content-from"> 禁言小张 </span>
+                      <span class="tpl-dropdown-content-from"> 教师A</span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
                                 </span>
                             <span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </span>
@@ -149,7 +149,7 @@
             </li>
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                        <span class="tpl-header-list-user-nick">教师A</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -338,7 +338,7 @@
                         <ul class="am-tabs-nav am-nav am-nav-tabs">
                             <li class="am-active"><a href="#tab1">成绩比例设置</a></li>
                             <li><a href="#tab2">成绩结果</a></li>
-                            <li><a href="#tab3">导出成绩册</a></li>
+<%--                            <li><a href="#tab3">导出成绩册</a></li>--%>
                         </ul>
 
 
@@ -359,9 +359,9 @@
                                         <th class="table-id">学号</th>
                                         <th class="table-name">姓名</th>
                                         <th class="table-name">班级</th>
-                                        <th class="table-name">考勤</th>
-                                        <th class="table-name am-hide-sm-only">作业</th>
-                                        <th class="table-name am-hide-sm-only">测试</th>
+                                        <th class="table-name">考勤<span>20%</span></th>
+                                        <th class="table-name am-hide-sm-only">作业<span>30%</span></th>
+                                        <th class="table-name am-hide-sm-only">测试<span>50%</span></th>
                                         <th class="table-name am-hide-sm-only">计算结果</th>
                                         <th class="table-name">最终成绩</th>
                                         <th class="table-name">操作</th>
@@ -371,7 +371,7 @@
                                     <tr>
                                         <td><input type="checkbox"></td>
                                         <td class="am-hide-sm-only">1</td>
-                                        <td><a href="#">颜静茵</a></td>
+                                        <td><a href="#">学生A</a></td>
                                         <td class="am-hide-sm-only">1901</td>
                                         <td class="am-hide-sm-only">10</td>
                                         <td class="am-hide-sm-only">40</td>
