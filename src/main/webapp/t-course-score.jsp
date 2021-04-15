@@ -526,26 +526,7 @@
                     </div>
                     <div class="am-hide-sm-only">分</div>
                 </div>
-
-                <div class="am-g am-margin-top am-form-group">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        迟到
-                    </div>
-                    <div class="am-u-sm-8 ">
-                        <input type="text" class="am-modal-prompt-input">
-                    </div>
-                    <div class="am-hide-sm-only">分</div>
-                </div>
-
-                <div class="am-g am-margin-top am-form-group">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        请假
-                    </div>
-                    <div class="am-u-sm-8 ">
-                        <input type="text" class="am-modal-prompt-input">
-                    </div>
-                    <div class="am-hide-sm-only">分</div>
-                </div>
+                
 
                 <div class="am-g am-margin-top am-form-group">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">

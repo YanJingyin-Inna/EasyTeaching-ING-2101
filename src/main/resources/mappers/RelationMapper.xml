@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.project.easyTeaching.dao.RelationMapper" >
+  <resultMap id="BaseResultMap" type="team.project.easyTeaching.pojo.Relation" >
+    <constructor >
+      <idArg column="relation_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="class_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="student_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    relation_id, class_id, student_id, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_relation
+    where relation_id = #{relationId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_relation
+    where relation_id = #{relationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="team.project.easyTeaching.pojo.Relation" >
+    insert into tb_relation (relation_id, class_id, student_id, 
+      create_time, update_time)
+    values (#{relationId,jdbcType=INTEGER}, #{classId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
+      now(), now())
+  </insert>
+  <insert id="insertSelective" parameterType="team.project.easyTeaching.pojo.Relation" >
+    insert into tb_relation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="relationId != null" >
+        relation_id,
+      </if>
+      <if test="classId != null" >
+        class_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+        create_time,
+        update_time,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="relationId != null" >
+        #{relationId,jdbcType=INTEGER},
+      </if>
+      <if test="classId != null" >
+        #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      now(),
+      now(),
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="team.project.easyTeaching.pojo.Relation" >
+    update tb_relation
+    <set >
+      <if test="classId != null" >
+        class_id = #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        student_id = #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where relation_id = #{relationId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="team.project.easyTeaching.pojo.Relation" >
+    update tb_relation
+    set class_id = #{classId,jdbcType=INTEGER},
+      student_id = #{studentId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where relation_id = #{relationId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByStudentId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from tb_relation
+    where student_id = #{studentId,jdbcType=INTEGER}
+    order by create_time desc
+  </select>
+
+  <delete id="deleteByRelation" parameterType="team.project.easyTeaching.pojo.Relation" >
+    delete from tb_relation
+    where class_id = #{classId,jdbcType=INTEGER}
+    and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+</mapper>

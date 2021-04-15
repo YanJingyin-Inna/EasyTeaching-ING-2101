@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface ITermService {
 
-    ServerResponse<List<String>> selectAllTerms(Integer teacher_id );
+    ServerResponse<List<Term>> selectTermsByTeacher(Integer teacherId );
 
     ServerResponse<String> addTerm(Term term);
 

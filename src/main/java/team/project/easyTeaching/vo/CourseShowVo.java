@@ -1,12 +1,16 @@
 package team.project.easyTeaching.vo;
 
 /**
- * @Classname CourseShow
+ * @Classname CourseShowVo
  * @Description TODO
  * @Created by 颜
  */
 
-public class CourseShow {
+public class CourseShowVo {
+    private Integer classId;
+
+    private String className;
+
     private Integer courseId;
 
     private String courseName;
@@ -17,15 +21,33 @@ public class CourseShow {
 
     private String termName;
 
+    public Integer getClassId() {
+        return classId;
+    }
+
+    public void setClassId(Integer classId) {
+        this.classId = classId;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     private Integer teacherId;
 
-    public CourseShow(Integer courseId, String courseName, String courseDesc, Integer termId, String termName, Integer teacherId) {
-        this.courseId = courseId;
-        this.courseName = courseName;
-        this.courseDesc = courseDesc;
-        this.termId = termId;
-        this.termName = termName;
-        this.teacherId = teacherId;
+    private Integer studentId;
+
+
+    public Integer getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
     }
 
     public Integer getCourseId() {

@@ -31,8 +31,9 @@ public class TermController {
 
     @RequestMapping(value = "show_terms.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<List<String>> showTerms(Integer teacher_id){
-        return  iTermService.selectAllTerms(teacher_id);
+    public ServerResponse<List<Term>> showTerms(Integer teacherId){
+
+        return  iTermService.selectTermsByTeacher(teacherId);
     }
 
     @RequestMapping(value = "add_term.do",method = RequestMethod.POST)
@@ -41,7 +42,7 @@ public class TermController {
 //        User teacher = (User) session.getAttribute(Const.CURRENT_USER);
 //        Integer id = teacher.getUid();
 
-        term.setTeacherId(1);
+        term.setTeacherId(-1303833160);
         return  iTermService.addTerm(term);
     }
 

@@ -18,57 +18,88 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>\
+    <script src="assets/js/echarts.min.js"></script>
 
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/amazeui.min.js"></script>
 
     <script>
+        //空值检查
         function checkAddContext(){
-            var termName = $("#termName").val();
-            if($.trim(termName)){
-                $("#term_name").css("border-color","#d6d6d6");
+            var text = $(".check-null").val();
+            if($.trim(text)){
+                $(".check-null").css("border-color","#d6d6d6");
+                $(".check-null-text").text("");
                 return true;
             }
-            $("#term_name").css("border-color","red");
+            $(".check-null").css("border-color","red");
+            $(".check-null-text").text("不可为空");
+            $(".check-null-text").css("color","red");
             return false;
         }
 
+        //添加课程
         $(function() {
             $(".add-course-toggle").on('click', function() {
+                // showTerms();
                 $('#add-course').modal({
-                    // relatedElement: this,
+                    relatedElement: this,
+                    closeOnConfirm:false,//点击确认时不关闭窗口
                     onConfirm: function() {
-                        alert('成功创建!');
+                        var courseName =document.getElementById("courseName").value;
+                        var termId =document.getElementById("termId").value;
+                        alert("确认新增课程？" + courseName );
+                        //表单提交
+                        $.post("course/add_course.do",$('#add-course-form').serialize(),function(data){//先获取数据
+                            //处理服务器响应
+                            if(data.status == 0){
+                                alert(data.msg);
+                                location.reload();
+                                $("#add-course").modal('close');//模态框关闭
+                            }else if (data.status == 1) {
+                                $("#errorMsg").text(data.msg);
+                                location.reload();
+                                $("#add-course").modal('close');
+                            }
+                        });
                     },
                     onCancel: function() {
-                        // alert('不想说!');
+                        // $("#add-course-form")[0].reset();
+                        location.reload();
+                        $("#add-course").modal('close');
                     }
                 });
             });
         });
 
+
+
         $(function() {
             $(".add-term-toggle").on('click', function() {
                 $('#add-term').modal({
                     relatedElement: this,
+                    closeOnConfirm:false,//点击确认时不关闭窗口
                     onConfirm:function() {
                         var termName =document.getElementById("termName").value;
-                        alert("确认新增学期？" + termName);
-                        // $("#add-term-form").submit(function () {
-                            $.post("term/add_term.do",$('#add-term-form').serialize(),function(data){//先获取数据
-                                //处理服务器响应
-                                if(data.status == 0){
-                                    alert(data.msg);
-                                    // window.location.replace("http://localhost:9090/index.jsp");
-                                }else if (data.status == 1) {
-                                    $("#errorMsg").text(data.msg);
-                                }
-                            });
-                        // });
+                        var termDesc =document.getElementById("termDesc").value;
+                        alert("确认新增学期？" + termName + "描述："+termDesc);
+                        //表单提交
+                        $.post("term/add_term.do",$('#add-term-form').serialize(),function(data){//先获取数据
+                            //处理服务器响应
+                            if(data.status == 0){
+                                alert(data.msg);
+                                location.reload();
+                                $("#add-term").modal('close');//模态框关闭
+                            }else if (data.status == 1) {
+                                $("#errorMsg").text(data.msg);
+                                location.reload();
+                                $("#add-term").modal('close');
+                            }
+                        });
                     },
                     onCancel: function() {
-                        // alert('不想说!');
+                        location.reload();
+                        $("#add-term").modal('close');
                     }
                 });
             });
@@ -76,57 +107,178 @@
 
         $(function() {
             $(".delete-course-toggle").on('click', function() {
+                // showTerms();
                 $('#delete-course').modal({
                     relatedElement: this,
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        var courseName =document.getElementById("makeupCo").value;
+                        var courseId = $("#typeNum").val();
+                        alert("确认删除课程？" + courseName + courseId);
+                        //表单提交
+                        $.post("course/delete_course.do",{courseId:courseId},function(data){//先获取数据
+                            //处理服务器响应
+                            if(data.status == 0){
+                                alert(data.msg);
+                                location.reload();
+                                $("#add-term").modal('close');//模态框关闭
+                            }else if (data.status == 1) {
+                                alert(data.msg);
+                                location.reload();
+                                $("#add-term").modal('close');
+                            }
+                        });
                     },
                     onCancel: function() {
-                        // alert('不想说!');
+                        location.reload();
+                        $("#delete-course").modal('close');
                     }
                 });
             });
         });
 
-        var TempArr = []; //存储option
+        //加载课程展示
+        $(function (){
+            var teacherName = "teacher";
+            $.post("course/course_view.do",{personName:teacherName},function (data) {
+                if(data.status == 0){
+                    // alert(data.data);
+                    // alert(data.msg);
+                    var jsData = data.data;
+                    for (var i = 0; i < jsData.length; i++) {
+                        // $(".termId").append("<option value=" + jsData[i].termId + ">" + jsData[i].termName + "</option>");
+                        // alert(jsData[i].courseName);
+                        var colors = "blue";
+                        if(i%4 == 1){
+                            colors = "red";
+                        }else if(i%4 == 2){
+                            colors = "green";
+                        }else if(i%4 == 3){
+                            colors = "purple";
+                        }
+
+                        var viewComponent  = "<div class=\"am-u-lg-3 am-u-md-6 am-u-sm-12\">\n" +
+                            "                <div class=\"dashboard-stat "+ colors +"\">\n" +
+                            "                    <div class=\"visual\">\n" +
+                            "                        <i class=\"am-icon-comments-o\"></i>\n" +
+                            "                    </div>\n" +
+                            "                    <div class=\"details\">\n" +
+                            "                        <div class=\"number\"> "+jsData[i].courseName+ "</div>\n" +
+                            "                        <div class=\"desc\"> "+jsData[i].termName+" </div>\n" +
+                            "                    </div>\n" +
+                            "                    <a class=\"more\" href=\"course-class.jsp?courseId="+jsData[i].courseId+"\"> 进入课程\n" +
+                            "                        <i class=\"m-icon-swapright m-icon-white\"></i>\n" +
+                            "                    </a>\n" +
+                            "                </div>\n" +
+                            "            </div>"
+                        $("#show-course-view").append(viewComponent);
+                    }
+
+                }else if(data.status == 1){
+                    alert(data.msg);
+                }
+            });
+
+        });
+
+        //加载当前教师所有的学期
+        $(function(){
+        // function showTerms() {
+            var tid = -1303833160;
+            $.post("term/show_terms.do", {teacherId: tid}, function (data) {//传递教师id，获取学期
+                //处理服务器响应
+                if (data.status == 0) {
+                    // alert(data.data);
+                    var jsData = data.data;
+                    for (var i = 0; i < jsData.length; i++) {
+                        $(".termId").append("<option value=" + jsData[i].termId + ">" + jsData[i].termName + "</option>");
+                    }
+
+                } else if (data.status == 1) {
+                    alert(data.msg);
+
+                }
+            });
+        });
+        // }
+
+        //加载当前学期的课程
+        function showTermCourse(){
+        //     var termid = 11;
+            var termid=$("#delete-term-name").val();
+            $.post("course/show_termCourses.do",{termId:termid},function(data){//传递所选获取学期
+                //处理服务器响应
+                if(data.status == 0){
+                    // alert(data.data);
+                    var jsData = data.data;
+                    $("#typeNum").empty();
+                    for (var i = 0; i < jsData.length; i++) {
+                        $("#typeNum").append("<option value="+jsData[i].courseId+">"+jsData[i].courseName+"</option>");
+                    }
+                }else if (data.status == 1) {
+                    alert(data.msg);
+                }
+            });
+        }
+
+        //加载所有课程列表
+        $(function(){
+            var tid = -1303833160;
+            $.post("course/show_courses.do",{teacherId:tid},function(data){//传递所选获取学期
+                //处理服务器响应
+                if(data.status == 0){
+                    // alert(data.data);
+                    var jsData = data.data;
+                    $("#typeNum").empty();
+                    for (var i = 0; i < jsData.length; i++) {
+                        $("#typeNum").append("<option value="+jsData[i].courseId+">"+jsData[i].courseName+"</option>");
+                    }
+                }else if (data.status == 1) {
+                    alert(data.msg);
+
+                }
+            });
+        });
+
         $(function () {
             /*先将数据存入数组*/
-            $("#typenum option").each(function (index, el) {
+            var TempArr = []; //存储option
+            $("#typeNum option").each(function (index, el) {
+                // alert("文字加入数组");
                 TempArr[index] = $(this).text();
             });
             $(document).bind('click', function (e) {
                 var e = e || window.event; //浏览器兼容性
                 var elem = e.target || e.srcElement;
                 while (elem) { //循环判断至跟节点，防止点击的是div子元素
-                    if (elem.id && (elem.id == 'typenum' || elem.id == "makeupCo")) {
+                    if (elem.id && (elem.id === 'typeNum' || elem.id == "makeupCo")) {
                         return;
                     }
                     elem = elem.parentNode;
                 }
-                $('#typenum').css('display', 'none'); //点击的不是div或其子元素
+                $('#typeNum').css('display', 'none'); //点击的不是div或其子元素
             });
         })
 
         function changeF(this_) {
             $(this_).prev("input").val($(this_).find("option:selected").text());
-            $("#typenum").css({
+            $("#typeNum").css({
                 "display": "none"
             });
         }
 
-        function setfocus(this_) {
-            $("#typenum").css({
+        function setFocus(this_) {
+            $("#typeNum").css({
                 "display": ""
             });
-            var select = $("#typenum");
+            var select = $("#typeNum");
             for (i = 0; i < TempArr.length; i++) {
-                var option = $("<option></option>").text(TempArr[i]);
+                var option = "<option>"+TempArr[i]+"</option>";
                 select.append(option);
             }
         }
 
-        function setinput(this_) {
-            var select = $("#typenum");
+        function setInput(this_) {
+            var select = $("#typeNum");
             select.html("");
             for (i = 0; i < TempArr.length; i++) {
                 //若找到以txt的内容开头的，添option
@@ -313,17 +465,13 @@
             <li class="am-active">课程</li>
         </ol>
 
-        <div class="tpl-portlet-components">
+        <div class="tpl-portlet-components" id="show-course-view">
             <div class="portlet-title">
                 <div class="caption font-green bold">
                     <span class="am-icon-code"></span> 课程列表
                 </div>
                 <div class="tpl-portlet-input tpl-fz-ml">
-                    <div class="portlet-input input-small input-inline">
-                        <%--                            <div class="input-icon right">--%>
-                        <%--                                <i class="am-icon-search"></i>--%>
-                        <%--                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>--%>
-                    </div>
+                    <div class="portlet-input input-small input-inline"></div>
                 </div>
             </div>
 
@@ -337,69 +485,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="am-u-sm-12 am-u-md-3">
-                </div>
             </div>
             <hr/>
 
-            <div class="row">
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                    <div class="dashboard-stat blue">
-                        <div class="visual">
-                            <i class="am-icon-comments-o"></i>
-                        </div>
-                        <div class="details">
-                            <div class="number"> 数据库实践 </div>
-                            <div class="desc"> 21下 </div>
-                        </div>
-                        <a class="more" href="course-class.jsp"> 进入课程
-                            <i class="m-icon-swapright m-icon-white"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                    <div class="dashboard-stat red">
-                        <div class="visual">
-                            <i class="am-icon-bar-chart-o"></i>
-                        </div>
-                        <div class="details">
-                            <div class="number"> 数据库原理 </div>
-                            <div class="desc"> 21上 </div>
-                        </div>
-                        <a class="more" href="course-class.jsp"> 进入课程
-                            <i class="m-icon-swapright m-icon-white"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                    <div class="dashboard-stat green">
-                        <div class="visual">
-                            <i class="am-icon-apple"></i>
-                        </div>
-                        <div class="details">
-                            <div class="number"> 数据库原理 </div>
-                            <div class="desc"> 19上 </div>
-                        </div>
-                        <a class="more" href="course-class.jsp"> 进入课程
-                            <i class="m-icon-swapright m-icon-white"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                    <div class="dashboard-stat purple">
-                        <div class="visual">
-                            <i class="am-icon-android"></i>
-                        </div>
-                        <div class="details">
-                            <div class="number"> 数据库原理 </div>
-                            <div class="desc"> 18上 </div>
-                        </div>
-                        <a class="more" href="course-class.jsp"> 进入课程
-                            <i class="m-icon-swapright m-icon-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>
@@ -415,13 +503,14 @@
     <div class="am-modal-dialog">
         <div class="am-modal-hd">新建课程</div>
         <div class="am-modal-bd">
-            <form class="am-form am-form-horizontal">
+            <form class="am-form am-form-horizontal"  id="add-course-form" name="add-course-form" method="post">
                 <div class="am-g am-margin-top am-form-group-sm">
                     <div class="am-u-sm-4 am-u-md-3 am-text-right">
                         课程名称
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <input type="text" class="am-modal-prompt-input" >
+                        <input type="text" class="am-modal-prompt-input check-null" id="courseName" name="courseName" onblur="checkAddContext()">
+                        <a class="check-null-text"></a>
                     </div>
                 </div>
 
@@ -430,16 +519,9 @@
                         所属学期
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <%--                        <input type="text" class="am-modal-prompt-input" >--%>
                         <div class="am-form-group-sm am-align-left">
-                            <select data-am-selected="{btnSize: 'sm'}">
+                            <select data-am-selected="{btnSize: 'sm'}" class="termId" id="termId" name="termId">
                                 <option value="option1">学期选择</option>
-                                <option value="option2">19上</option>
-                                <option value="option3">19下</option>
-                                <%--                                      <option value="option3">笔记本电脑</option>--%>
-                                <%--                                      <option value="option3">平板电脑</option>--%>
-                                <%--                                      <option value="option3">只能手机</option>--%>
-                                <%--                                      <option value="option3">超极本</option>--%>
                             </select>
                         </div>
                     </div>
@@ -450,7 +532,7 @@
                         课程描述
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <textarea rows="5" ></textarea>
+                        <textarea rows="5" id="courseDesc" name="courseDesc"></textarea>
                     </div>
                 </div>
             </form>
@@ -467,12 +549,13 @@
         <div class="am-modal-hd">新建学期</div>
         <div class="am-modal-bd">
             <form class="am-form am-form-horizontal add-term-form" id="add-term-form" name="add-term-form" method="post">
-                <div class="am-g am-margin-top am-form-group-sm">
+                <div class="am-g am-margin-top am-form-group-sm am-form-error">
                     <div class="am-u-sm-4 am-u-md-3 am-text-right">
                         学期名称
                     </div>
-                    <div class="am-u-sm-8 am-align-left">
-                        <input type="text" class="am-modal-prompt-input" id="termName" name="termName" onmouseout="checkAddContext()">
+                    <div class="am-u-sm-8 am-align-left ">
+                        <input type="text" class="am-modal-prompt-input check-null" id="termName" name="termName" onblur="checkAddContext()">
+                        <a class="check-null-text"></a>
                     </div>
                 </div>
 
@@ -481,7 +564,7 @@
                         学期描述
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <textarea rows="5" name="term_desc"></textarea>
+                        <textarea rows="5" id="termDesc" name="termDesc"></textarea>
                     </div>
                 </div>
             </form>
@@ -497,22 +580,14 @@
     <div class="am-modal-dialog">
         <div class="am-modal-hd">删除课程</div>
         <div class="am-modal-bd">
-            <form class="am-form am-form-horizontal">
+            <form class="am-form am-form-horizontal" id="delete-course-form">
                 <div class="am-g am-margin-top am-form-group-sm">
                     <div class="am-u-sm-4 am-u-md-3 am-text-right">
                         所属学期
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <%--                        <input type="text" class="am-modal-prompt-input" >--%>
                         <div class="am-form-group-sm am-align-left">
-                            <select data-am-selected="{btnSize: 'sm'}">
-                                <option value="option1">学期选择</option>
-                                <option value="option2">19上</option>
-                                <option value="option3">19下</option>
-                                <%--                                      <option value="option3">笔记本电脑</option>--%>
-                                <%--                                      <option value="option3">平板电脑</option>--%>
-                                <%--                                      <option value="option3">只能手机</option>--%>
-                                <%--                                      <option value="option3">超极本</option>--%>
+                            <select data-am-selected="{btnSize: 'sm'}" class="termId"  id="delete-term-name" onchange="showTermCourse()" autofocus>
                             </select>
                         </div>
                     </div>
@@ -523,17 +598,9 @@
                         课程名称
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setfocus(this)"
-                               oninput="setinput(this);" placeholder="请选择或输入" />
-                        <select name="makeupCoSe" id="typenum" onchange="changeF(this)" size="10" style="display:none;">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">12323</option>
-                            <option value="">31</option>
-                            <option value="">1332</option>
-                            <option value="">412</option>
-                            <option value="">42</option>
-                            <option value="">11</option>
+                        <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setFocus(this)"
+                               oninput="setInput(this);" placeholder="请选择或输入" autocomplete="off">
+                        <select name="courseId" id="typeNum" onchange="changeF(this)" size="10" style="display:none;">
                         </select>
                     </div>
                 </div>

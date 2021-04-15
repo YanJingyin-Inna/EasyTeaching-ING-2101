@@ -22,10 +22,10 @@ public class TermServiceImpl implements ITermService {
     private TermMapper termMapper;
 
     @Override
-    public ServerResponse<List<String>> selectAllTerms(Integer teacher_id) {
-        List<String> termList = null;
-//        List<String> termList =  termMapper.selectAllTermsByTeacher(teacher_id);
-        return ServerResponse.createBySuccess(termList);
+    public ServerResponse<List<Term>> selectTermsByTeacher(Integer teacherId) {
+//        List<String> termList = null;
+        List<Term> termList =  termMapper.selectTermsByTeacher(teacherId);
+        return ServerResponse.createBySuccess("查询成功",termList);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class TermServiceImpl implements ITermService {
         if (resultCount <= 0){
             return ServerResponse.createByErrorMessage("添加失败");
         }
-        return ServerResponse.createBySuccess("添加成功","sucess");
+        return ServerResponse.createBySuccess("添加成功","success");
     }
 
     @Override

@@ -24,19 +24,63 @@
     <script src="assets/js/amazeui.min.js"></script>
 
     <script>
+        function checkAddContext(){
+            var text = $(".check-null").val();
+            if($.trim(text)){
+                $(".check-null").css("border-color","#d6d6d6");
+                $(".check-null-text").text("");
+                return true;
+            }
+            $(".check-null").css("border-color","red");
+            $(".check-null-text").text("不可为空");
+            $(".check-null-text").css("color","red");
+            return false;
+        }
+
         $(document).ready(function(){
             $("#current-user").html(${currentUser.username});
+        });
+
+        //加入课程信息确认
+        $(function() {
+            $("#classCode").bind('keypress', function() {
+                var a = $("#classCode").val();
+                // alert(a);
+                $.post("course/show_course_class.do",{classCode:a},function (data){
+                    if(data.status == 0){
+                        // alert(data.data.classId);
+                        $("#courseName").val(data.data.courseName);
+                        $("#className").val(data.data.className);
+                        $("#courseDesc").val(data.data.courseDesc);
+                        $("#classId").val(data.data.classId);
+                        $("#termName").val(data.data.termName);
+                    }else if(data.status == 1){
+                        alert(data.msg);
+                    }
+                },"json");
+            });
         });
 
         $(function() {
             $(".join-class-toggle").on('click', function() {
                 $('#join-class').modal({
                     relatedElement: this,
-                    onConfirm: function(data) {
-                        alert('加入成功');
+                    closeOnConfirm:false,//点击确认时不关闭窗口
+                    onConfirm: function() {
+                        var classId = $("#classId").val();
+                        var sId = -1303833150;//取session
+                        $.post("course/join_class.do",{classId:classId,studentId:sId},function (data) {
+                            if(data.status == 0){
+                                alert(data.msg);
+                                location.reload();
+                            }else if(data.status == 1){
+                                alert(data.msg);
+                                location.reload();
+                            }
+                        });
                     },
                     onCancel: function() {
-                        // alert('不想说!');
+                        location.reload();
                     }
                 });
             });
@@ -46,47 +90,136 @@
             $(".out-class-toggle").on('click', function() {
                 $('#out-class').modal({
                     relatedElement: this,
+                    closeOnConfirm:false,//点击确认时不关闭窗口
                     onConfirm: function(data) {
-                        alert('你输入的是：' + data)
+                        var classId = $('#delete-class-id').val();
+                        var studentId = -1303833150;
+                        $.post("course/out_class.do",{classId:classId,studentId:studentId},function (data) {
+                            if(data.status == 0){
+                                alert(data.msg);
+                                location.reload();
+                            }else if(data.status == 1){
+                                alert(data.msg);
+                                location.reload();
+                            }
+                        });
                     },
                     onCancel: function() {
-                        // alert('不想说!');
+                        location.reload();
                     }
                 });
             });
         });
 
-        var TempArr = []; //存储option
+        //课程展示
+        $(function (){
+            var studentName = "student";
+            $.post("course/course_view.do",{personName:studentName},function (data) {
+                if(data.status == 0){
+                    var jsData = data.data;
+                    for (var i = 0; i < jsData.length; i++) {
+                        var colors = "blue";
+                        if(i%4 == 1){
+                            colors = "red";
+                        }else if(i%4 == 2){
+                            colors = "green";
+                        }else if(i%4 == 3){
+                            colors = "purple";
+                        }
+
+                        var viewComponent  = "<div class=\"am-u-lg-3 am-u-md-6 am-u-sm-12\">\n" +
+                            "                <div class=\"dashboard-stat "+ colors +"\">\n" +
+                            "                    <div class=\"visual\">\n" +
+                            "                        <i class=\"am-icon-comments-o\"></i>\n" +
+                            "                    </div>\n" +
+                            "                    <div class=\"details\">\n" +
+                            "                        <div class=\"number\"> "+jsData[i].courseName+ "</div>\n" +
+                            "                        <div class=\"desc\"> "+jsData[i].termName+" </div>\n" +
+                            "                    </div>\n" +
+                            "                    <a class=\"more\" href=\"course-class.jsp?courseId="+jsData[i].courseId+"&classId="+jsData[i].classId+"\"> 进入课程\n" +
+                            "                        <i class=\"m-icon-swapright m-icon-white\"></i>\n" +
+                            "                    </a>\n" +
+                            "                </div>\n" +
+                            "            </div>"
+                        $("#show-course-view").append(viewComponent);
+                    }
+
+                }else if(data.status == 1){
+                    alert(data.msg);
+                }
+            });
+
+        });
+
+        //用于退出课程信息确认
+        $(function() {
+            $(".out-class-toggle").on('click', function() {
+                var courseId = $("#typeNum").val();
+                var studentId = -1303833150;
+                $.post("course/show_outClass_info.do",{courseId:courseId,studentId:studentId},function (data){
+                    if(data.status == 0){
+                        var jsData = data.data;
+                        $("#delete-class-name").val(jsData.className);
+                        $("#delete-class-desc").val(jsData.courseDesc);
+                        $("#delete-class-term").val(jsData.termName);
+                        $("#delete-class-id").val(jsData.classId);
+                    }else if(data.status == 1){
+                        alert(data.msg);
+                    }
+                },"json");
+            });
+        });
+
+        //加载学生所有课程,到删除选择中
+        $(function() {
+            $(".out-class-toggle").on('click', function () {
+                var studentName = "student";
+                $.post("course/course_view.do", {personName: studentName}, function (data) {
+                    //处理服务器响应
+                    if (data.status == 0) {
+                        var jsData = data.data;
+                        for (var i = 0; i < jsData.length; i++) {
+                            $("#typeNum").append("<option value=" + jsData[i].courseId + ">" + jsData[i].courseName + "</option>");
+                        }
+                    } else if (data.status == 1) {
+                        alert(data.msg);
+                    }
+                });
+            });
+        });
+
+
         $(function () {
             /*先将数据存入数组*/
-            $("#typenum option").each(function (index, el) {
+            var TempArr = [];//存储option
+            $("#typeNum option").each(function (index, el) {
                 TempArr[index] = $(this).text();
             });
             $(document).bind('click', function (e) {
                 var e = e || window.event; //浏览器兼容性
                 var elem = e.target || e.srcElement;
                 while (elem) { //循环判断至跟节点，防止点击的是div子元素
-                    if (elem.id && (elem.id == 'typenum' || elem.id == "makeupCo")) {
+                    if (elem.id && (elem.id == 'typeNum' || elem.id == "makeUpCo")) {
                         return;
                     }
                     elem = elem.parentNode;
                 }
-                $('#typenum').css('display', 'none'); //点击的不是div或其子元素
+                $('#typeNum').css('display', 'none'); //点击的不是div或其子元素
             });
         })
 
         function changeF(this_) {
             $(this_).prev("input").val($(this_).find("option:selected").text());
-            $("#typenum").css({
+            $("#typeNum").css({
                 "display": "none"
             });
         }
 
         function setfocus(this_) {
-            $("#typenum").css({
+            $("#typeNum").css({
                 "display": ""
             });
-            var select = $("#typenum");
+            var select = $("#typeNum");
             for (i = 0; i < TempArr.length; i++) {
                 var option = $("<option></option>").text(TempArr[i]);
                 select.append(option);
@@ -94,7 +227,7 @@
         }
 
         function setinput(this_) {
-            var select = $("#typenum");
+            var select = $("#typeNum");
             select.html("");
             for (i = 0; i < TempArr.length; i++) {
                 //若找到以txt的内容开头的，添option
@@ -280,7 +413,7 @@
             <li class="am-active">课程</li>
         </ol>
 
-        <div class="tpl-portlet-components">
+        <div class="tpl-portlet-components" id="show-course-view">
             <div class="portlet-title">
                 <div class="caption font-green bold">
                     <span class="am-icon-code"></span> 课程列表
@@ -303,71 +436,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="am-u-sm-12 am-u-md-3">
-                </div>
             </div>
             <hr/>
-
-            <div class="row">
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat blue">
-                    <div class="visual">
-                        <i class="am-icon-comments-o"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 数据库实践 </div>
-                        <div class="desc"> 20下 </div>
-                    </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat red">
-                    <div class="visual">
-                        <i class="am-icon-bar-chart-o"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> 数据库原理 </div>
-                        <div class="desc"> 20上 </div>
-                    </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-                <div class="dashboard-stat green">
-                    <div class="visual">
-                        <i class="am-icon-apple"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number"> Java </div>
-                        <div class="desc"> 19上 </div>
-                    </div>
-                    <a class="more" href="course-class.jsp"> 进入课程
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
-<%--                <div class="dashboard-stat purple">--%>
-<%--                    <div class="visual">--%>
-<%--                        <i class="am-icon-android"></i>--%>
-<%--                    </div>--%>
-<%--                    <div class="details">--%>
-<%--                        <div class="number"> C++ </div>--%>
-<%--                        <div class="desc"> 18上 </div>--%>
-<%--                    </div>--%>
-<%--                    <a class="more" href="course-class.jsp"> 进入课程--%>
-<%--                        <i class="m-icon-swapright m-icon-white"></i>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-            </div>
-            </div>
         </div>
-
     </div>
 
     </div>
@@ -384,37 +455,41 @@
             <form class="am-form am-form-horizontal">
                 <div class="am-g am-margin-top am-form-group-sm">
                     <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        课程代码
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" class="am-modal-prompt-input check-null" id="classCode" name="classCode" onblur="checkAddContext()">
+                        <a>输入后按下回车确认班级信息</a>
+                        <a class="check-null-text"></a>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        学期
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" id="termName" readonly>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
                         课程名称
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setfocus(this)"
-                               oninput="setinput(this);" placeholder="请选择或输入" />
-                        <select name="makeupCoSe" id="typenum" onchange="changeF(this)" size="10" style="display:none;">
-                            <option value="">数据库原理</option>
-                            <option value="">高数1</option>
-                            <option value="">数据库实践</option>
-                            <option value="">Java程序设计</option>
-                        </select>
+                        <input type="text" id="courseName" readonly>
                     </div>
                 </div>
+
 
                 <div class="am-g am-margin-top am-form-group-sm">
                     <div class="am-u-sm-4 am-u-md-3 am-text-right">
                         班级
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <%--                        <input type="text" class="am-modal-prompt-input" >--%>
-                        <div class="am-form-group-sm am-align-left">
-                            <select data-am-selected="{btnSize: 'sm'}">
-                                <option value="option1">班级选择</option>
-                                <option value="option2">1901</option>
-                                <option value="option3">1902</option>
-                                <%--                                      <option value="option3">笔记本电脑</option>--%>
-                                <%--                                      <option value="option3">平板电脑</option>--%>
-                                <%--                                      <option value="option3">只能手机</option>--%>
-                                <%--                                      <option value="option3">超极本</option>--%>
-                            </select>
-                        </div>
+                        <input type="text" id="className" readonly>
+                        <input type="hidden" id="classId" ></input>
                     </div>
                 </div>
 
@@ -423,7 +498,7 @@
                         课程描述
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <textarea rows="5" readonly>本课程为教师A的Java程序设计</textarea>
+                        <textarea rows="4" id="courseDesc" readonly>本课程为教师A的Java程序设计</textarea>
                     </div>
                 </div>
             </form>
@@ -445,18 +520,19 @@
                         课程名称
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <input type="text" name="makeupCo" id="makeupCo" class="makeinp" onfocus="setfocus(this)"
-                               oninput="setinput(this);" placeholder="请选择或输入" />
-                        <select name="makeupCoSe" id="typenum" onchange="changeF(this)" size="10" style="display:none;">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">12323</option>
-                            <option value="">31</option>
-                            <option value="">1332</option>
-                            <option value="">412</option>
-                            <option value="">42</option>
-                            <option value="">11</option>
+                        <input type="text" name="makeUpCo" id="makeUpCo" class="makeinp" onfocus="setfocus(this)"
+                               oninput="setinput(this);" placeholder="请选择" />
+                        <select name="makeUpCoSe" id="typeNum" onchange="changeF(this)"  size="10" style="display:none;">
                         </select>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top am-form-group-sm">
+                    <div class="am-u-sm-4 am-u-md-3 am-text-right">
+                        学期
+                    </div>
+                    <div class="am-u-sm-8 am-align-left">
+                        <input type="text" id="delete-class-term" readonly></input>
                     </div>
                 </div>
 
@@ -465,18 +541,8 @@
                         班级
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <%--                        <input type="text" class="am-modal-prompt-input" >--%>
-                        <div class="am-form-group-sm am-align-left">
-                            <select data-am-selected="{btnSize: 'sm'}">
-                                <option value="option1">班级选择</option>
-                                <option value="option2">19上</option>
-                                <option value="option3">19下</option>
-                                <%--                                      <option value="option3">笔记本电脑</option>--%>
-                                <%--                                      <option value="option3">平板电脑</option>--%>
-                                <%--                                      <option value="option3">只能手机</option>--%>
-                                <%--                                      <option value="option3">超极本</option>--%>
-                            </select>
-                        </div>
+                        <input type="text" id="delete-class-name" readonly></input>
+                        <input type="hidden" id="delete-class-id" ></input>
                     </div>
                 </div>
 
@@ -485,7 +551,7 @@
                         课程描述
                     </div>
                     <div class="am-u-sm-8 am-align-left">
-                        <textarea rows="5" readonly></textarea>
+                        <textarea rows="5" id="delete-class-desc" readonly></textarea>
                     </div>
                 </div>
             </form>
